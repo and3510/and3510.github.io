@@ -50,7 +50,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* ===================== MAIN ===================== */
+/* ===================== MAIN (Home) ===================== */
 .main {
   height: calc(100vh - 70px);
   background: linear-gradient(135deg, #0d0d0d 0%, #141414 100%), url(images/blue.png) center/cover no-repeat;
@@ -263,6 +263,9 @@ body {
 }
 
 .project-item {
+  /* Altera para usar <button> no HTML */
+  border: none;
+  padding: 0; 
   background: #1b1b1b;
   border: 1px solid #2a2a2a;
   cursor: pointer;
@@ -270,6 +273,8 @@ body {
   overflow: hidden;
   border-radius: 12px;
   transition: transform 0.25s ease, box-shadow 0.3s ease;
+  width: 260px; /* Define um tamanho base */
+  height: 180px; /* Define um tamanho base */
 }
 
 .project-item:hover {
@@ -278,17 +283,17 @@ body {
 }
 
 .project-item img {
-  width: 260px;
-  height: 180px;
+  width: 100%; /* Ocupa todo o botão */
+  height: 100%; /* Ocupa todo o botão */
   border-radius: 10px;
   object-fit: cover;
   transition: opacity 0.3s ease;
-}
-
-.project-item .img-hover {
   position: absolute;
   top: 0;
   left: 0;
+}
+
+.project-item .img-hover {
   opacity: 0;
 }
 
@@ -309,6 +314,8 @@ body {
   justify-content: center;
   align-items: center;
   z-index: 1000;
+  overflow-y: auto; /* Adiciona scroll se o conteúdo for muito alto */
+  padding: 20px 0;
 }
 
 .modal-content {
@@ -322,6 +329,7 @@ body {
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   position: relative;
   border: 1px solid #2a2a2a;
+  margin: auto; /* Centraliza verticalmente no scroll */
 }
 
 #modal-video {
@@ -330,6 +338,30 @@ body {
   height: auto;
   margin: 20px 0;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+#modal-description {
+    text-align: justify;
+    margin-bottom: 20px;
+}
+
+#modal-link {
+    background: linear-gradient(90deg, #0097a7, #00bcd4);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.3s ease;
+}
+
+#modal-link:hover {
+    background: linear-gradient(90deg, #00acc1, #26c6da);
+    transform: translateY(-1px);
 }
 
 .close {
@@ -364,51 +396,192 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* ===================== RESPONSIVO ===================== */
+/* ===================== RESPONSIVO: TELAS GRANDES (>= 900px) ===================== */
+@media (min-width: 901px) {
+    /* Ajuste para garantir que a imagem não seja muito grande em telas grandes */
+    .sobre img {
+        width: 450px;
+        height: 470px;
+    }
+}
+
+
+/* ===================== RESPONSIVO: TABLETS (<= 900px) ===================== */
 @media (max-width: 900px) {
+  /* SOBRE (já estava bom, apenas ajustando padding e imagem) */
   .sobre {
     flex-direction: column;
     text-align: center;
+    padding: 60px 5%;
   }
 
   .sobre div {
     max-width: 100%;
+    margin-bottom: 30px;
   }
 
   .sobre img {
-    margin-top: 20px;
-    width: 300px;
+    margin-top: 0;
+    width: 80%; /* Ocupa mais espaço em tablets */
+    max-width: 400px;
+    height: auto;
   }
 
+  /* ESTUDOS (já estava bom) */
+  .study {
+      padding: 60px 5%;
+  }
+  
   .topicos {
     flex-direction: column;
     align-items: center;
   }
+  
+  .topicos div {
+      width: 100%;
+      max-width: 500px; /* Limita a largura em telas maiores de mobile */
+  }
 
+  /* NAVBAR */
   .nav {
     justify-content: center;
+    padding: 0 20px;
+  }
+  
+  .nav-list {
+      gap: 20px;
+  }
+  
+  /* PROJETOS */
+  .projetos {
+      padding: 60px 5%;
+  }
+
+  .project-list {
+    gap: 15px; /* Reduz o espaço entre os projetos */
+  }
+
+  .project-item {
+      width: 45%; /* Permite 2 itens por linha em telas um pouco maiores */
+      max-width: 280px;
+      height: auto;
+      aspect-ratio: 260 / 180; /* Mantém a proporção da imagem original */
   }
 }
 
-@media (max-width: 768px) {
-  #habilidades {
-    padding: 60px 6%;
-  }
+/* ===================== RESPONSIVO: CELULARES (<= 600px) ===================== */
+@media (max-width: 600px) {
+    /* GLOBAL */
+    body {
+        font-size: 16px;
+    }
 
-  .habilidades h1 {
-    font-size: 26px;
-  }
+    /* NAVBAR */
+    .nav {
+        height: auto;
+        padding: 10px 5px;
+        flex-direction: column;
+    }
+    
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px; /* Espaçamento ajustado */
+        padding: 5px 0;
+    }
+    
+    .nav-list a {
+        font-size: 14px;
+    }
 
-  .grid-icons {
-    gap: 18px;
-  }
+    /* HOME */
+    .main {
+        padding: 0 5%;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+    }
 
-  .icon img {
-    width: 55px;
-    height: 55px;
-  }
+    .main h1 {
+        font-size: 40px; /* Tamanho reduzido */
+    }
 
-  .icon span {
-    font-size: 12px;
-  }
+    .main p {
+        font-size: 18px;
+        margin: 15px 0;
+    }
+
+    .call_to_action {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+    
+    /* SEÇÕES EM GERAL */
+    .sobre, .study, #habilidades, .projetos {
+        padding: 40px 5%; /* Reduz o padding vertical */
+    }
+
+    /* SOBRE */
+    .sobre img {
+        width: 100%;
+        max-width: 350px;
+    }
+    
+    .sobre h1 {
+        font-size: 30px;
+    }
+
+    /* HABILIDADES */
+    .habilidades h1 {
+        font-size: 24px;
+    }
+    
+    .habilidades p {
+        margin-bottom: 30px;
+    }
+
+    .grid-icons {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr)); /* Ícones menores */
+        gap: 15px;
+    }
+
+    .icon img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon span {
+        font-size: 11px;
+    }
+
+    /* PROJETOS */
+    .projetos h1 {
+        font-size: 30px;
+    }
+
+    .project-list {
+        flex-direction: column; /* Um item por linha */
+        gap: 20px;
+        align-items: center;
+    }
+
+    .project-item {
+        width: 90%; /* Ocupa quase toda a largura */
+        max-width: 350px;
+    }
+
+    /* MODAL */
+    .modal-content {
+        padding: 20px;
+        width: 95%;
+    }
+    
+    #modal-title {
+        font-size: 20px;
+    }
+    
+    .close {
+        font-size: 24px;
+        right: 15px;
+    }
 }
