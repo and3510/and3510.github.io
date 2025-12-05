@@ -585,3 +585,131 @@ footer a:hover {
         right: 15px;
     }
 }
+
+/* ===================== RESPONSIVO: CELULARES (<= 600px) ===================== */
+@media (max-width: 600px) {
+    /* GLOBAL: Garante que nada saia do limite da tela */
+    body {
+        font-size: 16px;
+        overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+        word-wrap: break-word; /* Garante que palavras longas quebrem */
+    }
+
+    /* NAVBAR */
+    .nav {
+        height: auto;
+        padding: 10px 5px;
+        flex-direction: column;
+    }
+    
+    .nav-list {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px 18px; /* Espaçamento ajustado */
+        padding: 5px 0;
+    }
+    
+    .nav-list a {
+        font-size: 14px;
+    }
+
+    /* HOME */
+    .main {
+        padding: 0 5%;
+        text-align: center;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .main h1 {
+        font-size: 40px; 
+    }
+
+    .main p {
+        font-size: 18px;
+        margin: 15px 0;
+    }
+
+    .call_to_action {
+        padding: 12px 24px;
+        font-size: 16px;
+    }
+    
+    /* SEÇÕES EM GERAL: Padding consistente */
+    .sobre, .study, #habilidades, .projetos {
+        padding: 40px 5%; 
+    }
+
+    /* SOBRE: Foco no alinhamento e imagem */
+    .sobre img {
+        /* A chave: Garante que a imagem nunca ultrapasse a largura do contêiner */
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        box-sizing: border-box; /* Garante que padding/border não afetem a largura */
+    }
+    
+    .sobre h1 {
+        font-size: 30px;
+    }
+
+    /* ESTUDOS */
+    .topicos div {
+        padding: 20px;
+    }
+
+
+    /* HABILIDADES */
+    .habilidades h1 {
+        font-size: 24px;
+    }
+    
+    .habilidades p {
+        margin-bottom: 30px;
+    }
+
+    .grid-icons {
+        grid-template-columns: repeat(auto-fit, minmax(60px, 1fr));
+        gap: 15px;
+    }
+
+    .icon img {
+        width: 50px;
+        height: 50px;
+    }
+
+    .icon span {
+        font-size: 11px;
+    }
+
+    /* PROJETOS */
+    .projetos h1 {
+        font-size: 30px;
+    }
+
+    .project-list {
+        flex-direction: column; 
+        gap: 20px;
+        align-items: center;
+    }
+
+    .project-item {
+        width: 90%; 
+        max-width: 350px;
+    }
+
+    /* MODAL */
+    .modal-content {
+        padding: 20px;
+        width: 95%;
+    }
+    
+    #modal-title {
+        font-size: 20px;
+    }
+    
+    .close {
+        font-size: 24px;
+        right: 15px;
+    }
+}
