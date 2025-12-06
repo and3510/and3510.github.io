@@ -1,44 +1,73 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anderson - Portfolio</title>
+    <title>Anderson - DevOps Portfolio</title>
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Kavoon&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <style>
+        :root {
+            --icon-color: #ff8800;
+            /* Altere esta cor para qualquer outra */
+        }
+
+        .icons i {
+            font-size: 48px;
+            margin-right: 10px;
+            color: var(--icon-color);
+            transition: color 0.3s ease;
+        }
+    </style>
+    <style>
+        .icon-svg {
+            width: 48px;
+            height: 48px;
+            margin-right: 10px;
+        }
+
+        .icon-svg2 {
+            width: 48px;
+            height: 48px;
+            margin-right: 10px;
+        }
+
+        .icons .icon-svg {
+            filter: brightness(1) invert(0);
+        }
+
+        .icons .icon-svg2 {
+            filter: brightness(1) invert(2);
+        }
+    </style>
 </head>
+
 <body>
 
     <nav class="nav">
         <ul class="nav-list">
-            <li>
-                <a href="#home">Home</a>
-            </li>
-            <li>
-                <a href="#sobre">About</a>
-            </li>
-            <li>
-                <a href="#study">Studies</a>
-            </li>
-            <li>
-                <a href="#habilidades">Tools</a>
-            </li>
-            <li>
-                <a href="#projetos">Projects</a>
-            </li>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#sobre">Sobre</a></li>
+            <li><a href="#stack">Stack</a></li>
+            <!-- <li><a href="#projetos">Projetos</a></li> -->
         </ul>
     </nav>
 
     <section id="home" class="main">
         <div>
-            <h1>Olá, <br> Seja Bem Vindo</h1>
-            <p>Desenvolvimento ágil, código robusto.</p>
-            <a href="#projetos">
-                <button class="call_to_action">Veja meus Projetos 👇</button>
+            <h1>Bem-vindo</h1>
+            <p>Automação, infraestrutura, desenvolvimento e confiabilidade.</p>
+            <a href="#stack">
+                <button class="call_to_action">Ver Stack 👇</button>
             </a>
         </div>
     </section>
@@ -46,207 +75,220 @@
     <section id="sobre" class="sobre">
         <div>
             <h1>Sobre</h1>
-            <p style="text-align: justify;">Meu nome é Anderson e sou estudante de Engenharia de Software. Estou sempre em busca de novas oportunidades de aprendizado e desenvolvimento na área. Tenho um forte interesse em DevOps, segurança da informação, servidores e desenvolvimento web. Acredito que a combinação dessas disciplinas é fundamental para criar soluções tecnológicas robustas e eficientes.</p>
-            <br><br>
-            <p style="text-align: justify;">Estou animado para aplicar meu conhecimento em projetos práticos e contribuir para inovações que façam a diferença no mundo digital.</p>
+            <p style="text-align: justify;">
+                Sou Anderson, um profissional com <b>foco primário em DevOps e Infraestrutura</b>. Minha expertise reside na criação de integrações contínuas, pipelines confiáveis, containers (Docker/Kubernetes), ambientes Linux e automações eficientes com ferramentas como Bash, Ansible e GitLab CI.
+            </p>
+            <br>
+            <p style="text-align: justify;">
+                Além da infraestrutura, possuo <b>conhecimento e experiência em Desenvolvimento</b>, utilizando linguagens como Python, Go e Java, e frameworks como Spring e Django. Essa base em desenvolvimento me permite construir soluções de automação mais robustas e colaborar de forma eficaz com equipes de software, garantindo que as práticas de DevOps sejam aplicadas de ponta a ponta.
+            </p>
         </div>
-        <img src="images/duck.jpeg" alt="">
 
+        <img src="images/me.png" alt="DevOps">
     </section>
 
-
-
-</section>
-
-<section id="study" class="study">
-    <div>
-        <h1 style="text-align: center;">Meus Estudos</h1>
-        <p style="text-align: center;">Áreas de conhecimento nas quais estou me aprofundando atualmente</p>
-    </div>
-
-    <div class="topicos">
-
+    <section id="stack" class="study">
         <div>
-            <h2 style="text-align: justify;">DevOps</h2>
-            <p style="text-align: justify;">
-                Estou aprofundando conhecimentos em DevOps estudando integração contínua, entrega contínua (CI/CD), containers com Docker, orquestração com Kubernetes e ferramentas clássicas como Jenkins, GitLab CI/CD, Ansible e Terraform, aplicando boas práticas de automação e monitoramento em projetos reais.
-            </p>
+            <h1 style="text-align: center;">Stack </h1>
+            <p style="text-align: center;">Ferramentas e tecnologias que utilizo no dia a dia</p>
         </div>
 
-        <div>
-            <h2 style="text-align: justify;">Programação</h2>
-            <p style="text-align: justify;">
-                Aprofundo-me em programação com livros como "Automate the Boring Stuff with Python", cursos práticos e ferramentas como VS Code, GitHub e Postman para desenvolvimento web, automações e integração de APIs.
-            </p>
+        <div class="topicos">
+
+            <div>
+                <h2>Infraestrutura & Servidores</h2>
+                <p>
+                    Experiência com Linux, provisionamento de ambientes, redes, Nginx, firewall,
+                    processos de hardening e monitoramento de serviços essenciais.
+                </p>
+                <div class="icons">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/linux/linux-original.svg"
+                        class="icon-svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nginx/nginx-original.svg"
+                        class="icon-svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/apachekafka/apachekafka-original.svg"
+                        class="icon-svg2" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/rabbitmq/rabbitmq-original.svg"
+                        class="icon-svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/terraform/terraform-original.svg"
+                        class="icon-svg" />
+
+
+
+
+                </div>
+            </div>
+
+            <div>
+                <h2>Automação & Configuração</h2>
+                <p>
+                    Criação de scripts Bash robustos, uso de Ansible para padronização de ambientes,
+                    templates reutilizáveis e rotinas automatizadas de manutenção.
+                </p>
+                <div class="icons">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bash/bash-plain.svg"
+                        class="icon-svg2" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/yaml/yaml-original.svg"
+                        class="icon-svg2" />
+                    
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/ansible/ansible-original-wordmark.svg" class="icon-svg2" />
+          
+
+
+                </div>
+            </div>
+
+            <div>
+                <h2>CI/CD</h2>
+                <p>
+                    Pipelines reprodutíveis com GitLab CI, GitHub Actions e Jenkins.
+                </p>
+                <div class="icons">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/gitlab/gitlab-original.svg"
+                        class="icon-svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                        class="icon-svg2" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/githubactions/githubactions-original.svg"
+                        class="icon-svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+                        class="icon-svg" />
+
+
+
+
+                </div>
+            </div>
+
+            <div>
+                <h2>Containers & Cloud</h2>
+                <p>
+                    Build e otimização de Dockerfiles, docker-compose bem organizado e deploy de serviços.
+                </p>
+                <div class="icons">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/docker/docker-original.svg"
+                        class="icon-svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/kubernetes/kubernetes-original.svg"
+                        class="icon-svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/argocd/argocd-original.svg"
+                        class="icon-svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/portainer/portainer-original.svg"
+                        class="icon-svg" />
+
+
+
+                </div>
+            </div>
+
+            <div>
+                <h2>Monitoramento & Observabilidade</h2>
+                <p>
+                    Aplicação de ferramentas tradicionais de monitoramento, métricas e logs para garantir
+                    a saúde dos serviços e detectar problemas rapidamente.
+                </p>
+                <div class="icons">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/grafana/grafana-original.svg"
+                        class="icon-svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sentry/sentry-original.svg"
+                        class="icon-svg2" />
+
+                </div>
+            </div>
+
+            <div>
+                <h2>Linguagens de Programação</h2>
+                <p>
+                    Linguagens para o desenvolvimento de ferramentas e serviços.
+                </p>
+                <div class="icons">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                        class="icon-svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/typescript/typescript-original.svg"
+                        class="icon-svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/java/java-original.svg"
+                        class="icon-svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/go/go-original.svg"
+                        class="icon-svg" />
+
+
+
+
+
+                </div>
+            </div>
+
+            <div>
+                <h2>Banco de Dados</h2>
+                <p>
+                    Ferramentas e Bancos de Dados Relacionais e NoSQL.
+                </p>
+                <div class="icons">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/postgresql/postgresql-original.svg"
+                        class="icon-svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/mysql/mysql-original-wordmark.svg"
+                        class="icon-svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/dbeaver/dbeaver-original.svg"
+                        class="icon-svg" />
+
+
+
+                </div>
+            </div>
+
+            <div>
+                <h2>Frameworks</h2>
+                <p>
+                    Frameworks utilizados no desenvolvimento de APIs e aplicações.
+                </p>
+                <div class="icons">
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/spring/spring-original.svg" class="icon-svg"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/fastapi/fastapi-original.svg"  class="icon-svg"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original-wordmark.svg" class="icon-svg" />
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/django/django-plain.svg" class="icon-svg2"/>
+                    <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/flask/flask-original.svg"  class="icon-svg2"/>
+                </div>
+            </div>
+
         </div>
-    </div>
-</section>
+    </section>
 
+    <!-- <section id="projetos" class="projetos">
 
-
-        
-
-
-<section id="habilidades" class="habilidades">
-
-  <div style="text-align: center;">
-    <h1>Linguagens de Programação</h1>
-    <p>As linguagens que mais utilizo no desenvolvimento de software</p>
-
-    <div class="grid-icons">
-      <div class="icon"><img src="https://skillicons.dev/icons?i=python" alt="Python"><span>Python</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=typescript" alt="TypeScript"><span>TypeScript</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=javascript" alt="JavaScript"><span>JavaScript</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=java" alt="Java"><span>Java</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=dart" alt="Dart"><span>Dart</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=bash" alt="Bash"><span>Bash</span></div>
-    </div>
-  </div>
-
-  <br><br>
-
-  <div style="text-align: center;">
-    <h1>Frameworks e Bibliotecas</h1>
-    <p>Principais frameworks e bibliotecas com os quais trabalho</p>
-
-    <div class="grid-icons">
-      <div class="icon"><img src="https://skillicons.dev/icons?i=react" alt="React"><span>React</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=django" alt="Django"><span>Django</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=flask" alt="Flask"><span>Flask</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=flutter" alt="Flutter"><span>Flutter</span></div>
-    </div>
-  </div>
-
-  <br><br>
-
-  <div style="text-align: center;">
-    <h1>Ferramentas e Plataformas</h1>
-    <p>Ambientes, ferramentas e plataformas que utilizo no dia a dia</p>
-
-    <div class="grid-icons">
-      <div class="icon"><img src="https://skillicons.dev/icons?i=github" alt="GitHub"><span>GitHub</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=gitlab" alt="GitLab"><span>GitLab</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=postman" alt="Postman"><span>Postman</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=firebase" alt="Firebase"><span>Firebase</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=figma" alt="Figma"><span>Figma</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=vscode" alt="VSCode"><span>VSCode</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=idea" alt="IntelliJ IDEA"><span>IntelliJ IDEA</span></div>
-    </div>
-  </div>
-
-  <br><br>
-
-  <div style="text-align: center;">
-    <h1>Sistemas Operacionais e Infraestrutura</h1>
-    <p>Ambientes e tecnologias relacionados à administração e servidores</p>
-
-    <div class="grid-icons">
-      <div class="icon"><img src="https://skillicons.dev/icons?i=linux" alt="Linux"><span>Linux</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=ubuntu" alt="Ubuntu"><span>Ubuntu</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=kali" alt="Kali Linux"><span>Kali</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=windows" alt="Windows"><span>Windows</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=nginx" alt="Nginx"><span>Nginx</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=mysql" alt="MySQL"><span>MySQL</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=postgres" alt="PostgreSQL"><span>PostgreSQL</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=redis" alt="Redis"><span>Redis</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=rabbitmq" alt="RabbitMQ"><span>RabbitMQ</span></div>
-    </div>
-  </div>
-
-  <br><br>
-
-  <div style="text-align: center;">
-    <h1>DevOps Tools</h1>
-    <p>Ferramentas e tecnologias que utilizo ou estudo para DevOps</p>
-
-    <div class="grid-icons">
-      <div class="icon"><img src="https://skillicons.dev/icons?i=docker" alt="Docker"><span>Docker</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=kubernetes" alt="Kubernetes"><span>Kubernetes</span></div>
-      <div class="icon"><img src="https://skillicons.dev/icons?i=ansible" alt="Ansible"><span>Ansible</span></div>
-    </div>
-  </div>
-
-</section>
-
-
-
-    <section id="projetos" class="projetos">
-
-        <h1>Meus Projetos</h1>
-        <p>Conheça meus ultimos projetos</p>
-
+        <h1>Projetos DevOps</h1>
+        <p>Alguns dos meus trabalhos práticos na área de automação e infraestrutura</p>
 
         <span id="project-details" class="info-span"></span>
 
-
         <div class="project-list">
-            <button class="project-item" data-info="BIA - Bot Inteligente Academico|Chatbot universitário que ajuda os alunos a acessarem informações de forma rápida e precisa.|https://github.com/and3510/BIA_Project|https://minio.ajvale.com.br/portfolio-anderson/teste_bia.webm">
-                <img src="images/image copy 2.png" alt="Projeto 1" class="img-normal">
-                <img src="images/feedback.png" alt="Projeto 1 Hover" class="img-hover">
+
+            <button class="project-item"
+                data-info="Painel CLI para Portainer|Ferramenta CLI em Bash que consulta containers, stacks e serviços consumindo a API do Portainer. Formatação no estilo clássico, com colunas, cores e bordas.|https://github.com/seuuser/cli-portainer">
+                <img src="images/terminal.png" class="img-normal">
+                <img src="images/terminal2.png" class="img-hover">
             </button>
-            <button class="project-item" data-info="ENEM Trainer - Chatbot para Treino de Estudantes com Questões do ENEM|O Chatbot ENEM Trainer é uma ferramenta interativa criada para ajudar estudantes a se prepararem para o Exame Nacional do Ensino Médio (ENEM). Com a ajuda da API ENEM de Yunger7, o chatbot oferece uma experiência de estudo personalizada, prática e eficiente, tornando o aprendizado mais fácil e dinâmico.|https://github.com/and3510/EnemChatbot_Project|https://minio.ajvale.com.br/portfolio-anderson/teste_enem.webm">
-                <img src="images/image copy 12.png" alt="Projeto 1" class="img-normal">
-                <img src="images/enem_Chabot.png" alt="Projeto 1 Hover" class="img-hover">
+
+            <button class="project-item"
+                data-info="Pipeline GitLab CI para Serviços Docker|Pipeline CI/CD completa com build, análise, testes, versionamento, push automático para registry e deploy.|https://github.com/seuuser/gitlabci-docker">
+                <img src="images/gitlab.png" class="img-normal">
+                <img src="images/gitlab2.png" class="img-hover">
             </button>
-            <button class="project-item" data-info="Bot Clinica - Atendimento via Bot para Clínica|Chatbot para Atendimento de uma clinica,para atendimento e obter informações de forma rápida e precisa.|https://github.com/and3510/Clinimagem_Project|https://minio.ajvale.com.br/portfolio-anderson/teste.mp4">
-                <img src="images/image copy 8.png" alt="Projeto 2" class="img-normal">
-                <img src="images/image copy 9.png" alt="Projeto 2 Hover" class="img-hover">
+
+            <button class="project-item"
+                data-info="Automação com Ansible|Playbooks para provisionamento de servidores Linux, instalação de serviços essenciais, aplicação de roles e rotinas programadas.|https://github.com/seuuser/ansible-infra">
+                <img src="images/ansible.png" class="img-normal">
+                <img src="images/ansible2.png" class="img-hover">
             </button>
+
         </div>
 
-        <div class="project-list">
-            <button class="project-item" data-info="Autism Game - Um projeto de jogo para autistas|O aplicativo foi criado para ajudar crianças com Transtorno do Espectro Autista (TEA) a aprender de forma divertida e adaptada às suas necessidades.|https://github.com/and3510/AppAutismo_Project|https://minio.ajvale.com.br/portfolio-anderson/teste_memory.webm">
-                <img src="images/image copy 4.png" alt="Projeto 1" class="img-normal">
-                <img src="images/image copy.png" alt="Projeto 1 Hover" class="img-hover">
-            </button>
-            <button class="project-item" data-info="Galleria - Plataforma de Fotos|É uma plataforma de fotos que oferece uma experiência interativa, intuitiva e segura, permitindo que um fotógrafo compartilhe seu portfólio de maneira prática e confiável. Os visitantes podem visualizar as fotos e entrar em contato diretamente com o fotógrafo.|https://github.com/and3510/Galleria_Project|https://minio.ajvale.com.br/portfolio-anderson/teste_galeria.webm">
-                <img src="images/image copy 10.png" alt="Projeto 3" class="img-normal">
-                <img src="images/image copy 11.png" alt="Projeto 3 Hover" class="img-hover">
-            </button>
-            <button class="project-item" data-info="PrimeFlix - Plataforma de Filmes.|PrimeFlix é uma plataforma de filmes que permite explorar, ver detalhes e criar listas de favoritos, com dados sempre atualizados para uma experiência completa.|https://github.com/and3510/PrimeFlix_Project|https://minio.ajvale.com.br/portfolio-anderson/teste_primeflix.webm">
-                <img src="images/image copy 6.png" alt="Projeto 3" class="img-normal">
-                <img src="images/image copy 7.png" alt="Projeto 3 Hover" class="img-hover">
-            </button>
-        </div>
-
-
-        <div class="project-list">
-            <button class="project-item" data-info="Fall Alert System - Sistema de detecção de quedas.|Tecnologia Vestível para Idosos Protótipo Eletrônico de Detecção de Quedas|https://github.com/and3510/Alarme_Quedas_Project|https://minio.ajvale.com.br/portfolio-anderson/teste_arduino.mp4">
-                <img src="images/image copy 5.png" alt="Projeto 3" class="img-normal">
-                <img src="images/image.png" alt="Projeto 3 Hover" class="img-hover">
-            </button>
-            <button class="project-item" data-info="CurrencyTrainer - Plataforma de visualização em tempo real para preços de criptomoedas.|Plataforma web para monitoramento de criptomoedas em tempo real, oferecendo informações detalhadas como nome da moeda, valor de mercado, preço atual, volume de transações e variação percentual nas últimas 24 horas.|https://github.com/and3510/CurrencyTracker_Project|https://minio.ajvale.com.br/portfolio-anderson/teste_cripto.webm">
-                <img src="images/image copy 13.png" alt="Projeto 3" class="img-normal">
-                <img src="images/Screenshot from 2025-01-07 18-26-49.png" alt="Projeto 3 Hover" class="img-hover">
-            </button>
-        </div>
-
-    
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span id="close-modal" class="close">&times;</span>
-                <h2 id="modal-title">Título do Projeto</h2>
-                <video id="modal-video" autoplay muted loop style="max-width: 100%; height: auto;">
-                    <source src="" type="video/mp4">
-                    <p>video carregando</p>
-                </video>
-                <p id="modal-description">Descrição do projeto.</p>
-                <a id="modal-link" href="#" target="_blank">Saiba mais</a>
-            </div>                      
-        </div>
-
-
-    </section>
-
+    </section> -->
 
     <footer>
-
         <p>Email: <a href="mailto:and.dovale@gmail.com">and.dovale@gmail.com</a></p>
         <p>Instagram: <a href="https://instagram.com/and.dovale" target="_blank">@and.dovale</a></p>
-
     </footer>
 
-
+    
 
 </body>
+
 </html>
