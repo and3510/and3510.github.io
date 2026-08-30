@@ -1,0 +1,237 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center; /* Centralizado por padrão (celular) */
+  background: radial-gradient(circle, #43cea2 0%, #185a9d 100%);
+  background-size: 200% 200%;
+  animation: gradientRadial 6s linear infinite;
+  padding: 20px;
+  position: relative;
+  overflow-x: hidden;
+  --mx: 50%;
+  --my: 50%;
+}
+
+/* Brilho suave que segue o mouse, por cima do gradiente animado */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--mx) var(--my), rgba(255, 255, 255, 0.16), transparent 35%);
+  transition: background-position 0.05s ease-out;
+  z-index: 0;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+}
+
+/* Regra específica para telas maiores (computador/tablet) */
+@media (min-width: 768px) {
+  body {
+    align-items: flex-start; /* Tira do meio exato da tela */
+    padding-top: 5vh; /* Distância do topo */
+  }
+}
+
+@keyframes gradientRadial {
+  0% { background-position: 50% 50%; }
+  50% { background-position: 100% 100%; }
+  100% { background-position: 50% 50%; }
+}
+
+.container {
+  width: 100%;
+  max-width: 580px;
+  text-align: center;
+}
+
+.avatar {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  margin-bottom: 24px;
+  object-fit: cover;
+  border: 5px solid #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+  will-change: transform;
+}
+
+.avatar:hover {
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25), 0 0 24px rgba(255, 255, 255, 0.3);
+}
+
+/* Entrada suave e escalonada dos elementos ao carregar */
+.fade-in-item {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in-item.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+h1 {
+  font-size: 2.5rem;
+  margin-bottom: 12px;
+  color: #fff;
+}
+
+.description {
+  color: #f0f0f0;
+  margin-bottom: 36px;
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  margin-bottom: 36px;
+}
+
+.social-icons a {
+  width: 48px;
+  height: 48px;
+  display: inline-block;
+  position: relative;
+}
+
+.social-icons a svg {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s ease, fill 0.2s ease;
+}
+
+.social-icons a:hover svg {
+  transform: scale(1.2);
+  fill: #43cea2;
+}
+
+/* Ripple ao clicar nos ícones */
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.55);
+  transform: scale(0);
+  animation: ripple-anim 0.6s ease-out;
+  pointer-events: none;
+}
+
+@keyframes ripple-anim {
+  to {
+    transform: scale(3);
+    opacity: 0;
+  }
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 100%;
+}
+
+.rounded-btn {
+  display: block;
+  background: transparent;
+  color: #fff;
+  border: 3px solid #fff;
+  border-radius: 40px;
+  padding: 20px 16px;
+  font-size: 1.35rem;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+}
+
+.rounded-btn:hover {
+  background: #fff;
+  color: #185a9d;
+  transform: translateY(-2px);
+}
+
+/* Customização do botão de Portfólio estilo Terminal Linux */
+.btn-portfolio {
+  font-family: 'Courier New', Courier, monospace; /* Fonte monoespaçada de terminal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.btn-portfolio .btn-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.btn-portfolio:hover {
+  background: #0a0e0d;
+  color: #39d353;
+  border-color: #39d353;
+  box-shadow: 0 0 18px rgba(57, 211, 83, 0.35);
+  font-size: 1.15rem; /* Ajuste suave para caber o comando no hover */
+}
+
+/* Em telas estreitas, o texto do terminal fica ainda menor pra caber no botão */
+@media (max-width: 400px) {
+  .btn-portfolio:hover {
+    font-size: 0.85rem;
+  }
+}
+
+/* Cursor piscando estilo prompt */
+.typing-cursor {
+  display: inline-block;
+  opacity: 1;
+  animation: blink 0.7s infinite;
+  color: #39d353;
+  margin-left: 2px;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* Glitch rápido ao clicar no botão do Portfólio */
+.btn-portfolio.glitch {
+  animation: glitch-click 0.25s ease;
+}
+
+@keyframes glitch-click {
+  0% { transform: translate(0); text-shadow: none; }
+  20% { transform: translate(-2px, 1px); text-shadow: 2px 0 #ff004c, -2px 0 #39d353; }
+  40% { transform: translate(2px, -1px); text-shadow: -2px 0 #ff004c, 2px 0 #39d353; }
+  60% { transform: translate(-1px, 0); text-shadow: 1px 0 #ff004c, -1px 0 #39d353; }
+  80% { transform: translate(1px, 0); text-shadow: none; }
+  100% { transform: translate(0); text-shadow: none; }
+}
+
+/* Cursor de digitação piscando na descrição, ao carregar a página */
+.description .typing-cursor {
+  display: inline-block;
+  opacity: 1;
+  animation: blink 0.7s infinite;
+  color: #fff;
+  margin-left: 2px;
+}
