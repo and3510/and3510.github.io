@@ -1,4 +1,4 @@
-# devops-infra-blog
+# DevOpsOne
 
 Blog pessoal sobre Cultura DevOps, Engenharia de Plataforma e Infraestrutura —
 estudos, projetos e laboratórios documentados em Markdown.
