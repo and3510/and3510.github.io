@@ -1,0 +1,102 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Source Serif 4", Georgia, serif;
+  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+}
+
+.font-serif {
+  font-family: var(--font-serif);
+}
+
+.prose-post {
+  color: theme(colors.neutral.800);
+  font-size: 1.125rem;
+}
+.prose-post h1,
+.prose-post h2,
+.prose-post h3 {
+  font-family: var(--font-serif);
+  color: theme(colors.neutral.900);
+  margin-top: 1.8em;
+  margin-bottom: 0.6em;
+  font-weight: 700;
+}
+.prose-post h1 {
+  font-size: 1.9rem;
+}
+.prose-post h2 {
+  font-size: 1.5rem;
+  border-bottom: 2px solid theme(colors.neutral.200);
+  padding-bottom: 0.3em;
+}
+.prose-post h3 {
+  font-size: 1.2rem;
+}
+.prose-post p {
+  line-height: 1.8;
+  margin-bottom: 1.2em;
+}
+.prose-post a {
+  color: theme(colors.red.600);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-post ul,
+.prose-post ol {
+  margin: 1em 0 1.2em 1.4em;
+  line-height: 1.8;
+}
+.prose-post ul {
+  list-style: disc;
+}
+.prose-post ol {
+  list-style: decimal;
+}
+.prose-post blockquote {
+  border-left: 3px solid theme(colors.neutral.300);
+  padding-left: 1em;
+  color: theme(colors.neutral.500);
+  font-style: italic;
+  margin: 1.2em 0;
+}
+.prose-post code {
+  background: theme(colors.neutral.100);
+  border: 1px solid theme(colors.neutral.200);
+  border-radius: 0.3em;
+  padding: 0.15em 0.4em;
+  font-size: 0.85em;
+  color: theme(colors.neutral.800);
+}
+.prose-post pre {
+  background: theme(colors.neutral.900);
+  border-radius: 0.4em;
+  padding: 1em 1.2em;
+  overflow-x: auto;
+  margin: 1.2em 0;
+}
+.prose-post pre code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: theme(colors.neutral.100);
+}
+.prose-post img {
+  border-radius: 0.3em;
+  border: 1px solid theme(colors.neutral.200);
+}
+.prose-post table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.2em 0;
+}
+.prose-post th,
+.prose-post td {
+  border: 1px solid theme(colors.neutral.200);
+  padding: 0.5em 0.8em;
+  text-align: left;
+}
+.prose-post th {
+  background: theme(colors.neutral.50);
+  font-family: var(--font-serif);
+}

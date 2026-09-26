@@ -1,0 +1,44 @@
+---
+import { render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import CategoryBadge from '../../../components/CategoryBadge.astro';
+import { getPublishedPosts, getCategorySlug, getPostSlug, formatCategoryName } from '../../../lib/content';
+
+export async function getStaticPaths() {
+  const posts = await getPublishedPosts();
+  return posts.map((post) => ({
+    params: {
+      categoria: getCategorySlug(post),
+      pagina: getPostSlug(post),
+    },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+const categorySlug = getCategorySlug(post);
+const categoryName = formatCategoryName(categorySlug);
+const dateLabel = post.data.date
+  ? new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' }).format(post.data.date)
+  : null;
+---
+
+<BaseLayout title={post.data.title} description={post.data.description}>
+  <article class="mx-auto max-w-3xl">
+    <div class="mb-4 flex items-center gap-3 border-b border-neutral-200 pb-4">
+      <CategoryBadge slug={categorySlug} name={categoryName} size="md" />
+      {dateLabel && <span class="text-sm text-neutral-400">{dateLabel}</span>}
+    </div>
+    <h1 class="mb-3 font-serif text-4xl font-extrabold leading-tight text-neutral-900">{post.data.title}</h1>
+    {post.data.description && <p class="mb-8 text-xl leading-relaxed text-neutral-600">{post.data.description}</p>}
+    <div class="prose-post">
+      <Content />
+    </div>
+  </article>
+  <div class="mx-auto mt-12 max-w-3xl">
+    <a href={`/categorias/${categorySlug}/`} class="text-sm font-semibold text-red-600 hover:text-red-700">
+      ← voltar para {categoryName}
+    </a>
+  </div>
+</BaseLayout>
