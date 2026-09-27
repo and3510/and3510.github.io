@@ -2,6 +2,7 @@
 title: "Pipeline básico com GitHub Actions"
 description: "Estrutura mínima de um workflow de CI para lint, teste e build."
 date: 2026-02-03
+updatedDate: 2026-02-03
 ---
 
 ## Workflow mínimo

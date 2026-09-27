@@ -11,7 +11,7 @@ const categorySlug = getCategorySlug(post);
 const categoryName = formatCategoryName(categorySlug);
 const postSlug = getPostSlug(post);
 const dateLabel = post.data.date
-  ? new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric' }).format(post.data.date)
+  ? new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(post.data.date)
   : null;
 ---
 

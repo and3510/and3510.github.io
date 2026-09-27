@@ -19,16 +19,20 @@ const { post } = Astro.props;
 const { Content } = await render(post);
 const categorySlug = getCategorySlug(post);
 const categoryName = formatCategoryName(categorySlug);
-const dateLabel = post.data.date
-  ? new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric' }).format(post.data.date)
-  : null;
+const formatter = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const dateLabel = post.data.date ? formatter.format(post.data.date) : null;
+const updatedLabel =
+  post.data.updatedDate && post.data.date && post.data.updatedDate.getTime() !== post.data.date.getTime()
+    ? formatter.format(post.data.updatedDate)
+    : null;
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description}>
   <article class="mx-auto max-w-3xl">
-    <div class="mb-4 flex items-center gap-3 border-b border-neutral-200 pb-4">
+    <div class="mb-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-neutral-200 pb-4">
       <CategoryBadge slug={categorySlug} name={categoryName} size="md" />
-      {dateLabel && <span class="text-sm text-neutral-400">{dateLabel}</span>}
+      {dateLabel && <span class="text-sm text-neutral-400">Publicado em {dateLabel}</span>}
+      {updatedLabel && <span class="text-sm text-neutral-400">· Atualizado em {updatedLabel}</span>}
     </div>
     <h1 class="mb-3 font-serif text-4xl font-extrabold leading-tight text-neutral-900">{post.data.title}</h1>
     {post.data.description && <p class="mb-8 text-xl leading-relaxed text-neutral-600">{post.data.description}</p>}

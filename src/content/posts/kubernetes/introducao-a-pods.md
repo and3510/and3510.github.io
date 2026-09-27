@@ -2,6 +2,7 @@
 title: "Introdução a Pods no Kubernetes"
 description: "O que é um Pod, por que ele é a menor unidade de deploy e como isso afeta o design de aplicações."
 date: 2026-01-15
+updatedDate: 2026-09-26
 ---
 
 ## O que é um Pod?
