@@ -1,8 +1,8 @@
 ---
 title: "ConfigMaps e Secrets"
 description: "Como separar configuração e dados sensíveis do código da aplicação no Kubernetes."
-date: 2026-02-24
-updatedDate: 2026-02-24
+date: 2026-06-28
+updatedDate: 2026-06-28
 ---
 
 ## ConfigMap: configuração desacoplada

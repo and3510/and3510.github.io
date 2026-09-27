@@ -1,8 +1,8 @@
 ---
 title: "SMTP, POP3 e IMAP: protocolos de e-mail"
 description: "Um protocolo envia, dois protocolos diferentes de recebimento com filosofias opostas sobre onde a mensagem deveria viver."
-date: 2026-12-14
-updatedDate: 2026-12-14
+date: 2026-09-18
+updatedDate: 2026-09-18
 ---
 
 ## O fluxo geral

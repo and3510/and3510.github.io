@@ -1,8 +1,8 @@
 ---
 title: "Deployments e ReplicaSets"
 description: "Como o Kubernetes garante réplicas e rollouts de aplicações usando Deployment e ReplicaSet."
-date: 2026-02-10
-updatedDate: 2026-02-10
+date: 2026-06-26
+updatedDate: 2026-06-26
 ---
 
 ## Por que não gerenciar Pods diretamente?

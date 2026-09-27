@@ -1,8 +1,8 @@
 ---
 title: "NTFS, ReFS e permissões no Windows"
 description: "Como o Windows organiza, protege e audita arquivos — e por que acesso remoto passa por duas camadas de permissão."
-date: 2026-09-24
-updatedDate: 2026-09-24
+date: 2026-08-19
+updatedDate: 2026-08-19
 ---
 
 ## NTFS x ReFS

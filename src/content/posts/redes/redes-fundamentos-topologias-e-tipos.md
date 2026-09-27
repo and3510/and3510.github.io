@@ -1,8 +1,8 @@
 ---
 title: "Redes de computadores: fundamentos, topologias e tipos"
 description: "Os conceitos base antes de qualquer protocolo: o que é uma rede, como os dispositivos se conectam e como o tráfego se propaga."
-date: 2026-10-09
-updatedDate: 2026-10-09
+date: 2026-08-24
+updatedDate: 2026-08-24
 ---
 
 ## O que é uma rede

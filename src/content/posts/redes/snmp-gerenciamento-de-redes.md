@@ -1,8 +1,8 @@
 ---
 title: "SNMP: gerenciamento e monitoramento de redes"
 description: "Como um sistema central consulta e recebe alertas de centenas de dispositivos de rede diferentes."
-date: 2026-12-17
-updatedDate: 2026-12-17
+date: 2026-09-19
+updatedDate: 2026-09-19
 ---
 
 ## O que é SNMP

@@ -1,8 +1,8 @@
 ---
 title: "Filas, Pub/Sub e Event-Driven Architecture"
 description: "Como desacoplar sistemas no tempo e na responsabilidade usando mensageria em vez de chamadas diretas."
-date: 2026-06-26
-updatedDate: 2026-06-26
+date: 2026-07-20
+updatedDate: 2026-07-20
 ---
 
 ## Por que usar mensageria

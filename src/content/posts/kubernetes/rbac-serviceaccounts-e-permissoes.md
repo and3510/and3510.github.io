@@ -1,8 +1,8 @@
 ---
 title: "ServiceAccounts: a identidade dos workloads no Kubernetes"
 description: "Como Pods se autenticam contra a API do Kubernetes, e por que a conta default nunca deveria ter privilégios elevados."
-date: 2026-07-20
-updatedDate: 2026-07-20
+date: 2026-07-28
+updatedDate: 2026-07-28
 ---
 
 ## Usuário humano x ServiceAccount

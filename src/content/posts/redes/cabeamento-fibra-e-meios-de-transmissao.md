@@ -1,8 +1,8 @@
 ---
 title: "Cabeamento, fibra óptica e meios de transmissão"
 description: "Cobre, fibra e sem fio: as três formas físicas de fazer bits chegarem de um ponto a outro."
-date: 2027-01-07
-updatedDate: 2027-01-07
+date: 2026-09-26
+updatedDate: 2026-09-26
 ---
 
 ## Os três meios

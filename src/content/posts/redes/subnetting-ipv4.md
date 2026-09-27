@@ -1,8 +1,8 @@
 ---
 title: "Subnetting IPv4: dividindo redes com máscaras"
 description: "Como quebrar uma rede grande em sub-redes menores, e o cálculo que aparece em toda prova de redes."
-date: 2026-10-24
-updatedDate: 2026-10-24
+date: 2026-09-01
+updatedDate: 2026-09-01
 ---
 
 ## O que é subnetting

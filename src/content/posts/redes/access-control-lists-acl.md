@@ -1,8 +1,8 @@
 ---
 title: "ACL: filtrando tráfego em redes"
 description: "Listas de controle de acesso decidem, regra por regra e em ordem, o que passa e o que é bloqueado."
-date: 2026-11-29
-updatedDate: 2026-11-29
+date: 2026-09-13
+updatedDate: 2026-09-13
 ---
 
 ## O que é uma ACL

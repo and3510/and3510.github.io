@@ -1,8 +1,8 @@
 ---
 title: "Ethernet, endereço MAC e switches"
 description: "Como um switch aprende para onde encaminhar cada quadro, sem nenhuma configuração manual."
-date: 2026-11-14
-updatedDate: 2026-11-14
+date: 2026-09-08
+updatedDate: 2026-09-08
 ---
 
 ## Ethernet e o quadro

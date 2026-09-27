@@ -1,8 +1,8 @@
 ---
 title: "Roteamento IP: estático, dinâmico e RIP"
 description: "Como um roteador decide o próximo salto de cada pacote, e a diferença entre configurar rotas manualmente ou deixar os roteadores aprenderem sozinhos."
-date: 2026-11-23
-updatedDate: 2026-11-23
+date: 2026-09-11
+updatedDate: 2026-09-11
 ---
 
 ## O que é roteamento

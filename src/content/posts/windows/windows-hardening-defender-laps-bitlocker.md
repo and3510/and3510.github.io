@@ -1,8 +1,8 @@
 ---
 title: "Windows Hardening: Defender, LAPS, BitLocker e UAC"
 description: "Defesa em profundidade no Windows: nenhum controle isolado resolve tudo, mas juntos reduzem significativamente o risco."
-date: 2026-10-03
-updatedDate: 2026-10-03
+date: 2026-08-22
+updatedDate: 2026-08-22
 ---
 
 ## Defesa em profundidade

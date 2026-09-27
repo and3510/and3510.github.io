@@ -1,8 +1,8 @@
 ---
 title: "VLANs e Trunks"
 description: "Como separar logicamente uma rede física em vários domínios de broadcast independentes."
-date: 2026-11-17
-updatedDate: 2026-11-17
+date: 2026-09-09
+updatedDate: 2026-09-09
 ---
 
 ## O que é uma VLAN

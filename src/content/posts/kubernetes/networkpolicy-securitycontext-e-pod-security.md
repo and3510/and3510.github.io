@@ -1,8 +1,8 @@
 ---
 title: "NetworkPolicy, SecurityContext e Pod Security"
 description: "Três camadas complementares para reduzir superfície de ataque dentro de um cluster Kubernetes."
-date: 2026-07-23
-updatedDate: 2026-07-23
+date: 2026-07-29
+updatedDate: 2026-07-29
 ---
 
 ## NetworkPolicy: microssegmentação de rede

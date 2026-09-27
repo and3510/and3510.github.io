@@ -1,8 +1,8 @@
 ---
 title: "systemd: gerenciando serviços no Linux"
 description: "Como criar, habilitar e depurar serviços com systemd, o init system padrão das distros modernas."
-date: 2026-04-07
-updatedDate: 2026-04-07
+date: 2026-07-04
+updatedDate: 2026-07-04
 ---
 
 ## O que é o systemd

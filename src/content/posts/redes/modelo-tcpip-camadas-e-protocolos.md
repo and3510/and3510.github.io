@@ -1,8 +1,8 @@
 ---
 title: "Modelo TCP/IP: camadas e protocolos"
 description: "O modelo prático de quatro camadas que efetivamente roda por trás da internet."
-date: 2026-10-15
-updatedDate: 2026-10-15
+date: 2026-08-27
+updatedDate: 2026-08-27
 ---
 
 ## As quatro camadas

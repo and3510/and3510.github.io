@@ -1,8 +1,8 @@
 ---
 title: "STP: Spanning Tree Protocol"
 description: "Como manter redundância física entre switches sem que a rede entre em loop infinito de broadcast."
-date: 2026-11-20
-updatedDate: 2026-11-20
+date: 2026-09-10
+updatedDate: 2026-09-10
 ---
 
 ## Por que o STP existe

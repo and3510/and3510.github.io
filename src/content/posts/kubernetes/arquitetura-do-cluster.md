@@ -1,8 +1,8 @@
 ---
 title: "Kubernetes: arquitetura do cluster"
 description: "Como Control Plane e Worker Nodes trabalham juntos para reconciliar o estado desejado com o estado real."
-date: 2026-07-11
-updatedDate: 2026-07-11
+date: 2026-07-25
+updatedDate: 2026-07-25
 ---
 
 ## Declarativo e reconciliação

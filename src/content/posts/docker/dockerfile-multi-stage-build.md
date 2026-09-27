@@ -1,8 +1,8 @@
 ---
 title: "Dockerfile: multi-stage build e boas práticas"
 description: "Como reduzir o tamanho e a superfície de ataque de imagens Docker usando builds em múltiplos estágios."
-date: 2026-04-28
-updatedDate: 2026-04-28
+date: 2026-07-07
+updatedDate: 2026-07-07
 ---
 
 ## O problema da imagem única

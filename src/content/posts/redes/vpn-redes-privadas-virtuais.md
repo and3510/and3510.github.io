@@ -1,8 +1,8 @@
 ---
 title: "VPN: redes privadas virtuais"
 description: "Como criar um túnel privado sobre uma infraestrutura pública compartilhada como a internet."
-date: 2026-12-26
-updatedDate: 2026-12-26
+date: 2026-09-22
+updatedDate: 2026-09-22
 ---
 
 ## O que é VPN

@@ -1,8 +1,8 @@
 ---
 title: "Ansible: automação e configuration management"
 description: "Como manter centenas de servidores em estado consistente sem executar comandos manuais um por um."
-date: 2026-07-08
-updatedDate: 2026-07-08
+date: 2026-07-24
+updatedDate: 2026-07-24
 ---
 
 ## O problema que o Ansible resolve

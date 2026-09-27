@@ -1,8 +1,8 @@
 ---
 title: "SDN e NFV: redes programáveis e funções virtualizadas"
 description: "Como software passou a controlar decisões de rede que antes exigiam appliances físicos dedicados."
-date: 2027-01-04
-updatedDate: 2027-01-04
+date: 2026-09-25
+updatedDate: 2026-09-25
 ---
 
 ## SDN — Software-Defined Networking

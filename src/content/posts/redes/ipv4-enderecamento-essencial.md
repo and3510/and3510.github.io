@@ -1,8 +1,8 @@
 ---
 title: "IPv4: endereçamento essencial"
 description: "Como 32 bits identificam cada dispositivo de uma rede — a base de todo roteamento IPv4."
-date: 2026-10-21
-updatedDate: 2026-10-21
+date: 2026-08-31
+updatedDate: 2026-08-31
 ---
 
 ## Estrutura do endereço

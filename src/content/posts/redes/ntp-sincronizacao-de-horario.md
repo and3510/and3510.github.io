@@ -1,8 +1,8 @@
 ---
 title: "NTP: sincronização de horário em redes"
 description: "Por que relógios dessincronizados entre servidores são um problema de segurança, não só de conveniência."
-date: 2026-12-20
-updatedDate: 2026-12-20
+date: 2026-09-20
+updatedDate: 2026-09-20
 ---
 
 ## O que é NTP

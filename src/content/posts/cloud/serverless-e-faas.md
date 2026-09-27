@@ -1,8 +1,8 @@
 ---
 title: "Serverless e FaaS: código sob demanda"
 description: "Servidores continuam existindo — o que muda é quem gerencia a infraestrutura e como você paga por ela."
-date: 2026-06-23
-updatedDate: 2026-06-23
+date: 2026-07-19
+updatedDate: 2026-07-19
 ---
 
 ## Serverless não significa sem servidor

@@ -1,8 +1,8 @@
 ---
 title: "Group Policy: GPO, herança e processamento"
 description: "Como o Windows aplica configurações centralizadas a milhares de máquinas e usuários de forma consistente."
-date: 2026-09-15
-updatedDate: 2026-09-15
+date: 2026-08-16
+updatedDate: 2026-08-16
 ---
 
 ## O que é uma GPO

@@ -1,8 +1,8 @@
 ---
 title: "TCP x UDP: confiabilidade x simplicidade"
 description: "Os dois protocolos de transporte que sustentam praticamente todo tráfego de rede — e quando cada um é a escolha certa."
-date: 2026-10-18
-updatedDate: 2026-10-18
+date: 2026-08-29
+updatedDate: 2026-08-29
 ---
 
 ## TCP — Transmission Control Protocol

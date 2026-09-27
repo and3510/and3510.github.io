@@ -1,8 +1,8 @@
 ---
 title: "CNI, CSI e CRI: as interfaces padronizadas do Kubernetes"
 description: "Por que o Kubernetes não depende de um runtime, plugin de rede ou storage específico."
-date: 2026-07-29
-updatedDate: 2026-07-29
+date: 2026-07-31
+updatedDate: 2026-07-31
 ---
 
 ## Por que interfaces padronizadas existem

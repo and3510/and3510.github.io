@@ -1,8 +1,8 @@
 ---
 title: "ARP e NDP: descobrindo vizinhos na rede"
 description: "Como um host descobre o endereço MAC correspondente a um IP na mesma rede local."
-date: 2026-10-30
-updatedDate: 2026-10-30
+date: 2026-09-03
+updatedDate: 2026-09-03
 ---
 
 ## ARP — Address Resolution Protocol (IPv4)

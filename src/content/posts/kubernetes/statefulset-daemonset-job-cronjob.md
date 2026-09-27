@@ -1,8 +1,8 @@
 ---
 title: "StatefulSet, DaemonSet, Job e CronJob"
 description: "Deployment não é a solução para tudo — cada padrão de workload tem um controlador mais adequado no Kubernetes."
-date: 2026-07-17
-updatedDate: 2026-07-17
+date: 2026-07-27
+updatedDate: 2026-07-27
 ---
 
 ## Deployment não é solução universal

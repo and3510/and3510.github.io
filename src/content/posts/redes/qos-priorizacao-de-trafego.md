@@ -1,8 +1,8 @@
 ---
 title: "QoS: priorização e qualidade de serviço"
 description: "Quando o enlace está congestionado, QoS decide quem passa primeiro — mas não cria banda extra do nada."
-date: 2026-12-29
-updatedDate: 2026-12-29
+date: 2026-09-23
+updatedDate: 2026-09-23
 ---
 
 ## Por que QoS existe

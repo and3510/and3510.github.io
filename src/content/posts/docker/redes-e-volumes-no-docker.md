@@ -1,8 +1,8 @@
 ---
 title: "Redes e volumes no Docker"
 description: "Como containers se comunicam entre si e como persistir dados além do ciclo de vida do container."
-date: 2026-05-12
-updatedDate: 2026-05-12
+date: 2026-07-09
+updatedDate: 2026-07-09
 ---
 
 ## Tipos de rede

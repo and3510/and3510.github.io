@@ -1,8 +1,8 @@
 ---
 title: "Permissões, usuários e grupos no Linux"
 description: "Como o modelo de permissões do Linux funciona na prática, incluindo casos que fogem do rwx básico."
-date: 2026-04-14
-updatedDate: 2026-04-14
+date: 2026-07-05
+updatedDate: 2026-07-05
 ---
 
 ## O modelo básico: rwx

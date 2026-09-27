@@ -1,8 +1,8 @@
 ---
 title: "Segurança Wi-Fi: WEP, WPA, WPA2 e WPA3"
 description: "A evolução dos protocolos que protegem redes sem fio — e por que WEP nunca deveria ser usado hoje."
-date: 2026-12-05
-updatedDate: 2026-12-05
+date: 2026-09-15
+updatedDate: 2026-09-15
 ---
 
 ## Para que serve

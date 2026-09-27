@@ -1,8 +1,8 @@
 ---
 title: "Hyper-V: virtualização no Windows Server"
 description: "Como o Hyper-V cria e isola máquinas virtuais, e as decisões que afetam performance e recuperação de desastre."
-date: 2026-09-27
-updatedDate: 2026-09-27
+date: 2026-08-20
+updatedDate: 2026-08-20
 ---
 
 ## Hyper-V é um hypervisor tipo 1

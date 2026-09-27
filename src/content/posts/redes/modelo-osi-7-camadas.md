@@ -1,8 +1,8 @@
 ---
 title: "Modelo OSI: as 7 camadas de comunicação"
 description: "O modelo de referência que organiza toda a pilha de protocolos de rede em responsabilidades bem definidas."
-date: 2026-10-12
-updatedDate: 2026-10-12
+date: 2026-08-25
+updatedDate: 2026-08-25
 ---
 
 ## As sete camadas

@@ -1,8 +1,8 @@
 ---
 title: "ICMP, Ping e Traceroute"
 description: "As ferramentas de diagnóstico mais básicas de rede — e por que um ping falho não prova que o host está fora do ar."
-date: 2026-11-02
-updatedDate: 2026-11-02
+date: 2026-09-04
+updatedDate: 2026-09-04
 ---
 
 ## O que é ICMP

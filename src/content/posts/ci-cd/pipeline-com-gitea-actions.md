@@ -1,8 +1,8 @@
 ---
 title: "Pipeline básico com Gitea Actions"
 description: "Como rodar CI em um Gitea self-hosted usando uma sintaxe compatível com GitHub Actions."
-date: 2026-10-19
-updatedDate: 2026-10-19
+date: 2026-08-30
+updatedDate: 2026-08-30
 ---
 
 ## Gitea Actions é compatível com a sintaxe do GitHub Actions

@@ -1,8 +1,8 @@
 ---
 title: "Service Mesh: comunicação segura entre microsserviços"
 description: "Como padronizar TLS mútuo, retries, observabilidade e políticas de tráfego sem reimplementar isso em cada serviço."
-date: 2026-07-02
-updatedDate: 2026-07-02
+date: 2026-07-22
+updatedDate: 2026-07-22
 ---
 
 ## O problema

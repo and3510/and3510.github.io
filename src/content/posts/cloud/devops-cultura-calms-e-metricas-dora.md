@@ -1,8 +1,8 @@
 ---
 title: "DevOps: cultura, automação e as métricas DORA"
 description: "DevOps não é uma ferramenta — é integrar pessoas, processos e automação para entregar valor com qualidade e velocidade."
-date: 2026-06-08
-updatedDate: 2026-06-08
+date: 2026-07-14
+updatedDate: 2026-07-14
 ---
 
 ## O problema que o DevOps resolve

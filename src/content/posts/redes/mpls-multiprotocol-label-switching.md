@@ -1,8 +1,8 @@
 ---
 title: "MPLS: Multiprotocol Label Switching"
 description: "Como rótulos evitam que cada roteador refaça a análise completa de IP a cada salto."
-date: 2027-01-01
-updatedDate: 2027-01-01
+date: 2026-09-24
+updatedDate: 2026-09-24
 ---
 
 ## O que é MPLS

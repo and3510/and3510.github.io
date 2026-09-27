@@ -1,8 +1,8 @@
 ---
 title: "DHCP: configuração automática de rede"
 description: "Como um dispositivo novo na rede recebe IP, máscara, gateway e DNS sem intervenção manual."
-date: 2026-11-05
-updatedDate: 2026-11-05
+date: 2026-09-05
+updatedDate: 2026-09-05
 ---
 
 ## O que o DHCP fornece

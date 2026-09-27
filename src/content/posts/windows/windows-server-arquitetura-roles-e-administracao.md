@@ -1,8 +1,8 @@
 ---
 title: "Windows Server: arquitetura, roles e administração"
 description: "Como o Windows Server organiza serviços corporativos em roles e features, e as ferramentas centrais de administração."
-date: 2026-09-03
-updatedDate: 2026-09-03
+date: 2026-08-12
+updatedDate: 2026-08-12
 ---
 
 ## Roles x Features

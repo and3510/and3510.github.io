@@ -1,8 +1,8 @@
 ---
 title: "Grupos do AD e o modelo AGDLP"
 description: "Permissão deve ser atribuída a grupos, não a usuários individuais — AGDLP formaliza esse princípio na prática."
-date: 2026-09-12
-updatedDate: 2026-09-12
+date: 2026-08-15
+updatedDate: 2026-08-15
 ---
 
 ## Regra de ouro: permissão vai para grupos

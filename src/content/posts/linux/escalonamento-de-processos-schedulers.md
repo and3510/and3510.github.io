@@ -1,8 +1,8 @@
 ---
 title: "Escalonamento de processos: FCFS, SJF, Round Robin"
 description: "Como o sistema operacional decide qual processo usa a CPU a seguir — e por que não existe um algoritmo perfeito."
-date: 2026-08-10
-updatedDate: 2026-08-10
+date: 2026-08-04
+updatedDate: 2026-08-04
 ---
 
 ## O objetivo do scheduling

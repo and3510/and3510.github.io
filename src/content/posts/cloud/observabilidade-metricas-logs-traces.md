@@ -1,8 +1,8 @@
 ---
 title: "Observabilidade: métricas, logs e traces"
 description: "Monitoramento responde perguntas conhecidas; observabilidade investiga o que você não esperava que fosse acontecer."
-date: 2026-06-14
-updatedDate: 2026-06-14
+date: 2026-07-16
+updatedDate: 2026-07-16
 ---
 
 ## Monitoramento x Observabilidade

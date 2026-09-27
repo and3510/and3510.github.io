@@ -1,8 +1,8 @@
 ---
 title: "12-Factor App: princípios para aplicações cloud-native"
 description: "Metodologia para construir aplicações portáveis, automatizáveis e que escalam bem em ambientes de nuvem."
-date: 2026-07-05
-updatedDate: 2026-07-05
+date: 2026-07-23
+updatedDate: 2026-07-23
 ---
 
 ## Por que esses princípios existem

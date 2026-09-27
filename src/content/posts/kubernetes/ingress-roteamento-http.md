@@ -1,8 +1,8 @@
 ---
 title: "Ingress: roteamento HTTP para o cluster"
 description: "Como expor múltiplos serviços HTTP/HTTPS através de um único ponto de entrada."
-date: 2026-03-03
-updatedDate: 2026-03-03
+date: 2026-06-29
+updatedDate: 2026-06-29
 ---
 
 ## Por que Ingress e não só LoadBalancer?

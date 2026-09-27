@@ -1,8 +1,8 @@
 ---
 title: "Docker Compose: orquestrando múltiplos serviços"
 description: "Como declarar aplicação, banco e dependências num único arquivo para ambientes locais e de teste."
-date: 2026-05-05
-updatedDate: 2026-05-05
+date: 2026-07-08
+updatedDate: 2026-07-08
 ---
 
 ## Um compose básico

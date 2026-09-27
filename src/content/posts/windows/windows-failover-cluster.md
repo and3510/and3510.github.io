@@ -1,8 +1,8 @@
 ---
 title: "Windows Failover Cluster: quorum, witness e failover"
 description: "Como o Windows Server disponibiliza workloads críticos mesmo quando um nó falha."
-date: 2026-09-30
-updatedDate: 2026-09-30
+date: 2026-08-21
+updatedDate: 2026-08-21
 ---
 
 ## O que é um Failover Cluster

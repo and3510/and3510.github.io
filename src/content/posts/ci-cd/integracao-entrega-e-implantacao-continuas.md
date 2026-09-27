@@ -1,8 +1,8 @@
 ---
 title: "CI/CD: Integração, Entrega e Implantação Contínuas"
 description: "CI, Continuous Delivery e Continuous Deployment não são sinônimos — cada um marca um ponto diferente de confiança automatizada no pipeline."
-date: 2026-10-13
-updatedDate: 2026-10-13
+date: 2026-08-26
+updatedDate: 2026-08-26
 ---
 
 ## CI — Continuous Integration

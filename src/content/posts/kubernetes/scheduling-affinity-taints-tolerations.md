@@ -1,8 +1,8 @@
 ---
 title: "Scheduling: Affinity, Taints e Tolerations"
 description: "Como influenciar onde o Kubernetes coloca cada Pod, além do comportamento padrão do scheduler."
-date: 2026-07-26
-updatedDate: 2026-07-26
+date: 2026-07-30
+updatedDate: 2026-07-30
 ---
 
 ## O que o Scheduler faz

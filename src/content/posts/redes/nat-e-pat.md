@@ -1,8 +1,8 @@
 ---
 title: "NAT e PAT: tradução de endereços"
 description: "Como uma rede inteira compartilha um único IP público, e por que isso não é a mesma coisa que um firewall."
-date: 2026-11-11
-updatedDate: 2026-11-11
+date: 2026-09-07
+updatedDate: 2026-09-07
 ---
 
 ## NAT — Network Address Translation

@@ -1,8 +1,8 @@
 ---
 title: "Pipeline básico com GitLab CI"
 description: "Estrutura mínima de um .gitlab-ci.yml para lint, teste e build, com stages e cache."
-date: 2026-10-16
-updatedDate: 2026-10-16
+date: 2026-08-28
+updatedDate: 2026-08-28
 ---
 
 ## Pipeline mínimo

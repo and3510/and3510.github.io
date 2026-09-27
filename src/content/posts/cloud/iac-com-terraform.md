@@ -1,8 +1,8 @@
 ---
 title: "Infraestrutura como Código com Terraform"
 description: "Como provisionar e versionar infraestrutura de nuvem de forma declarativa e reprodutível."
-date: 2026-05-19
-updatedDate: 2026-05-19
+date: 2026-07-10
+updatedDate: 2026-07-10
 ---
 
 ## Por que IaC

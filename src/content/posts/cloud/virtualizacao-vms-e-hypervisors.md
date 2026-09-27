@@ -1,8 +1,8 @@
 ---
 title: "Virtualização: VMs, hypervisors e a base da nuvem"
 description: "Como hypervisors tipo 1 e tipo 2 criam máquinas virtuais isoladas, e por que isso é a base de toda a cloud computing."
-date: 2026-06-05
-updatedDate: 2026-06-05
+date: 2026-07-13
+updatedDate: 2026-07-13
 ---
 
 ## O que é virtualização

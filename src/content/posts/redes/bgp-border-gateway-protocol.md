@@ -1,8 +1,8 @@
 ---
 title: "BGP: o protocolo que roteia a internet entre organizações"
 description: "Como provedores, empresas e organizações trocam rotas entre si usando política, não apenas o menor caminho."
-date: 2026-11-26
-updatedDate: 2026-11-26
+date: 2026-09-12
+updatedDate: 2026-09-12
 ---
 
 ## O que é BGP

@@ -1,8 +1,8 @@
 ---
 title: "LDAP: consultando diretórios no Active Directory"
 description: "O protocolo por trás de como aplicações buscam usuários, grupos e computadores no AD."
-date: 2026-09-21
-updatedDate: 2026-09-21
+date: 2026-08-18
+updatedDate: 2026-08-18
 ---
 
 ## O que é LDAP

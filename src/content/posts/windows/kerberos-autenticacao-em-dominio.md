@@ -1,8 +1,8 @@
 ---
 title: "Kerberos: autenticação por tickets no Active Directory"
 description: "Como o Windows autentica usuários sem enviar a senha repetidamente para cada serviço acessado."
-date: 2026-09-18
-updatedDate: 2026-09-18
+date: 2026-08-17
+updatedDate: 2026-08-17
 ---
 
 ## O objetivo do Kerberos

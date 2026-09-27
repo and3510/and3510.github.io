@@ -1,8 +1,8 @@
 ---
 title: "Resiliência: Timeout, Retry, Circuit Breaker e Bulkhead"
 description: "Em sistemas distribuídos, falhar faz parte. O objetivo de engenharia é falhar sem derrubar tudo junto."
-date: 2026-06-29
-updatedDate: 2026-06-29
+date: 2026-07-21
+updatedDate: 2026-07-21
 ---
 
 ## O problema

@@ -1,8 +1,8 @@
 ---
 title: "Horizontal Pod Autoscaler (HPA)"
 description: "Escalando réplicas automaticamente com base em CPU, memória ou métricas customizadas."
-date: 2026-03-31
-updatedDate: 2026-03-31
+date: 2026-07-03
+updatedDate: 2026-07-03
 ---
 
 ## O que o HPA faz

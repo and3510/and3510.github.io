@@ -1,8 +1,8 @@
 ---
 title: "Troubleshooting de rede no Linux em 7 passos"
 description: "Diagnosticar uma camada de cada vez, de interface a serviço, evita perder tempo testando a coisa errada primeiro."
-date: 2026-08-28
-updatedDate: 2026-08-28
+date: 2026-08-10
+updatedDate: 2026-08-10
 ---
 
 ## O roteiro de diagnóstico

@@ -1,8 +1,8 @@
 ---
 title: "Estratégias de deploy: Rolling, Blue-Green e Canary"
 description: "Como reduzir o risco de cada implantação escolhendo a estratégia certa para o cenário."
-date: 2026-06-11
-updatedDate: 2026-06-11
+date: 2026-07-15
+updatedDate: 2026-07-15
 ---
 
 ## Rolling Update

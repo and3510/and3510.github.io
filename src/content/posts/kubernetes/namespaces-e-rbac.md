@@ -1,8 +1,8 @@
 ---
 title: "Namespaces e RBAC"
 description: "Isolamento lógico de recursos e controle de acesso granular no cluster."
-date: 2026-03-17
-updatedDate: 2026-03-17
+date: 2026-07-01
+updatedDate: 2026-07-01
 ---
 
 ## Namespaces: dividindo o cluster

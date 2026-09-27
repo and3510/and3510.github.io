@@ -1,8 +1,8 @@
 ---
 title: "HTTP x HTTPS"
 description: "O protocolo que move a web inteira — métodos, status codes e como o TLS entra na história."
-date: 2026-12-08
-updatedDate: 2026-12-08
+date: 2026-09-16
+updatedDate: 2026-09-16
 ---
 
 ## Estrutura da comunicação

@@ -1,8 +1,8 @@
 ---
 title: "SLI, SLO, SLA e Error Budget: medindo confiabilidade"
 description: "Como transformar 'o sistema está bom' em números concretos que orientam decisões de engenharia."
-date: 2026-06-20
-updatedDate: 2026-06-20
+date: 2026-07-18
+updatedDate: 2026-07-18
 ---
 
 ## As quatro siglas

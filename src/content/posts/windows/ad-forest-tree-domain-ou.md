@@ -1,8 +1,8 @@
 ---
 title: "AD: Forest, Tree, Domain e Organizational Unit"
 description: "A hierarquia lógica que organiza identidade, administração e replicação no Active Directory."
-date: 2026-09-09
-updatedDate: 2026-09-09
+date: 2026-08-14
+updatedDate: 2026-08-14
 ---
 
 ## A hierarquia completa

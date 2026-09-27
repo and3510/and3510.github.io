@@ -1,8 +1,8 @@
 ---
 title: "RAID, LVM e desempenho de disco"
 description: "Como combinar discos físicos para ganhar performance, redundância, ou ambos — e por que RAID não é backup."
-date: 2026-08-19
-updatedDate: 2026-08-19
+date: 2026-08-07
+updatedDate: 2026-08-07
 ---
 
 ## RAID não é backup

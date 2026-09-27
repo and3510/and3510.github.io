@@ -1,8 +1,8 @@
 ---
 title: "Sistemas de arquivos: inodes, links e journaling"
 description: "Por que o nome de um arquivo no Linux não está armazenado junto com seu conteúdo."
-date: 2026-08-16
-updatedDate: 2026-08-16
+date: 2026-08-06
+updatedDate: 2026-08-06
 ---
 
 ## Do nome ao conteúdo

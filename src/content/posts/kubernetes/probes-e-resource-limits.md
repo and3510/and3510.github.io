@@ -1,8 +1,8 @@
 ---
 title: "Probes e resource limits: Pods saudáveis e previsíveis"
 description: "Liveness, readiness, startup probes e como requests/limits afetam scheduling e estabilidade."
-date: 2026-03-24
-updatedDate: 2026-03-24
+date: 2026-07-02
+updatedDate: 2026-07-02
 ---
 
 ## Probes: os três tipos

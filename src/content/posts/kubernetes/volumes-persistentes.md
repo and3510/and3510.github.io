@@ -1,8 +1,8 @@
 ---
 title: "Armazenamento persistente: Volumes, PV e PVC"
 description: "Como dados sobrevivem à recriação de Pods usando Volumes, PersistentVolume e PersistentVolumeClaim."
-date: 2026-03-10
-updatedDate: 2026-03-10
+date: 2026-06-30
+updatedDate: 2026-06-30
 ---
 
 ## O problema

@@ -1,8 +1,8 @@
 ---
 title: "Bash e Shell: pipes, redirecionamentos, grep, sed e awk"
 description: "Comandos pequenos combinados por pipes formam a base da produtividade no terminal Linux."
-date: 2026-08-25
-updatedDate: 2026-08-25
+date: 2026-08-09
+updatedDate: 2026-08-09
 ---
 
 ## Os três fluxos padrão

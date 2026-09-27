@@ -1,8 +1,8 @@
 ---
 title: "Processos: estados, PCB e troca de contexto"
 description: "Programa é código parado no disco; processo é esse código vivendo em execução, com estado próprio."
-date: 2026-08-04
-updatedDate: 2026-08-04
+date: 2026-08-02
+updatedDate: 2026-08-02
 ---
 
 ## Programa x processo

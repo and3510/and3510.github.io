@@ -1,8 +1,8 @@
 ---
 title: "Active Directory Domain Services: identidade centralizada"
 description: "Como o AD DS centraliza autenticação e autorização para redes corporativas Windows."
-date: 2026-09-06
-updatedDate: 2026-09-06
+date: 2026-08-13
+updatedDate: 2026-08-13
 ---
 
 ## O que é o AD DS

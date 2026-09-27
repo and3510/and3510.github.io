@@ -1,8 +1,8 @@
 ---
 title: "Firewall no Linux com nftables"
 description: "Substituto moderno do iptables: como estruturar tabelas, chains e regras de filtragem."
-date: 2026-04-21
-updatedDate: 2026-04-21
+date: 2026-07-06
+updatedDate: 2026-07-06
 ---
 
 ## Por que nftables

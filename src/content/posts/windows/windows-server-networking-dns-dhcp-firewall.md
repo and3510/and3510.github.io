@@ -1,8 +1,8 @@
 ---
 title: "Windows Server Networking: DNS, DHCP e Firewall"
 description: "Como um cliente Windows recebe configuração de rede automaticamente e como isso se conecta ao Active Directory."
-date: 2026-10-06
-updatedDate: 2026-10-06
+date: 2026-08-23
+updatedDate: 2026-08-23
 ---
 
 ## O fluxo completo

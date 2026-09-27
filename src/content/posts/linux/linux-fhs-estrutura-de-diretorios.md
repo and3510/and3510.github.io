@@ -1,8 +1,8 @@
 ---
 title: "Linux FHS: entendendo /etc, /var, /home, /usr e /proc"
 description: "No Linux, tudo parte de /. Entender o propósito de cada diretório padrão evita erros bobos de administração."
-date: 2026-08-22
-updatedDate: 2026-08-22
+date: 2026-08-08
+updatedDate: 2026-08-08
 ---
 
 ## A raiz de tudo

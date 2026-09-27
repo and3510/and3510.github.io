@@ -1,8 +1,8 @@
 ---
 title: "DNS: sistema de nomes de domínio"
 description: "Como nomes legíveis por humanos viram endereços IP, e os tipos de registro que mais aparecem no dia a dia."
-date: 2026-11-08
-updatedDate: 2026-11-08
+date: 2026-09-06
+updatedDate: 2026-09-06
 ---
 
 ## Função principal
