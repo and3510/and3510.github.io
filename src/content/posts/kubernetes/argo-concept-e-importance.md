@@ -10,7 +10,6 @@ updatedDate: 2026-09-28
 
 O Argocd é uma aplicação que é implementada como kubernetes controller, que orquestra os componentes do kubernetes por meio da sincronização de um repositório que centraliza esses manifestos com .yaml(s). 
 
-<img width="743" height="708" alt="image" src="https://github.com/user-attachments/assets/a5dd3395-f2f0-40c9-b15b-a6bc1596143a" />
 
 
 ## Importancia: Qual o seu valor?
