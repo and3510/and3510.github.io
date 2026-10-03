@@ -199,6 +199,23 @@ h1 {
   }
 }
 
+/* Botão Blog: tipografia editorial do site DevOpsOne, com cursor de digitação vermelho */
+.btn-blog {
+  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  letter-spacing: 0.3px;
+}
+
+.btn-blog:hover {
+  background: #fdfdfd;
+  color: #111;
+  border-color: #111;
+  box-shadow: 0 0 22px rgba(0, 0, 0, 0.25);
+}
+
+.btn-blog .typing-cursor {
+  color: #c0392b;
+}
+
 /* Cursor piscando estilo prompt */
 .typing-cursor {
   display: inline-block;

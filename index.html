@@ -8,7 +8,11 @@
   
   <!-- Linha adicionada para o Favicon -->
   <link rel="icon" type="image/png" href="images/devops.png">
-  
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -88,49 +92,56 @@
     </div>
 
     <div class="links">
-      <a href="portfolio/index.html" class="rounded-btn btn-portfolio">
+      <a href="portfolio/index.html" class="rounded-btn btn-portfolio" data-default-text="Portfólio" data-hover-text="anderson@devops:~$ cd portfolio" data-cursor-char="_">
         <span class="btn-text">Portfólio</span><span class="typing-cursor"></span>
+      </a>
+      <a href="https://devopsone.netlify.app/" target="_blank" class="rounded-btn btn-blog" data-default-text="Blog DevOpsOne" data-hover-text="Ir ao Blog DevOpsOne" data-cursor-char="|">
+        <span class="btn-text">Blog DevOpsOne</span><span class="typing-cursor"></span>
       </a>
       <!-- Adicione outros botões aqui se quiser -->
     </div>
   </div>
 
   <script>
-    // ===== Botão Portfólio: efeito de digitação já existente =====
-    const btnPortfolio = document.querySelector('.btn-portfolio');
-    const textSpan = btnPortfolio.querySelector('.btn-text');
-    const cursor = btnPortfolio.querySelector('.typing-cursor');
+    // ===== Botões com efeito de digitação no hover =====
+    document.querySelectorAll('[data-hover-text]').forEach((btn) => {
+      const textSpan = btn.querySelector('.btn-text');
+      const cursor = btn.querySelector('.typing-cursor');
 
-    const defaultText = "Portfólio";
-    const terminalText = "anderson@devops:~$ cd portfolio";
-    let typingInterval = null;
+      const defaultText = btn.dataset.defaultText;
+      const hoverText = btn.dataset.hoverText;
+      const cursorChar = btn.dataset.cursorChar || '_';
+      let typingInterval = null;
 
-    btnPortfolio.addEventListener('mouseenter', () => {
-      clearInterval(typingInterval);
-      textSpan.textContent = "";
-      cursor.textContent = "_";
-      let charIndex = 0;
+      btn.addEventListener('mouseenter', () => {
+        clearInterval(typingInterval);
+        textSpan.textContent = "";
+        cursor.textContent = cursorChar;
+        let charIndex = 0;
 
-      typingInterval = setInterval(() => {
-        if (charIndex < terminalText.length) {
-          textSpan.textContent += terminalText.charAt(charIndex);
-          charIndex++;
-        } else {
-          clearInterval(typingInterval);
-        }
-      }, 35); // Velocidade de digitação por caractere (ms)
+        typingInterval = setInterval(() => {
+          if (charIndex < hoverText.length) {
+            textSpan.textContent += hoverText.charAt(charIndex);
+            charIndex++;
+          } else {
+            clearInterval(typingInterval);
+          }
+        }, 35); // Velocidade de digitação por caractere (ms)
+      });
+
+      btn.addEventListener('mouseleave', () => {
+        clearInterval(typingInterval);
+        cursor.textContent = "";
+        textSpan.textContent = defaultText;
+      });
     });
 
-    btnPortfolio.addEventListener('mouseleave', () => {
-      clearInterval(typingInterval);
-      cursor.textContent = "";
-      textSpan.textContent = defaultText;
-    });
-
-    // Efeito "glitch" rápido ao clicar no botão
-    btnPortfolio.addEventListener('click', () => {
-      btnPortfolio.classList.add('glitch');
-      setTimeout(() => btnPortfolio.classList.remove('glitch'), 250);
+    // ===== Botão Portfólio: efeito "glitch" rápido ao clicar =====
+    document.querySelectorAll('.btn-portfolio').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        btn.classList.add('glitch');
+        setTimeout(() => btn.classList.remove('glitch'), 250);
+      });
     });
 
     // ===== Descrição: efeito de digitação ao carregar a página =====
