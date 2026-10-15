@@ -29,7 +29,7 @@ const index = posts.map((post) => ({
     data-search-results
   >
   </div>
-  <script type="application/json" data-search-index set:html={JSON.stringify(index)} />
+  <script type="application/json" data-search-index set:html={JSON.stringify(index).replace(/</g, '\\u003c')} />
 </div>
 
 <script>
