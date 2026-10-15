@@ -3,7 +3,7 @@ import CoverImage from '../../../components/CoverImage.astro';
 import { render } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CategoryBadge from '../../../components/CategoryBadge.astro';
-import { getPublishedPosts, getCategorySlug, getPostSlug, getReadingTime, formatCategoryName } from '../../../lib/content';
+import { getPublishedPosts, getCategorySlug, getPostSlug, getReadingTime, formatCategoryName, url } from '../../../lib/content';
 
 export async function getStaticPaths() {
   const posts = await getPublishedPosts();
@@ -61,7 +61,7 @@ const updatedLabel =
       <Content />
     </div>
     <footer class="rule-double mt-16 pt-6">
-      <a href={`/categorias/${categorySlug}/`} class="text-sm font-semibold text-accent hover:underline">
+      <a href={url(`/categorias/${categorySlug}/`)} class="text-sm font-semibold text-accent hover:underline">
         ← Mais de {categoryName}
       </a>
     </footer>

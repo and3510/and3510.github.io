@@ -2,6 +2,12 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 
 export type Post = CollectionEntry<'posts'>;
 
+const BASE = import.meta.env.BASE_URL.replace(/\/$/, '');
+
+export function url(path: string): string {
+  return `${BASE}${path}`;
+}
+
 const CATEGORY_NAMES: Record<string, string> = {
   'ci-cd': 'CI/CD',
 };
@@ -54,7 +60,7 @@ export function getReadingTime(post: Post): number {
 }
 
 export function getPostUrl(post: Post): string {
-  return `/categorias/${getCategorySlug(post)}/${getPostSlug(post)}/`;
+  return url(`/categorias/${getCategorySlug(post)}/${getPostSlug(post)}/`);
 }
 
 export function getExcerpt(post: Post, maxChars = 700): string[] {

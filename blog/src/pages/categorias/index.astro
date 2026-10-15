@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getCategories } from '../../lib/content';
+import { getCategories, url } from '../../lib/content';
 
 const categories = await getCategories();
 ---
@@ -11,7 +11,7 @@ const categories = await getCategories();
     <div class="grid gap-4 sm:grid-cols-2">
       {categories.map((category) => (
         <a
-          href={`/categorias/${category.slug}/`}
+          href={url(`/categorias/${category.slug}/`)}
           class="flex items-center justify-between border-b border-neutral-200 py-4 hover:text-red-700"
         >
           <span class="font-serif text-lg font-bold text-neutral-900">{category.name}</span>
