@@ -3,6 +3,8 @@ title: "Conceito de Argocd"
 description: "O que é Argocd e seu valor no deploy de aplicações no Kubernetes."
 date: 2026-09-27
 updatedDate: 2026-09-28
+cover: https://i0.wp.com/blog.mocsolucoes.com.br/wp-content/uploads/2023/03/Argo-CD-Kubernete.jpg?resize=728%2C380&ssl=1
+coverAlt: "Fonte: Imagem tirada do site blog.mocsolucoes.com.br"
 ---
 
 
