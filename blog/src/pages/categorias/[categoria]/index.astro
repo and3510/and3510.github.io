@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import PostCard from '../../../components/PostCard.astro';
+import FeaturedSection from '../../../components/FeaturedSection.astro';
+import { getCategories, getPostsByCategory, formatCategoryName } from '../../../lib/content';
+
+export async function getStaticPaths() {
+  const categories = await getCategories();
+  return categories.map((category) => ({
+    params: { categoria: category.slug },
+  }));
+}
+
+const { categoria } = Astro.params;
+const posts = await getPostsByCategory(categoria);
+const categoryName = formatCategoryName(categoria);
+const [headline, ...rest] = posts;
+const secondary = rest.slice(0, 3);
+const others = rest.slice(3);
+---
+
+<BaseLayout title={categoryName}>
+  <header class="mb-10 text-center">
+    <p class="text-xs font-bold uppercase tracking-widest text-muted">Editoria</p>
+    <h1 class="mt-2 font-serif text-4xl font-extrabold text-ink sm:text-5xl">{categoryName}</h1>
+    <p class="mt-3 text-muted">{posts.length} publicaç{posts.length === 1 ? 'ão' : 'ões'}</p>
+  </header>
+  {headline ? (
+    <>
+      <FeaturedSection headline={headline} secondary={secondary} showCategory={false} />
+      {others.length > 0 && (
+        <section>
+          <h2 class="rule-double mb-6 pt-3 font-serif text-sm font-bold uppercase tracking-widest text-ink">Mais em {categoryName}</h2>
+          <div class="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+            {others.map((post) => <PostCard post={post} showCategory={false} />)}
+          </div>
+        </section>
+      )}
+    </>
+  ) : (
+    <p class="text-center text-muted">Nenhuma página nesta categoria ainda.</p>
+  )}
+</BaseLayout>

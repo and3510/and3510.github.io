@@ -1,0 +1,17 @@
+---
+interface Props {
+  slug: string;
+  name: string;
+  size?: 'sm' | 'md';
+}
+
+const { slug, name, size = 'sm' } = Astro.props;
+const textSize = size === 'md' ? 'text-sm' : 'text-xs';
+---
+
+<a
+  href={`/categorias/${slug}/`}
+  class={`relative z-10 font-sans font-bold uppercase tracking-wider text-accent hover:underline ${textSize}`}
+>
+  {name}
+</a>

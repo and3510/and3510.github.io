@@ -1,0 +1,33 @@
+---
+import CategoryBadge from './CategoryBadge.astro';
+import { getCategorySlug, getPostUrl, getReadingTime, formatCategoryName, type Post } from '../lib/content';
+
+interface Props {
+  post: Post;
+  showCategory?: boolean;
+}
+
+const { post, showCategory = true } = Astro.props;
+const categorySlug = getCategorySlug(post);
+const dateLabel = post.data.date
+  ? new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'short', year: 'numeric', timeZone: 'UTC' }).format(post.data.date)
+  : null;
+---
+
+<article class="group relative border-b border-rule pb-6">
+  {showCategory && (
+    <div class="mb-2">
+      <CategoryBadge slug={categorySlug} name={formatCategoryName(categorySlug)} />
+    </div>
+  )}
+  <h3 class="font-serif text-xl font-bold leading-snug text-ink transition group-hover:text-accent">
+    <a href={getPostUrl(post)} class="after:absolute after:inset-0">
+      {post.data.title}
+    </a>
+  </h3>
+  {post.data.description && <p class="mt-2 leading-relaxed text-muted">{post.data.description}</p>}
+  <p class="mt-3 text-xs text-muted">
+    {dateLabel && <span>{dateLabel} · </span>}
+    <span>{getReadingTime(post)} min de leitura</span>
+  </p>
+</article>

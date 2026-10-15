@@ -1,0 +1,55 @@
+---
+import CoverImage from './CoverImage.astro';
+import CategoryBadge from './CategoryBadge.astro';
+import PostCard from './PostCard.astro';
+import { getCategorySlug, getPostUrl, getReadingTime, getExcerpt, formatCategoryName, type Post } from '../lib/content';
+
+interface Props {
+  headline: Post;
+  secondary: Post[];
+  showCategory?: boolean;
+}
+
+const { headline, secondary, showCategory = true } = Astro.props;
+const excerpt = getExcerpt(headline);
+---
+
+<section class:list={['mb-12 grid gap-10 border-b border-rule pb-12', secondary.length > 0 && 'lg:grid-cols-3']}>
+  <article class:list={['group relative', secondary.length > 0 && 'lg:col-span-2']}>
+    {headline.data.cover && (
+      <div class="mb-6 overflow-hidden rounded-md">
+        <CoverImage
+          src={headline.data.cover}
+          alt={headline.data.coverAlt ?? ''}
+          widths={[800, 1200]}
+          sizes="(min-width: 1024px) 760px, 100vw"
+          loading="eager"
+          class="aspect-[16/9] w-full object-cover transition duration-300 group-hover:scale-[1.02]"
+        />
+      </div>
+    )}
+    <p class="mb-3 text-xs font-bold uppercase tracking-widest text-muted">Destaque</p>
+    {showCategory && <CategoryBadge slug={getCategorySlug(headline)} name={formatCategoryName(getCategorySlug(headline))} size="md" />}
+    <h2 class="mt-3 font-serif text-4xl font-extrabold leading-tight text-ink transition group-hover:text-accent sm:text-5xl">
+      <a href={getPostUrl(headline)} class="after:absolute after:inset-0">
+        {headline.data.title}
+      </a>
+    </h2>
+    {headline.data.description && (
+      <p class="mt-5 max-w-2xl font-serif text-xl leading-relaxed text-muted">{headline.data.description}</p>
+    )}
+    {!headline.data.cover && excerpt.length > 0 && (
+      <div class="lede mt-6 max-w-2xl border-t border-rule pt-6 font-serif text-lg leading-relaxed text-ink/85">
+        {excerpt.map((paragraph) => <p class="mb-4">{paragraph}</p>)}
+      </div>
+    )}
+    <p class="mt-5 text-sm font-semibold text-accent">
+      Ler artigo · {getReadingTime(headline)} min →
+    </p>
+  </article>
+  {secondary.length > 0 && (
+    <div class="flex flex-col gap-6 lg:border-l lg:border-rule lg:pl-8">
+      {secondary.map((post) => <PostCard post={post} showCategory={showCategory} />)}
+    </div>
+  )}
+</section>

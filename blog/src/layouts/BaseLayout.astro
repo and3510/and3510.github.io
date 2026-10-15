@@ -1,0 +1,40 @@
+---
+import '../styles/global.css';
+import SiteHeader from '../components/SiteHeader.astro';
+import { getCategories } from '../lib/content';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Notas de estudo, projetos e prática de DevOps e infraestrutura.' } = Astro.props;
+const siteTitle = 'DevOpsOne';
+const categories = await getCategories();
+---
+
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;0,8..60,800;1,8..60,400&family=JetBrains+Mono:wght@400;500&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <title>{title} · {siteTitle}</title>
+  </head>
+  <body class="min-h-screen bg-paper font-sans text-ink antialiased">
+    <SiteHeader categories={categories} siteTitle={siteTitle} />
+    <main class="mx-auto w-full max-w-6xl px-4 pb-20 pt-10 sm:px-6">
+      <slot />
+    </main>
+    <footer class="rule-double mx-auto max-w-6xl py-8 text-center text-sm text-muted">
+      <p>{siteTitle} · conteúdo em Markdown.</p>
+    </footer>
+  </body>
+</html>
