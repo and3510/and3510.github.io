@@ -47,3 +47,39 @@ export async function getPostsByCategory(categorySlug: string): Promise<Post[]> 
   const posts = await getPublishedPosts();
   return posts.filter((post) => getCategorySlug(post) === categorySlug);
 }
+
+export function getReadingTime(post: Post): number {
+  const words = (post.body ?? '').trim().split(/\s+/).filter(Boolean).length;
+  return Math.max(1, Math.round(words / 200));
+}
+
+export function getPostUrl(post: Post): string {
+  return `/categorias/${getCategorySlug(post)}/${getPostSlug(post)}/`;
+}
+
+export function getExcerpt(post: Post, maxChars = 700): string[] {
+  const body = (post.body ?? '').replace(/```[\s\S]*?```/g, '');
+  const paragraphs = body
+    .split(/\n\s*\n/)
+    .map((block) => block.trim())
+    .filter((block) => block && !/^(#|[-*+] |\d+\. |\||>|!\[|<)/.test(block))
+    .map((block) =>
+      block
+        .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
+        .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+        .replace(/[*_`]+/g, '')
+        .replace(/\s+/g, ' ')
+        .trim(),
+    )
+    .filter(Boolean);
+
+  const excerpt: string[] = [];
+  let total = 0;
+  for (const paragraph of paragraphs) {
+    if (total >= maxChars) break;
+    const remaining = maxChars - total;
+    excerpt.push(paragraph.length > remaining ? `${paragraph.slice(0, remaining).replace(/\s+\S*$/, '')}…` : paragraph);
+    total += paragraph.length;
+  }
+  return excerpt;
+}

@@ -1,0 +1,106 @@
+---
+import { getPublishedPosts, getPostUrl, getCategorySlug, formatCategoryName } from '../lib/content';
+
+const posts = await getPublishedPosts();
+const index = posts.map((post) => ({
+  title: post.data.title,
+  description: post.data.description ?? '',
+  category: formatCategoryName(getCategorySlug(post)),
+  url: getPostUrl(post),
+}));
+---
+
+<div class="search relative" data-search>
+  <label class="group/search flex items-center gap-2 border-b border-ink/30 py-1 transition-colors focus-within:border-accent">
+    <svg aria-hidden="true" viewBox="0 0 20 20" class="h-4 w-4 shrink-0 text-muted transition-colors group-focus-within/search:text-accent" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="9" cy="9" r="6" /><path d="m14 14 4 4" stroke-linecap="round" />
+    </svg>
+    <span class="sr-only">Buscar posts</span>
+    <input
+      type="search"
+      placeholder="Buscar no arquivo…"
+      autocomplete="off"
+      class="w-full min-w-0 appearance-none bg-transparent font-serif text-sm text-ink placeholder:italic placeholder:text-muted focus:outline-none sm:w-48 [&::-webkit-search-cancel-button]:hidden"
+      data-search-input
+    />
+  </label>
+  <div
+    class="rule-double absolute right-0 z-30 mt-3 hidden max-h-[70vh] w-[min(28rem,calc(100vw-2rem))] overflow-y-auto border-x border-b border-rule bg-paper shadow-[0_12px_24px_-12px_rgb(28_25_23/0.25)]"
+    data-search-results
+  >
+  </div>
+  <script type="application/json" data-search-index set:html={JSON.stringify(index)} />
+</div>
+
+<script>
+  type Entry = { title: string; description: string; category: string; url: string };
+
+  const normalize = (text: string) => text.normalize('NFD').replace(/[̀-ͯ]/g, '').toLowerCase();
+  const escape = (text: string) =>
+    text.replace(/[&<>"']/g, (char) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[char]!);
+
+  for (const root of document.querySelectorAll<HTMLElement>('[data-search]')) {
+    const input = root.querySelector<HTMLInputElement>('[data-search-input]')!;
+    const results = root.querySelector<HTMLElement>('[data-search-results]')!;
+    const entries: (Entry & { haystack: string })[] = JSON.parse(
+      root.querySelector('[data-search-index]')!.textContent ?? '[]',
+    ).map((entry: Entry) => ({ ...entry, haystack: normalize(`${entry.title} ${entry.description}`) }));
+
+    const render = () => {
+      const terms = normalize(input.value).split(/\s+/).filter(Boolean);
+      if (terms.length === 0) {
+        results.classList.add('hidden');
+        return;
+      }
+      const matches = entries
+        .filter((entry) => terms.every((term) => entry.haystack.includes(term)))
+        .sort((a, b) => Number(terms.every((t) => normalize(b.title).includes(t))) - Number(terms.every((t) => normalize(a.title).includes(t))))
+        .slice(0, 8);
+
+      results.innerHTML = matches.length
+        ? `<p class="px-5 pt-3 text-xs font-bold uppercase tracking-widest text-muted">${matches.length} resultado${matches.length === 1 ? '' : 's'}</p>` +
+          matches
+            .map(
+              (entry) => `
+              <a href="${entry.url}" class="group/item block border-b border-rule px-5 py-4 last:border-0 hover:bg-accent-soft/60 focus:bg-accent-soft/60 focus:outline-none">
+                <span class="text-xs font-bold uppercase tracking-wider text-accent">${escape(entry.category)}</span>
+                <span class="mt-1 block font-serif text-lg font-bold leading-snug text-ink group-hover/item:text-accent group-focus/item:text-accent">${escape(entry.title)}</span>
+                ${entry.description ? `<span class="mt-1 block font-serif text-sm italic leading-snug text-muted">${escape(entry.description)}</span>` : ''}
+              </a>`,
+            )
+            .join('')
+        : `<p class="px-5 py-4 font-serif text-sm italic text-muted">Nada encontrado para “${escape(input.value.trim())}”.</p>`;
+      results.classList.remove('hidden');
+    };
+
+    input.addEventListener('input', render);
+    input.addEventListener('focus', render);
+    input.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        input.value = '';
+        render();
+        input.blur();
+      }
+      if (event.key === 'Enter') results.querySelector<HTMLAnchorElement>('a')?.click();
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        results.querySelector<HTMLAnchorElement>('a')?.focus();
+      }
+    });
+    results.addEventListener('keydown', (event) => {
+      const link = document.activeElement as HTMLElement | null;
+      if (event.key === 'ArrowDown') {
+        event.preventDefault();
+        (link?.nextElementSibling as HTMLElement | null)?.focus();
+      }
+      if (event.key === 'ArrowUp') {
+        event.preventDefault();
+        const previous = link?.previousElementSibling;
+        (previous instanceof HTMLAnchorElement ? previous : input).focus();
+      }
+    });
+    document.addEventListener('click', (event) => {
+      if (!root.contains(event.target as Node)) results.classList.add('hidden');
+    });
+  }
+</script>

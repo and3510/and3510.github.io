@@ -1,8 +1,9 @@
 ---
+import CoverImage from '../../../components/CoverImage.astro';
 import { render } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CategoryBadge from '../../../components/CategoryBadge.astro';
-import { getPublishedPosts, getCategorySlug, getPostSlug, formatCategoryName } from '../../../lib/content';
+import { getPublishedPosts, getCategorySlug, getPostSlug, getReadingTime, formatCategoryName } from '../../../lib/content';
 
 export async function getStaticPaths() {
   const posts = await getPublishedPosts();
@@ -28,21 +29,41 @@ const updatedLabel =
 ---
 
 <BaseLayout title={post.data.title} description={post.data.description}>
-  <article class="mx-auto max-w-3xl">
-    <div class="mb-4 flex flex-wrap items-center gap-x-3 gap-y-1 border-b border-neutral-200 pb-4">
+  <article class="mx-auto max-w-[44rem]">
+    <header class="mb-10 border-b border-rule pb-8 text-center">
       <CategoryBadge slug={categorySlug} name={categoryName} size="md" />
-      {dateLabel && <span class="text-sm text-neutral-400">Publicado em {dateLabel}</span>}
-      {updatedLabel && <span class="text-sm text-neutral-400">· Atualizado em {updatedLabel}</span>}
-    </div>
-    <h1 class="mb-3 font-serif text-4xl font-extrabold leading-tight text-neutral-900">{post.data.title}</h1>
-    {post.data.description && <p class="mb-8 text-xl leading-relaxed text-neutral-600">{post.data.description}</p>}
+      <h1 class="mt-4 font-serif text-4xl font-extrabold leading-tight text-ink sm:text-5xl">{post.data.title}</h1>
+      {post.data.description && (
+        <p class="mx-auto mt-5 max-w-2xl font-serif text-xl italic leading-relaxed text-muted">{post.data.description}</p>
+      )}
+      <p class="mt-6 text-sm text-muted">
+        {dateLabel && <span>Publicado em {dateLabel}</span>}
+        {updatedLabel && <span> · Atualizado em {updatedLabel}</span>}
+        <span> · {getReadingTime(post)} min de leitura</span>
+      </p>
+    </header>
+    {post.data.cover && (
+      <figure class="-mx-4 mb-10 sm:mx-0">
+        <CoverImage
+          src={post.data.cover}
+          alt={post.data.coverAlt ?? ''}
+          widths={[800, 1400]}
+          sizes="(min-width: 768px) 704px, 100vw"
+          loading="eager"
+          class="w-full object-cover sm:rounded-md"
+        />
+        {post.data.coverAlt && (
+          <figcaption class="mt-2 px-4 text-center text-sm italic text-muted sm:px-0">{post.data.coverAlt}</figcaption>
+        )}
+      </figure>
+    )}
     <div class="prose-post">
       <Content />
     </div>
+    <footer class="rule-double mt-16 pt-6">
+      <a href={`/categorias/${categorySlug}/`} class="text-sm font-semibold text-accent hover:underline">
+        ← Mais de {categoryName}
+      </a>
+    </footer>
   </article>
-  <div class="mx-auto mt-12 max-w-3xl">
-    <a href={`/categorias/${categorySlug}/`} class="text-sm font-semibold text-red-600 hover:text-red-700">
-      ← voltar para {categoryName}
-    </a>
-  </div>
 </BaseLayout>

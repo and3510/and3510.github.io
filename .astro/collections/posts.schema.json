@@ -20,6 +20,20 @@
       "default": false,
       "type": "boolean"
     },
+    "cover": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "string",
+          "format": "uri"
+        }
+      ]
+    },
+    "coverAlt": {
+      "type": "string"
+    },
     "$schema": {
       "type": "string"
     }
