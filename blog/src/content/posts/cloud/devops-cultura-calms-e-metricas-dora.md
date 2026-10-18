@@ -46,6 +46,7 @@ validação e reduzem o tamanho de cada mudança.
 - **Blameless postmortem**: analisar incidentes focando em sistema e processo, não em quem
   errou — isso é o que faz as pessoas reportarem problemas cedo em vez de escondê-los.
 
+
 > DevOps não significa eliminar especialistas nem que desenvolvedores substituem toda a
 > equipe de operações — a Platform Engineering, inclusive, existe justamente para dar a esses
 > times ferramentas de autoatendimento em vez de exigir que cada um reinvente sua própria
