@@ -3,6 +3,8 @@ title: "NAT e PAT: tradução de endereços"
 description: "Como uma rede inteira compartilha um único IP público, e por que isso não é a mesma coisa que um firewall."
 date: 2026-09-07
 updatedDate: 2026-09-07
+prerequisites: [redes/ipv4-enderecamento-essencial]
+related: [redes/access-control-lists-acl, redes/vpn-redes-privadas-virtuais]
 ---
 
 ## NAT — Network Address Translation

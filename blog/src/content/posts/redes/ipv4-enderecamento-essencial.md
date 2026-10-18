@@ -3,6 +3,8 @@ title: "IPv4: endereçamento essencial"
 description: "Como 32 bits identificam cada dispositivo de uma rede — a base de todo roteamento IPv4."
 date: 2026-08-31
 updatedDate: 2026-08-31
+prerequisites: [redes/modelo-tcpip-camadas-e-protocolos]
+related: [redes/subnetting-ipv4, redes/nat-e-pat]
 ---
 
 ## Estrutura do endereço

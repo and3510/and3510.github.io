@@ -3,6 +3,8 @@ title: "IPv6: endereçamento e conceitos essenciais"
 description: "Como o IPv6 resolve o esgotamento de endereços do IPv4 com um espaço de endereçamento absurdamente maior."
 date: 2026-09-02
 updatedDate: 2026-09-02
+prerequisites: [redes/ipv4-enderecamento-essencial]
+related: [redes/arp-e-ndp]
 ---
 
 ## Estrutura do endereço

@@ -200,3 +200,72 @@ body {
   font-size: 0.9rem;
   color: var(--color-muted);
 }
+
+/* ---------- Glossário (tooltip de termos) ---------- */
+.prose-post .gloss {
+  position: relative;
+  text-decoration: underline dotted var(--color-muted);
+  text-underline-offset: 3px;
+  cursor: help;
+  color: inherit;
+}
+.prose-post a.gloss {
+  text-decoration-color: var(--color-accent);
+}
+.prose-post .gloss::after {
+  content: attr(data-def);
+  position: absolute;
+  left: 0;
+  bottom: calc(100% + 0.4rem);
+  z-index: 10;
+  width: max-content;
+  max-width: min(20rem, 80vw);
+  padding: 0.55em 0.8em;
+  border-radius: 0.4em;
+  background: var(--color-ink);
+  color: var(--color-paper);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.45;
+  text-decoration: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.12s;
+}
+.prose-post .gloss:hover::after,
+.prose-post .gloss:focus::after {
+  opacity: 1;
+}
+
+/* ---------- Pré-requisitos e relacionados ---------- */
+.post-links {
+  font-family: var(--font-sans);
+  border: 1px solid var(--color-rule);
+  border-left: 3px solid var(--color-accent);
+  background: #fff;
+  border-radius: 0.4em;
+  padding: 1em 1.3em;
+}
+.post-links h2 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+.post-links ul {
+  margin-top: 0.5em;
+  list-style: none;
+}
+.post-links li + li {
+  margin-top: 0.3em;
+}
+.post-links a {
+  color: var(--color-accent);
+  font-weight: 600;
+}
+.post-links a:hover {
+  text-decoration: underline;
+}

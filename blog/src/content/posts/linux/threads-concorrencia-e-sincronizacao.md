@@ -3,6 +3,7 @@ title: "Threads: concorrência, paralelismo e sincronização"
 description: "Threads são leves porque compartilham memória do processo — mas esse compartilhamento também é a fonte dos bugs mais difíceis."
 date: 2026-08-03
 updatedDate: 2026-08-03
+prerequisites: [linux/memoria-virtual-paginacao-e-page-fault]
 ---
 
 ## Processo x thread

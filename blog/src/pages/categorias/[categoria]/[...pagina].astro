@@ -3,7 +3,8 @@ import CoverImage from '../../../components/CoverImage.astro';
 import { render } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CategoryBadge from '../../../components/CategoryBadge.astro';
-import { getPublishedPosts, getCategorySlug, getPostSlug, getReadingTime, formatCategoryName, url } from '../../../lib/content';
+import PostLinks from '../../../components/PostLinks.astro';
+import { getPublishedPosts, getCategorySlug, getPostSlug, getReadingTime, formatCategoryName, resolvePostRefs, url } from '../../../lib/content';
 
 export async function getStaticPaths() {
   const posts = await getPublishedPosts();
@@ -18,6 +19,8 @@ export async function getStaticPaths() {
 
 const { post } = Astro.props;
 const { Content } = await render(post);
+const prerequisites = await resolvePostRefs(post, 'prerequisites');
+const related = await resolvePostRefs(post, 'related');
 const categorySlug = getCategorySlug(post);
 const categoryName = formatCategoryName(categorySlug);
 const formatter = new Intl.DateTimeFormat('pt-BR', { day: '2-digit', month: 'long', year: 'numeric', timeZone: 'UTC' });
@@ -57,8 +60,14 @@ const updatedLabel =
         )}
       </figure>
     )}
+    <div class="mb-8">
+      <PostLinks title="Antes de ler" posts={prerequisites} />
+    </div>
     <div class="prose-post">
       <Content />
+    </div>
+    <div class="mt-12">
+      <PostLinks title="Veja também" posts={related} />
     </div>
     <footer class="rule-double mt-16 pt-6">
       <a href={url(`/categorias/${categorySlug}/`)} class="text-sm font-semibold text-accent hover:underline">

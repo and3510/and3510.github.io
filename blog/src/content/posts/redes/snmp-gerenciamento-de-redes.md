@@ -3,6 +3,8 @@ title: "SNMP: gerenciamento e monitoramento de redes"
 description: "Como um sistema central consulta e recebe alertas de centenas de dispositivos de rede diferentes."
 date: 2026-09-19
 updatedDate: 2026-09-19
+prerequisites: [redes/modelo-tcpip-camadas-e-protocolos]
+related: [redes/ntp-sincronizacao-de-horario, cloud/observabilidade-metricas-logs-traces]
 ---
 
 ## O que é SNMP

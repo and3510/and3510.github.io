@@ -3,6 +3,8 @@ title: "Wi-Fi: IEEE 802.11, frequências e conceitos"
 description: "Os fundamentos por trás de toda rede sem fio — de bandas de frequência a como dispositivos evitam colisão no ar."
 date: 2026-09-14
 updatedDate: 2026-09-14
+prerequisites: [redes/ethernet-mac-e-switches]
+related: [redes/seguranca-wifi-wep-wpa-wpa2-wpa3, redes/cabeamento-fibra-e-meios-de-transmissao]
 ---
 
 ## O que é Wi-Fi

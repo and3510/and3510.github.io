@@ -3,6 +3,7 @@ title: "Ansible: automação e configuration management"
 description: "Como manter centenas de servidores em estado consistente sem executar comandos manuais um por um."
 date: 2026-07-24
 updatedDate: 2026-07-24
+related: [cloud/iac-com-terraform]
 ---
 
 ## O problema que o Ansible resolve

@@ -3,6 +3,8 @@ title: "VPN: redes privadas virtuais"
 description: "Como criar um túnel privado sobre uma infraestrutura pública compartilhada como a internet."
 date: 2026-09-22
 updatedDate: 2026-09-22
+prerequisites: [redes/ipv4-enderecamento-essencial]
+related: [redes/ssh-ftp-sftp-ftps]
 ---
 
 ## O que é VPN

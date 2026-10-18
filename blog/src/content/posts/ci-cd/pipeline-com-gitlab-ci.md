@@ -3,6 +3,8 @@ title: "Pipeline básico com GitLab CI"
 description: "Estrutura mínima de um .gitlab-ci.yml para lint, teste e build, com stages e cache."
 date: 2026-08-28
 updatedDate: 2026-08-28
+prerequisites: [ci-cd/integracao-entrega-e-implantacao-continuas]
+related: [ci-cd/pipeline-com-github-actions, ci-cd/pipeline-com-gitea-actions]
 ---
 
 ## Pipeline mínimo

@@ -3,6 +3,8 @@ title: "ACL: filtrando tráfego em redes"
 description: "Listas de controle de acesso decidem, regra por regra e em ordem, o que passa e o que é bloqueado."
 date: 2026-09-13
 updatedDate: 2026-09-13
+prerequisites: [redes/ipv4-enderecamento-essencial]
+related: [redes/nat-e-pat]
 ---
 
 ## O que é uma ACL

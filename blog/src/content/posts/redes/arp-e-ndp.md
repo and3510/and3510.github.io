@@ -3,6 +3,8 @@ title: "ARP e NDP: descobrindo vizinhos na rede"
 description: "Como um host descobre o endereço MAC correspondente a um IP na mesma rede local."
 date: 2026-09-03
 updatedDate: 2026-09-03
+prerequisites: [redes/ethernet-mac-e-switches, redes/ipv4-enderecamento-essencial]
+related: [redes/ipv6-enderecamento]
 ---
 
 ## ARP — Address Resolution Protocol (IPv4)

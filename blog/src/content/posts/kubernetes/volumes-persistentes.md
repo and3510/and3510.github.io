@@ -3,6 +3,8 @@ title: "Armazenamento persistente: Volumes, PV e PVC"
 description: "Como dados sobrevivem à recriação de Pods usando Volumes, PersistentVolume e PersistentVolumeClaim."
 date: 2026-06-30
 updatedDate: 2026-06-30
+prerequisites: [kubernetes/introducao-a-pods]
+related: [kubernetes/statefulset-daemonset-job-cronjob, docker/redes-e-volumes-no-docker]
 ---
 
 ## O problema

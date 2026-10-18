@@ -3,6 +3,8 @@ title: "DNS: sistema de nomes de domínio"
 description: "Como nomes legíveis por humanos viram endereços IP, e os tipos de registro que mais aparecem no dia a dia."
 date: 2026-09-06
 updatedDate: 2026-09-06
+prerequisites: [redes/modelo-tcpip-camadas-e-protocolos]
+related: [redes/dhcp-configuracao-automatica-de-rede, redes/http-x-https]
 ---
 
 ## Função principal

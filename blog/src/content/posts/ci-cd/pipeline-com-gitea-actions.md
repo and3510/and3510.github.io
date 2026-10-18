@@ -3,6 +3,8 @@ title: "Pipeline básico com Gitea Actions"
 description: "Como rodar CI em um Gitea self-hosted usando uma sintaxe compatível com GitHub Actions."
 date: 2026-08-30
 updatedDate: 2026-08-30
+prerequisites: [ci-cd/integracao-entrega-e-implantacao-continuas]
+related: [ci-cd/pipeline-com-github-actions, ci-cd/pipeline-com-gitlab-ci]
 ---
 
 ## Gitea Actions é compatível com a sintaxe do GitHub Actions

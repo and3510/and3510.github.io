@@ -3,6 +3,8 @@ title: "Troubleshooting de rede no Linux em 7 passos"
 description: "Diagnosticar uma camada de cada vez, de interface a serviço, evita perder tempo testando a coisa errada primeiro."
 date: 2026-08-10
 updatedDate: 2026-08-10
+prerequisites: [redes/modelo-tcpip-camadas-e-protocolos, redes/icmp-ping-e-traceroute]
+related: [redes/dns-sistema-de-nomes-de-dominio]
 ---
 
 ## O roteiro de diagnóstico

@@ -3,6 +3,8 @@ title: "Sidecar pattern e design de Pods multi-container"
 description: "Quando faz sentido colocar mais de um container no mesmo Pod, e o que eles compartilham entre si."
 date: 2026-08-01
 updatedDate: 2026-08-01
+prerequisites: [kubernetes/introducao-a-pods]
+related: [cloud/observabilidade-metricas-logs-traces]
 ---
 
 ## Pod é a unidade agendável, não o container

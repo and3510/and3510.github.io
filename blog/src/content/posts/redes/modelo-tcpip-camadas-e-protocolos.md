@@ -3,6 +3,8 @@ title: "Modelo TCP/IP: camadas e protocolos"
 description: "O modelo prático de quatro camadas que efetivamente roda por trás da internet."
 date: 2026-08-27
 updatedDate: 2026-08-27
+prerequisites: [redes/modelo-osi-7-camadas]
+related: [redes/tcp-x-udp, redes/ipv4-enderecamento-essencial]
 ---
 
 ## As quatro camadas

@@ -3,6 +3,8 @@ title: "Ethernet, endereço MAC e switches"
 description: "Como um switch aprende para onde encaminhar cada quadro, sem nenhuma configuração manual."
 date: 2026-09-08
 updatedDate: 2026-09-08
+prerequisites: [redes/redes-fundamentos-topologias-e-tipos]
+related: [redes/arp-e-ndp, redes/vlans-e-trunks, redes/spanning-tree-protocol-stp]
 ---
 
 ## Ethernet e o quadro

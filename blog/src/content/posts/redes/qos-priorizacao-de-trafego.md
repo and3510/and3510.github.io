@@ -3,6 +3,8 @@ title: "QoS: priorização e qualidade de serviço"
 description: "Quando o enlace está congestionado, QoS decide quem passa primeiro — mas não cria banda extra do nada."
 date: 2026-09-23
 updatedDate: 2026-09-23
+prerequisites: [redes/modelo-tcpip-camadas-e-protocolos]
+related: [redes/mpls-multiprotocol-label-switching]
 ---
 
 ## Por que QoS existe

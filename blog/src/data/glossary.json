@@ -1,0 +1,16 @@
+[
+  { "term": "SLI", "definition": "Service Level Indicator: métrica que mede um aspecto do serviço, como latência ou taxa de erros.", "post": "cloud/sli-slo-sla-error-budget" },
+  { "term": "SLO", "aliases": ["SLOs"], "definition": "Service Level Objective: meta interna para um SLI, como 99,9% de requisições com sucesso.", "post": "cloud/sli-slo-sla-error-budget" },
+  { "term": "SLA", "definition": "Service Level Agreement: acordo contratual com o cliente, com consequências se não for cumprido.", "post": "cloud/sli-slo-sla-error-budget" },
+  { "term": "error budget", "aliases": ["Error budget"], "definition": "Margem de falha permitida pelo SLO; enquanto sobra orçamento, a equipe pode arriscar mais nas entregas.", "post": "cloud/sli-slo-sla-error-budget" },
+  { "term": "toil", "aliases": ["Toil"], "definition": "Trabalho operacional manual, repetitivo e automatizável, que cresce com o tamanho do sistema.", "post": "cloud/sre-confiabilidade-e-toil" },
+  { "term": "self-healing", "aliases": ["Self-healing"], "definition": "Auto-cura: o sistema detecta o problema e reinicia ou substitui o componente sozinho.", "post": "cloud/incidentes-self-healing-e-postmortem-blameless" },
+  { "term": "postmortem", "aliases": ["Postmortem", "postmortems"], "definition": "Análise feita depois de um incidente para entender o que aconteceu e evitar que se repita.", "post": "cloud/incidentes-self-healing-e-postmortem-blameless" },
+  { "term": "circuit breaker", "aliases": ["Circuit breaker"], "definition": "Padrão que interrompe chamadas a um serviço que está falhando, evitando falhas em cascata.", "post": "cloud/resiliencia-timeout-retry-circuit-breaker" },
+  { "term": "IaC", "definition": "Infraestrutura como Código: provisionar e versionar infraestrutura por meio de arquivos declarativos.", "post": "cloud/iac-com-terraform" },
+  { "term": "feature flag", "aliases": ["feature flags", "Feature flag"], "definition": "Chave que liga ou desliga uma funcionalidade em produção sem novo deploy." },
+  { "term": "AZ", "aliases": ["AZs"], "definition": "Zona de disponibilidade: data center independente dentro de uma região de nuvem." },
+  { "term": "Quality Gate", "definition": "Conjunto de condições de qualidade que o código precisa cumprir; se falhar, o pipeline é interrompido." },
+  { "term": "SAST", "definition": "Static Application Security Testing: análise do código-fonte em busca de vulnerabilidades, sem executá-lo." },
+  { "term": "RBAC", "definition": "Role-Based Access Control: controle de acesso baseado em papéis atribuídos às identidades." }
+]

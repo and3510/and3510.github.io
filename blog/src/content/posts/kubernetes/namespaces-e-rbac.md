@@ -3,6 +3,8 @@ title: "Namespaces e RBAC"
 description: "Isolamento lógico de recursos e controle de acesso granular no cluster."
 date: 2026-07-01
 updatedDate: 2026-07-01
+prerequisites: [kubernetes/arquitetura-do-cluster]
+related: [kubernetes/rbac-serviceaccounts-e-permissoes]
 ---
 
 ## Namespaces: dividindo o cluster

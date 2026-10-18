@@ -89,3 +89,13 @@ export function getExcerpt(post: Post, maxChars = 700): string[] {
   }
   return excerpt;
 }
+
+// Resolve ids "categoria/slug" do frontmatter em posts, falhando o build se algum não existir.
+export async function resolvePostRefs(post: Post, field: 'prerequisites' | 'related'): Promise<Post[]> {
+  const all = await getPublishedPosts();
+  return post.data[field].map((id) => {
+    const found = all.find((p) => p.id === id);
+    if (!found) throw new Error(`${post.id}: "${field}" referencia "${id}", que não existe`);
+    return found;
+  });
+}

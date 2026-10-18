@@ -3,6 +3,8 @@ title: "SRE: Engenharia de Confiabilidade de Sites"
 description: "Como o SRE aplica engenharia de software aos problemas de operação, e por que reduzir toil é o objetivo central."
 date: 2026-07-17
 updatedDate: 2026-07-17
+prerequisites: [cloud/devops-cultura-calms-e-metricas-dora]
+related: [cloud/sli-slo-sla-error-budget, cloud/observabilidade-metricas-logs-traces]
 ---
 
 ## O que é SRE

@@ -3,6 +3,8 @@ title: "SELinux, AppArmor e hardening no Linux"
 description: "Como camadas de segurança obrigatórias (MAC) complementam as permissões tradicionais de dono/grupo/outros."
 date: 2026-08-11
 updatedDate: 2026-08-11
+prerequisites: [linux/permissoes-usuarios-e-grupos]
+related: [kubernetes/networkpolicy-securitycontext-e-pod-security]
 ---
 
 ## DAC x MAC

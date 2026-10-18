@@ -3,6 +3,8 @@ title: "Estratégias de deploy: Rolling, Blue-Green e Canary"
 description: "Como reduzir o risco de cada implantação escolhendo a estratégia certa para o cenário."
 date: 2026-07-15
 updatedDate: 2026-07-15
+prerequisites: [ci-cd/integracao-entrega-e-implantacao-continuas]
+related: [kubernetes/deployments-e-replicasets, kubernetes/argo-concept-e-importance]
 ---
 
 ## Rolling Update

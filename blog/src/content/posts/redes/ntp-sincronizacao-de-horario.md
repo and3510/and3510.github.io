@@ -3,6 +3,8 @@ title: "NTP: sincronização de horário em redes"
 description: "Por que relógios dessincronizados entre servidores são um problema de segurança, não só de conveniência."
 date: 2026-09-20
 updatedDate: 2026-09-20
+prerequisites: [redes/modelo-tcpip-camadas-e-protocolos]
+related: [redes/snmp-gerenciamento-de-redes]
 ---
 
 ## O que é NTP

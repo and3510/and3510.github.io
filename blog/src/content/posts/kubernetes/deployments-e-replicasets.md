@@ -3,6 +3,8 @@ title: "Deployments e ReplicaSets"
 description: "Como o Kubernetes garante réplicas e rollouts de aplicações usando Deployment e ReplicaSet."
 date: 2026-06-26
 updatedDate: 2026-06-26
+prerequisites: [kubernetes/introducao-a-pods]
+related: [cloud/cicd-estrategias-blue-green-canary-rolling, kubernetes/horizontal-pod-autoscaler]
 ---
 
 ## Por que não gerenciar Pods diretamente?

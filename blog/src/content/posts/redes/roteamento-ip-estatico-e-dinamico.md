@@ -3,6 +3,8 @@ title: "Roteamento IP: estático, dinâmico e RIP"
 description: "Como um roteador decide o próximo salto de cada pacote, e a diferença entre configurar rotas manualmente ou deixar os roteadores aprenderem sozinhos."
 date: 2026-09-11
 updatedDate: 2026-09-11
+prerequisites: [redes/subnetting-ipv4]
+related: [redes/bgp-border-gateway-protocol, redes/mpls-multiprotocol-label-switching]
 ---
 
 ## O que é roteamento

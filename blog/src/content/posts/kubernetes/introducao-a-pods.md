@@ -3,6 +3,8 @@ title: "Introdução a Pods no Kubernetes"
 description: "O que é um Pod, por que ele é a menor unidade de deploy e como isso afeta o design de aplicações."
 date: 2026-06-24
 updatedDate: 2026-06-24
+prerequisites: [kubernetes/arquitetura-do-cluster]
+related: [kubernetes/deployments-e-replicasets, kubernetes/sidecar-pattern-e-pod-design]
 ---
 
 ## O que é um Pod?

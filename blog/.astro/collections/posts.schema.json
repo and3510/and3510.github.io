@@ -20,6 +20,20 @@
       "default": false,
       "type": "boolean"
     },
+    "prerequisites": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "related": {
+      "default": [],
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
     "cover": {
       "anyOf": [
         {

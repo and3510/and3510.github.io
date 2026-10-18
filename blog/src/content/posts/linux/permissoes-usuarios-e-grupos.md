@@ -3,6 +3,7 @@ title: "Permissões, usuários e grupos no Linux"
 description: "Como o modelo de permissões do Linux funciona na prática, incluindo casos que fogem do rwx básico."
 date: 2026-07-05
 updatedDate: 2026-07-05
+related: [linux/selinux-apparmor-e-hardening, linux/sistemas-de-arquivos-inodes-e-journaling]
 ---
 
 ## O modelo básico: rwx

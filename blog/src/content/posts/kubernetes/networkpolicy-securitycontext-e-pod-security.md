@@ -3,6 +3,8 @@ title: "NetworkPolicy, SecurityContext e Pod Security"
 description: "Três camadas complementares para reduzir superfície de ataque dentro de um cluster Kubernetes."
 date: 2026-07-29
 updatedDate: 2026-07-29
+prerequisites: [kubernetes/namespaces-e-rbac]
+related: [linux/selinux-apparmor-e-hardening, kubernetes/rbac-serviceaccounts-e-permissoes]
 ---
 
 ## NetworkPolicy: microssegmentação de rede

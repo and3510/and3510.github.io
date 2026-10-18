@@ -3,6 +3,8 @@ title: "Horizontal Pod Autoscaler (HPA)"
 description: "Escalando réplicas automaticamente com base em CPU, memória ou métricas customizadas."
 date: 2026-07-03
 updatedDate: 2026-07-03
+prerequisites: [kubernetes/deployments-e-replicasets, kubernetes/probes-e-resource-limits]
+related: [cloud/alta-disponibilidade-e-escalabilidade]
 ---
 
 ## O que o HPA faz

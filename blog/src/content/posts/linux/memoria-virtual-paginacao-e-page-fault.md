@@ -3,6 +3,7 @@ title: "Memória virtual: paginação, TLB e page fault"
 description: "Cada processo enxerga seu próprio espaço de endereçamento — a tradução para memória física acontece por baixo, de forma transparente."
 date: 2026-08-05
 updatedDate: 2026-08-05
+related: [linux/threads-concorrencia-e-sincronizacao]
 ---
 
 ## Por que memória virtual existe

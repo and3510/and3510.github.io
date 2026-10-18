@@ -3,6 +3,8 @@ title: "VLANs e Trunks"
 description: "Como separar logicamente uma rede física em vários domínios de broadcast independentes."
 date: 2026-09-09
 updatedDate: 2026-09-09
+prerequisites: [redes/ethernet-mac-e-switches]
+related: [redes/spanning-tree-protocol-stp, redes/roteamento-ip-estatico-e-dinamico]
 ---
 
 ## O que é uma VLAN

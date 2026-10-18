@@ -3,6 +3,8 @@ title: "Docker Compose: orquestrando múltiplos serviços"
 description: "Como declarar aplicação, banco e dependências num único arquivo para ambientes locais e de teste."
 date: 2026-07-08
 updatedDate: 2026-07-08
+prerequisites: [docker/dockerfile-multi-stage-build, docker/redes-e-volumes-no-docker]
+related: [kubernetes/introducao-a-pods]
 ---
 
 ## Um compose básico

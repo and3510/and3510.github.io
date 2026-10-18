@@ -3,6 +3,8 @@ title: "HTTP x HTTPS"
 description: "O protocolo que move a web inteira — métodos, status codes e como o TLS entra na história."
 date: 2026-09-16
 updatedDate: 2026-09-16
+prerequisites: [redes/modelo-tcpip-camadas-e-protocolos, redes/tcp-x-udp]
+related: [redes/dns-sistema-de-nomes-de-dominio, redes/proxy-reverse-proxy-e-load-balancer]
 ---
 
 ## Estrutura da comunicação

@@ -3,6 +3,7 @@ title: "Observabilidade: métricas, logs e traces"
 description: "Monitoramento responde perguntas conhecidas; observabilidade investiga o que você não esperava que fosse acontecer."
 date: 2026-07-16
 updatedDate: 2026-07-16
+related: [cloud/sli-slo-sla-error-budget, redes/snmp-gerenciamento-de-redes]
 ---
 
 ## Monitoramento x Observabilidade

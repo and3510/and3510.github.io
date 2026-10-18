@@ -3,6 +3,8 @@ title: "MPLS: Multiprotocol Label Switching"
 description: "Como rótulos evitam que cada roteador refaça a análise completa de IP a cada salto."
 date: 2026-09-24
 updatedDate: 2026-09-24
+prerequisites: [redes/roteamento-ip-estatico-e-dinamico]
+related: [redes/qos-priorizacao-de-trafego, redes/sdn-e-nfv-redes-programaveis]
 ---
 
 ## O que é MPLS

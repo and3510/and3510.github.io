@@ -3,6 +3,8 @@ title: "Probes e resource limits: Pods saudáveis e previsíveis"
 description: "Liveness, readiness, startup probes e como requests/limits afetam scheduling e estabilidade."
 date: 2026-07-02
 updatedDate: 2026-07-02
+prerequisites: [kubernetes/introducao-a-pods]
+related: [kubernetes/horizontal-pod-autoscaler, cloud/incidentes-self-healing-e-postmortem-blameless]
 ---
 
 ## Probes: os três tipos

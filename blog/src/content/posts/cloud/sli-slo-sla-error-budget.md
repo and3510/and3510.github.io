@@ -3,6 +3,8 @@ title: "SLI, SLO, SLA e Error Budget: medindo confiabilidade"
 description: "Como transformar 'o sistema está bom' em números concretos que orientam decisões de engenharia."
 date: 2026-07-18
 updatedDate: 2026-07-18
+prerequisites: [cloud/sre-confiabilidade-e-toil]
+related: [cloud/observabilidade-metricas-logs-traces, cloud/incidentes-self-healing-e-postmortem-blameless]
 ---
 
 ## As quatro siglas

@@ -3,6 +3,8 @@ title: "Redes e volumes no Docker"
 description: "Como containers se comunicam entre si e como persistir dados além do ciclo de vida do container."
 date: 2026-07-09
 updatedDate: 2026-07-09
+prerequisites: [docker/dockerfile-multi-stage-build]
+related: [kubernetes/volumes-persistentes, kubernetes/services-e-tipos]
 ---
 
 ## Tipos de rede

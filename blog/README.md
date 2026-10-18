@@ -38,6 +38,20 @@ draft: false      # opcional, esconde a página quando true
 ---
 ```
 
+### Ligando posts entre si
+
+- **Pré-requisitos e relacionados** (frontmatter, ids `categoria/slug`; o build falha se o id não existir):
+
+  ```yaml
+  prerequisites: [cloud/sre-confiabilidade-e-toil]
+  related: [cloud/sli-slo-sla-error-budget]
+  ```
+
+- **Wikilinks** no corpo, como no Obsidian: `[[slug]]`, `[[categoria/slug]]` ou `[[slug|texto]]`.
+  Se o post não for encontrado, o texto é mantido e um aviso aparece no build.
+- **Glossário** em `src/data/glossary.json`: a primeira ocorrência de cada termo no post ganha um
+  tooltip com a definição (e um link, se o termo tiver `post`).
+
 O site gera automaticamente:
 
 - `/` — categorias e publicações recentes

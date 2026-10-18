@@ -3,6 +3,7 @@ title: "IaaS, PaaS, SaaS e a estratégia multi-cloud"
 description: "O que muda de responsabilidade em cada modelo de serviço em nuvem e quando considerar múltiplos provedores."
 date: 2026-07-12
 updatedDate: 2026-07-12
+related: [cloud/fundamentos-aws-nuvem-custos-e-seguranca, cloud/iac-com-terraform]
 ---
 
 ## Modelos de serviço e responsabilidade compartilhada

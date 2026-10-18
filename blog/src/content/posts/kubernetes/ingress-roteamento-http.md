@@ -3,6 +3,8 @@ title: "Ingress: roteamento HTTP para o cluster"
 description: "Como expor múltiplos serviços HTTP/HTTPS através de um único ponto de entrada."
 date: 2026-06-29
 updatedDate: 2026-06-29
+prerequisites: [kubernetes/services-e-tipos]
+related: [redes/http-x-https, redes/proxy-reverse-proxy-e-load-balancer]
 ---
 
 ## Por que Ingress e não só LoadBalancer?

@@ -3,6 +3,7 @@ title: "Alta disponibilidade e escalabilidade em nuvem"
 description: "Diferença entre escalar vertical e horizontalmente, e como eliminar pontos únicos de falha."
 date: 2026-07-11
 updatedDate: 2026-07-11
+related: [kubernetes/horizontal-pod-autoscaler, redes/proxy-reverse-proxy-e-load-balancer, cloud/fundamentos-aws-nuvem-custos-e-seguranca]
 ---
 
 ## Escalabilidade vertical vs horizontal

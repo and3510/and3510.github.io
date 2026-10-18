@@ -3,6 +3,8 @@ title: "Modelo OSI: as 7 camadas de comunicação"
 description: "O modelo de referência que organiza toda a pilha de protocolos de rede em responsabilidades bem definidas."
 date: 2026-08-25
 updatedDate: 2026-08-25
+prerequisites: [redes/redes-fundamentos-topologias-e-tipos]
+related: [redes/modelo-tcpip-camadas-e-protocolos]
 ---
 
 ## As sete camadas

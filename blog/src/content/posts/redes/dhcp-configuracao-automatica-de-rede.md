@@ -3,6 +3,8 @@ title: "DHCP: configuração automática de rede"
 description: "Como um dispositivo novo na rede recebe IP, máscara, gateway e DNS sem intervenção manual."
 date: 2026-09-05
 updatedDate: 2026-09-05
+prerequisites: [redes/ipv4-enderecamento-essencial]
+related: [redes/dns-sistema-de-nomes-de-dominio]
 ---
 
 ## O que o DHCP fornece

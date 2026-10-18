@@ -3,6 +3,8 @@ title: "Kubernetes: arquitetura do cluster"
 description: "Como Control Plane e Worker Nodes trabalham juntos para reconciliar o estado desejado com o estado real."
 date: 2026-07-25
 updatedDate: 2026-07-25
+prerequisites: [docker/dockerfile-multi-stage-build]
+related: [kubernetes/cni-csi-cri-interfaces-do-kubernetes, kubernetes/introducao-a-pods]
 ---
 
 ## Declarativo e reconciliação

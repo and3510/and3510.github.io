@@ -3,6 +3,8 @@ title: "Proxy, Reverse Proxy e Load Balancer"
 description: "Três intermediários de rede que parecem semelhantes, mas protegem lados opostos da conexão."
 date: 2026-09-21
 updatedDate: 2026-09-21
+prerequisites: [redes/http-x-https]
+related: [cloud/alta-disponibilidade-e-escalabilidade, kubernetes/ingress-roteamento-http]
 ---
 
 ## Forward Proxy

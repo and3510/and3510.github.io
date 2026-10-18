@@ -3,6 +3,8 @@ title: "Services: expondo Pods na rede"
 description: "ClusterIP, NodePort e LoadBalancer — como o Kubernetes roteia tráfego para Pods que mudam de IP o tempo todo."
 date: 2026-06-27
 updatedDate: 2026-06-27
+prerequisites: [kubernetes/introducao-a-pods]
+related: [kubernetes/ingress-roteamento-http, redes/proxy-reverse-proxy-e-load-balancer]
 ---
 
 ## O problema que o Service resolve

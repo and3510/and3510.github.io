@@ -3,6 +3,8 @@ title: "Helm: pacotes e templates para Kubernetes"
 description: "Como evitar duplicar dezenas de manifests YAML entre ambientes usando charts parametrizados."
 date: 2026-07-26
 updatedDate: 2026-07-26
+prerequisites: [kubernetes/deployments-e-replicasets, kubernetes/configmaps-e-secrets]
+related: [kubernetes/argo-concept-e-importance]
 ---
 
 ## O problema

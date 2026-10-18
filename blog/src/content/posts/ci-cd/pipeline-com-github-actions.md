@@ -3,6 +3,8 @@ title: "Pipeline básico com GitHub Actions"
 description: "Estrutura mínima de um workflow de CI para lint, teste e build."
 date: 2026-06-25
 updatedDate: 2026-06-25
+prerequisites: [ci-cd/integracao-entrega-e-implantacao-continuas]
+related: [ci-cd/pipeline-com-gitlab-ci, ci-cd/pipeline-com-gitea-actions, ci-cd/sonarqube-qualidade-de-codigo-no-pipeline]
 ---
 
 ## Workflow mínimo

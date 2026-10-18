@@ -3,6 +3,7 @@ title: "Infraestrutura como Código com Terraform"
 description: "Como provisionar e versionar infraestrutura de nuvem de forma declarativa e reprodutível."
 date: 2026-07-10
 updatedDate: 2026-07-10
+related: [cloud/ansible-automacao-e-configuration-management, cloud/modelos-de-servico-e-multi-cloud]
 ---
 
 ## Por que IaC

@@ -3,6 +3,8 @@ title: "SSH, FTP, SFTP e FTPS"
 description: "Quatro siglas parecidas para acesso remoto e transferência de arquivos — e por que só uma delas oferece criptografia nativa completa."
 date: 2026-09-17
 updatedDate: 2026-09-17
+prerequisites: [redes/tcp-x-udp]
+related: [redes/vpn-redes-privadas-virtuais]
 ---
 
 ## Para que servem

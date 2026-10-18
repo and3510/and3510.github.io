@@ -3,6 +3,8 @@ title: "ConfigMaps e Secrets"
 description: "Como separar configuração e dados sensíveis do código da aplicação no Kubernetes."
 date: 2026-06-28
 updatedDate: 2026-06-28
+prerequisites: [kubernetes/introducao-a-pods]
+related: [cloud/doze-fatores-12-factor-app]
 ---
 
 ## ConfigMap: configuração desacoplada
