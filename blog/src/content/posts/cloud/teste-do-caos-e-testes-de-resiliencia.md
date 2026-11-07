@@ -6,7 +6,7 @@ updatedDate: 2026-10-17
 prerequisites: [cloud/sre-confiabilidade-e-toil]
 related: [cloud/incidentes-self-healing-e-postmortem-blameless, cloud/resiliencia-timeout-retry-circuit-breaker]
 ---
-
+	
 ## Resiliência é saber como o sistema falha
 
 Testes de resiliência mostram quão confiável é a aplicação e como ela lida com situações adversas: erro de rede, erro de banco de dados, excesso de clientes. A ideia é descobrir **como o sistema falha antes de ele falhar para o cliente**. Fazer esses testes é função do SRE, e eles se dividem em duas frentes principais.
