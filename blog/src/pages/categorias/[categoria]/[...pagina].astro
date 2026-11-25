@@ -31,7 +31,14 @@ const updatedLabel =
     : null;
 ---
 
-<BaseLayout title={post.data.title} description={post.data.description}>
+<BaseLayout
+  title={post.data.title}
+  description={post.data.description}
+  image={post.data.cover}
+  imageAlt={post.data.coverAlt}
+  type="article"
+  publishedTime={post.data.date}
+>
   <article class="mx-auto max-w-[44rem]">
     <header class="mb-10 border-b border-rule pb-8 text-center">
       <CategoryBadge slug={categorySlug} name={categoryName} size="md" />

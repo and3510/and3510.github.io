@@ -40,6 +40,10 @@ jobs:
         working-directory: blog
         run: npm run build
 
+      - name: Check share cards (Open Graph)
+        working-directory: blog
+        run: npm run check:og
+
       - name: Assemble site
         run: |
           mkdir -p _site
