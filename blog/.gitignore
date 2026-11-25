@@ -143,3 +143,5 @@ vite.config.ts.timestamp-*
 .vite/
 
 .vscode/
+# Astro: cache e tipos gerados (recriados em dev/build/sync)
+.astro/

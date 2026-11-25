@@ -102,12 +102,16 @@ npm run preview
 
 ## Deploy
 
-Publicado no Netlify. Build command: `npm run build`, publish directory: `dist`.
+Publicado no GitHub Pages em `https://and3510.github.io/blog/`, junto com o portfólio da raiz
+do repositório.
 
-Deploy automático via GitHub Actions ([.github/workflows/deploy.yml](.github/workflows/deploy.yml)):
-todo push/merge na branch `main` builda o site e publica em produção no Netlify.
+Todo push na `main` dispara o workflow [`pages.yml`](../.github/workflows/pages.yml), que:
 
-Para funcionar, cadastre em **Settings → Secrets and variables → Actions** do repositório:
+1. instala as dependências do blog (`npm ci`);
+2. verifica as imagens (`npm run images:check`);
+3. builda o blog (`npm run build`);
+4. monta o site com o portfólio na raiz e o blog em `/blog`;
+5. publica no GitHub Pages.
 
-- `NETLIFY_AUTH_TOKEN` — token pessoal gerado em Netlify → User settings → Applications → New access token
-- `NETLIFY_SITE_ID` — Site ID do site no Netlify (Site settings → General → Site details)
+Não precisa de secret. Em **Settings → Pages**, a origem deve estar como **GitHub Actions**.
+O caminho `/blog` vem do `base` em `astro.config.mjs`.
