@@ -1,16 +1,14 @@
 ---
 title: "Services: expondo Pods na rede"
-description: "ClusterIP, NodePort e LoadBalancer — como o Kubernetes roteia tráfego para Pods que mudam de IP o tempo todo."
-date: 2026-06-27
-updatedDate: 2026-06-27
+description: "Os tipos de Service (ClusterIP, NodePort e LoadBalancer) e como o Kubernetes roteia tráfego para Pods que mudam de IP."
+date: 2026-09-27
 prerequisites: [kubernetes/introducao-a-pods]
 related: [kubernetes/ingress-roteamento-http, redes/proxy-reverse-proxy-e-load-balancer]
 ---
 
 ## O problema que o Service resolve
 
-Pods têm IPs efêmeros: a cada recriação, o IP muda. Um **Service** cria um endereço estável e
-faz o balanceamento de carga entre os Pods que casam com um `selector`.
+Pods têm IPs efêmeros: a cada recriação, o IP muda. Um **Service** cria um endereço estável e faz o balanceamento de carga entre os Pods que casam com um `selector`.
 
 ```yaml
 apiVersion: v1
@@ -49,6 +47,4 @@ Dentro do cluster, qualquer Pod pode resolver o Service pelo nome DNS:
 nginx-service.default.svc.cluster.local
 ```
 
-O `kube-proxy` mantém as regras de roteamento (iptables ou IPVS) atualizadas em cada nó,
-redirecionando o tráfego para os Pods saudáveis por trás do Service — sem que o cliente
-precise saber quais Pods existem.
+O `kube-proxy` mantém as regras de roteamento (iptables ou IPVS) atualizadas em cada nó, redirecionando o tráfego para os Pods saudáveis por trás do Service, sem que o cliente precise saber quais Pods existem.

@@ -1,8 +1,7 @@
 ---
 title: "Modelo TCP/IP: camadas e protocolos"
 description: "O modelo prático de quatro camadas que efetivamente roda por trás da internet."
-date: 2026-08-27
-updatedDate: 2026-08-27
+date: 2026-09-27
 prerequisites: [redes/modelo-osi-7-camadas]
 related: [redes/tcp-x-udp, redes/ipv4-enderecamento-essencial]
 ---
@@ -16,8 +15,7 @@ related: [redes/tcp-x-udp, redes/ipv4-enderecamento-essencial]
 1. Acesso à Rede  — Ethernet, Wi-Fi (entrega na rede local)
 ```
 
-O modelo TCP/IP é a base real da internet — mais enxuto que o OSI, mas cobrindo as mesmas
-responsabilidades essenciais.
+O modelo TCP/IP é a base real da internet. É mais enxuto que o OSI, mas cobre as mesmas responsabilidades essenciais.
 
 ## OSI x TCP/IP
 
@@ -32,9 +30,7 @@ OSI (7 camadas)          TCP/IP (4 camadas)
 1. Física       ┴──→    Acesso à Rede
 ```
 
-Alguns materiais dividem "Acesso à Rede" em Enlace e Física separadamente — o importante é
-seguir o modelo explícito indicado no contexto (prova, documentação, discussão técnica), pois
-não há uma única convenção universal de quantas camadas o TCP/IP "oficialmente" tem.
+Alguns materiais dividem "Acesso à Rede" em Enlace e Física separadamente. O importante é seguir o modelo explícito indicado no contexto (prova, documentação, discussão técnica), pois não há uma única convenção universal de quantas camadas o TCP/IP "oficialmente" tem.
 
 ## Encapsulamento simplificado
 
@@ -48,13 +44,8 @@ Dados da Aplicação → Segmento/Datagrama → Pacote IP → Quadro → Bits
 
 ## Pegadinhas comuns
 
-- No modelo TCP/IP clássico de 4 camadas, **não existem camadas separadas de Sessão e
-  Apresentação** — essas funções ficam dentro da camada de Aplicação.
-- **DNS está na camada de Aplicação**, não em uma camada inferior — mesmo resolvendo algo tão
-  "básico" quanto um nome, ele opera como um protocolo de aplicação.
-- **TCP é apenas um protocolo da camada de Transporte** — nem todo tráfego usa TCP; DNS, por
-  exemplo, frequentemente usa UDP para consultas simples.
+- No modelo TCP/IP clássico de 4 camadas, **não existem camadas separadas de Sessão e Apresentação**. Essas funções ficam dentro da camada de Aplicação.
+- **DNS está na camada de Aplicação**, não em uma camada inferior. Mesmo resolvendo algo tão "básico" quanto um nome, ele opera como um protocolo de aplicação.
+- **TCP é apenas um protocolo da camada de Transporte**: nem todo tráfego usa TCP; DNS, por exemplo, frequentemente usa UDP para consultas simples.
 
-> O modelo TCP/IP é importante porque é a base da internet, padrão usado em praticamente toda
-> rede moderna, interoperável e escalável — entender suas quatro camadas é o que permite
-> raciocinar sobre onde um problema de rede realmente está.
+O TCP/IP importa porque é a base da internet e de praticamente toda rede moderna. Entender as quatro camadas ajuda a descobrir onde um problema de rede realmente está.

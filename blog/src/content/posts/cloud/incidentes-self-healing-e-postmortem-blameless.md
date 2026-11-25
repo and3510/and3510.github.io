@@ -2,7 +2,6 @@
 title: "Incidentes, Self-Healing e Postmortem Blameless"
 description: "O ciclo de vida de um incidente em SRE: identificar, registrar, priorizar, responder com auto-cura e aprender com a análise de causa."
 date: 2026-10-17
-updatedDate: 2026-10-17
 prerequisites: [cloud/sre-confiabilidade-e-toil, cloud/observabilidade-metricas-logs-traces]
 related: [cloud/sli-slo-sla-error-budget, cloud/teste-do-caos-e-testes-de-resiliencia]
 ---

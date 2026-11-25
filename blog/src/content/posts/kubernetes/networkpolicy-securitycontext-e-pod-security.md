@@ -1,17 +1,14 @@
 ---
 title: "NetworkPolicy, SecurityContext e Pod Security"
 description: "Três camadas complementares para reduzir superfície de ataque dentro de um cluster Kubernetes."
-date: 2026-07-29
-updatedDate: 2026-07-29
+date: 2026-09-27
 prerequisites: [kubernetes/namespaces-e-rbac]
 related: [linux/selinux-apparmor-e-hardening, kubernetes/rbac-serviceaccounts-e-permissoes]
 ---
 
 ## NetworkPolicy: microssegmentação de rede
 
-Por padrão, na maioria dos clusters, todo Pod pode falar com qualquer outro Pod — não há
-isolamento de rede automático. **NetworkPolicy** controla quais comunicações são permitidas
-entre Pods e outros endpoints.
+Por padrão, na maioria dos clusters, todo Pod pode falar com qualquer outro Pod: não há isolamento de rede automático. **NetworkPolicy** controla quais comunicações são permitidas entre Pods e outros endpoints.
 
 ```yaml
 apiVersion: networking.k8s.io/v1
@@ -31,18 +28,15 @@ spec:
               app: frontend
 ```
 
-Isso restringe quem pode acessar o Pod `app: api` — só Pods com label `app: frontend`.
+Assim, só Pods com label `app: frontend` conseguem acessar o Pod `app: api`.
 
-> NetworkPolicy depende do plugin de rede (CNI) ter suporte a ela. Criar a política sem um CNI
-> compatível não gera filtragem efetiva alguma — o manifest existe, mas não tem efeito.
+> NetworkPolicy depende de o plugin de rede (CNI) suportar o recurso. Sem um CNI compatível, a política é criada mas não filtra nada.
 
-A prática recomendada é começar com **default deny** e liberar explicitamente só os fluxos
-necessários, em vez de confiar no "permite tudo" padrão.
+A prática recomendada é começar com **default deny** e liberar explicitamente só os fluxos necessários, em vez de confiar no "permite tudo" padrão.
 
 ## SecurityContext: privilégios do Pod/container
 
-Define atributos de segurança como usuário de execução, capabilities do Linux e permissões de
-escrita no filesystem.
+Define atributos de segurança como usuário de execução, capabilities do Linux e permissões de escrita no filesystem.
 
 ```yaml
 securityContext:
@@ -55,29 +49,19 @@ securityContext:
 ```
 
 - `runAsNonRoot`: exige que o container não rode como root.
-- `allowPrivilegeEscalation: false`: impede que o processo obtenha mais privilégios do que
-  tinha ao iniciar.
-- `capabilities.drop: ["ALL"]`: remove capabilities Linux desnecessárias, seguindo o princípio
-  do menor privilégio.
+- `allowPrivilegeEscalation: false`: impede que o processo obtenha mais privilégios do que tinha ao iniciar.
+- `capabilities.drop: ["ALL"]`: remove capabilities Linux desnecessárias, seguindo o princípio do menor privilégio.
 
-Um **privileged container** recebe acesso elevado ao host — é o nível mais alto de risco e
-deve ser evitado, salvo necessidade técnica muito específica (ex: agentes de infraestrutura).
+Um **privileged container** recebe acesso elevado ao host. É o nível mais alto de risco e deve ser evitado, salvo necessidade técnica muito específica (ex: agentes de infraestrutura).
 
 ## Pod Security Standards
 
 Três níveis padronizados que definem o que é permitido em um Pod:
 
 - **Privileged**: sem restrições.
-- **Baseline**: bloqueia escalonamentos de privilégio conhecidos, mantendo compatibilidade
-  ampla.
-- **Restricted**: conjunto mais restritivo de boas práticas, recomendado para a maioria dos
-  workloads comuns.
+- **Baseline**: bloqueia escalonamentos de privilégio conhecidos, mantendo compatibilidade ampla.
+- **Restricted**: conjunto mais restritivo de boas práticas, recomendado para a maioria dos workloads comuns.
 
-Um **admission controller** valida ou rejeita Pods antes de serem persistidos — pode bloquear
-imagem não autorizada, Pod privilegiado ou configuração insegura antes que ela chegue a
-existir no cluster.
+Um **admission controller** valida ou rejeita Pods antes de serem persistidos. Pode bloquear imagem não autorizada, Pod privilegiado ou configuração insegura antes que ela chegue a existir no cluster.
 
-> Container não-root ainda pode ter riscos — SecurityContext é apenas uma camada de defesa, não
-> uma garantia isolada. A segurança real do cluster combina NetworkPolicy (rede), RBAC
-> (autorização), SecurityContext (privilégios) e Admission Control (validação), nenhuma delas
-> sozinha é suficiente.
+Rodar como não-root não resolve tudo: o SecurityContext é só uma das camadas. A segurança do cluster vem da combinação de NetworkPolicy (rede), RBAC (autorização), SecurityContext (privilégios) e Admission Control (validação).

@@ -1,17 +1,14 @@
 ---
 title: "Deployments e ReplicaSets"
 description: "Como o Kubernetes garante réplicas e rollouts de aplicações usando Deployment e ReplicaSet."
-date: 2026-06-26
-updatedDate: 2026-06-26
+date: 2026-09-27
 prerequisites: [kubernetes/introducao-a-pods]
 related: [cloud/cicd-estrategias-blue-green-canary-rolling, kubernetes/horizontal-pod-autoscaler]
 ---
 
 ## Por que não gerenciar Pods diretamente?
 
-Pods são efêmeros: se um nó cai ou o Pod trava, ele não volta sozinho. Para manter um número
-fixo de réplicas rodando, usamos um **Deployment**, que por sua vez cria e controla um
-**ReplicaSet**.
+Pods são efêmeros: se um nó cai ou o Pod trava, ele não volta sozinho. Para manter um número fixo de réplicas rodando, usamos um **Deployment**, que por sua vez cria e controla um **ReplicaSet**.
 
 ```yaml
 apiVersion: apps/v1
@@ -40,7 +37,7 @@ spec:
 - O **ReplicaSet** garante que N réplicas de um Pod estejam sempre rodando.
 - O **Deployment** gerencia ReplicaSets, permitindo rollout, rollback e histórico de versões.
 
-Você raramente cria um ReplicaSet manualmente — o Deployment já cuida disso.
+Você raramente cria um ReplicaSet manualmente. O Deployment já cuida disso.
 
 ## Rollout e rollback
 
@@ -50,8 +47,7 @@ kubectl rollout status deployment/nginx-deployment
 kubectl rollout undo deployment/nginx-deployment
 ```
 
-Por padrão, o Kubernetes faz um **rolling update**: sobe Pods novos e derruba os antigos aos
-poucos, sem downtime, respeitando `maxSurge` e `maxUnavailable`.
+Por padrão, o Kubernetes faz um **rolling update**: sobe Pods novos e derruba os antigos aos poucos, sem downtime, respeitando `maxSurge` e `maxUnavailable`.
 
 ```yaml
 strategy:
@@ -61,5 +57,4 @@ strategy:
     maxUnavailable: 0
 ```
 
-> `maxUnavailable: 0` garante que nunca haverá menos réplicas que o desejado durante o
-> rollout, ao custo de exigir capacidade extra temporária no cluster.
+Com `maxUnavailable: 0` o número de réplicas nunca fica abaixo do desejado durante o rollout, mas o cluster precisa ter capacidade sobrando por um tempo.

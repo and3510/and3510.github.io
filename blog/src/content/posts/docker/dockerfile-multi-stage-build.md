@@ -1,16 +1,13 @@
 ---
 title: "Dockerfile: multi-stage build e boas práticas"
 description: "Como reduzir o tamanho e a superfície de ataque de imagens Docker usando builds em múltiplos estágios."
-date: 2026-07-07
-updatedDate: 2026-07-07
+date: 2026-09-27
 related: [docker/redes-e-volumes-no-docker, cloud/doze-fatores-12-factor-app]
 ---
 
 ## O problema da imagem única
 
-Um Dockerfile ingênuo instala compiladores, dependências de build e o código-fonte na mesma
-imagem que vai para produção — resultando em imagens grandes e com ferramentas que um
-atacante poderia explorar.
+Um Dockerfile ingênuo instala compiladores, dependências de build e o código-fonte na mesma imagem que vai para produção. O resultado são imagens grandes e com ferramentas que um atacante poderia explorar.
 
 ```dockerfile
 # ❌ tudo em uma imagem só
@@ -42,19 +39,14 @@ EXPOSE 3000
 CMD ["node", "dist/server.js"]
 ```
 
-A imagem final não contém código-fonte, devDependencies nem ferramentas de build — só o que
-é necessário para rodar.
+A imagem final não contém código-fonte, devDependencies nem ferramentas de build, só o que é necessário para rodar.
 
 ## Boas práticas adicionais
 
-- **Ordene o `COPY` para aproveitar cache**: copie `package.json` antes do resto do código,
-  assim o `npm ci` só reexecuta quando as dependências mudam, não a cada alteração de código.
-- **Use imagens `-slim` ou `-alpine`** como base final, quando compatível com suas
-  dependências nativas.
-- **Rode como usuário não-root** (`USER node`) — por padrão, containers rodam como root, o
-  que amplia o impacto de uma eventual fuga de container.
-- **`.dockerignore`** evita copiar `node_modules`, `.git` e arquivos de segredo local para o
-  contexto de build.
+- **Ordene o `COPY` para aproveitar cache**: copie `package.json` antes do resto do código, assim o `npm ci` só reexecuta quando as dependências mudam, não a cada alteração de código.
+- **Use imagens `-slim` ou `-alpine`** como base final, quando compatível com suas dependências nativas.
+- **Rode como usuário não-root** (`USER node`). Por padrão, containers rodam como root, o que amplia o impacto de uma eventual fuga de container.
+- **`.dockerignore`** evita copiar `node_modules`, `.git` e arquivos de segredo local para o contexto de build.
 
 ```
 # .dockerignore
@@ -64,6 +56,4 @@ node_modules
 *.log
 ```
 
-> Cada `RUN`, `COPY` e `ADD` cria uma camada nova. Combinar comandos relacionados com `&&`
-> num único `RUN` reduz o número de camadas e o tamanho final da imagem, mas prejudica o
-> cache incremental — avalie o trade-off conforme a frequência de mudança daquele passo.
+Cada `RUN`, `COPY` e `ADD` cria uma camada nova. Juntar comandos relacionados com `&&` num único `RUN` diminui o número de camadas e o tamanho da imagem, mas atrapalha o cache. Vale pesar isso conforme a frequência com que aquele passo muda.

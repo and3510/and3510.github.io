@@ -1,17 +1,14 @@
 ---
 title: "systemd: gerenciando serviços no Linux"
 description: "Como criar, habilitar e depurar serviços com systemd, o init system padrão das distros modernas."
-date: 2026-07-04
-updatedDate: 2026-07-04
+date: 2026-09-27
 prerequisites: [linux/permissoes-usuarios-e-grupos]
 related: [kubernetes/probes-e-resource-limits]
 ---
 
 ## O que é o systemd
 
-O **systemd** é o sistema de inicialização (init) usado pela maioria das distribuições Linux
-modernas (Ubuntu, Debian, RHEL, Fedora). Ele gerencia o boot, serviços, sockets, timers e
-dependências entre eles.
+O **systemd** é o sistema de inicialização (init) usado pela maioria das distribuições Linux modernas (Ubuntu, Debian, RHEL, Fedora). Ele gerencia o boot, serviços, sockets, timers e dependências entre eles.
 
 ## Criando um serviço
 
@@ -65,9 +62,6 @@ Persistent=true
 WantedBy=timers.target
 ```
 
-O `Persistent=true` garante que, se a máquina estiver desligada no horário agendado, o timer
-executa assim que ela ligar novamente — algo que o cron tradicional não oferece.
+O `Persistent=true` garante que, se a máquina estiver desligada no horário agendado, o timer executa assim que ela ligar novamente, algo que o cron tradicional não oferece.
 
-> `Type=simple` assume que o processo principal não faz fork; para daemons que fazem
-> double-fork, use `Type=forking`. Errar o `Type` é a causa mais comum de serviços que o
-> systemd considera "iniciados" mas que na verdade não estão prontos.
+> `Type=simple` assume que o processo principal não faz fork; para daemons que fazem double-fork, use `Type=forking`. `Type` errado é a causa mais comum de serviço que o systemd mostra como "iniciado" mas que ainda não está pronto.

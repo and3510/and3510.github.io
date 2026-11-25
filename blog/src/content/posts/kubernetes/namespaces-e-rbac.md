@@ -1,16 +1,14 @@
 ---
 title: "Namespaces e RBAC"
 description: "Isolamento lógico de recursos e controle de acesso granular no cluster."
-date: 2026-07-01
-updatedDate: 2026-07-01
+date: 2026-09-27
 prerequisites: [kubernetes/arquitetura-do-cluster]
 related: [kubernetes/rbac-serviceaccounts-e-permissoes]
 ---
 
 ## Namespaces: dividindo o cluster
 
-Um **Namespace** cria um escopo lógico para nomes de recursos, permitindo múltiplos times ou
-ambientes (dev, staging, prod) no mesmo cluster sem colisão de nomes.
+Um **Namespace** cria um escopo lógico para nomes de recursos, permitindo múltiplos times ou ambientes (dev, staging, prod) no mesmo cluster sem colisão de nomes.
 
 ```yaml
 apiVersion: v1
@@ -24,13 +22,11 @@ kubectl get pods -n time-pagamentos
 kubectl config set-context --current --namespace=time-pagamentos
 ```
 
-Recursos como Nodes e PersistentVolumes são globais e não pertencem a nenhum namespace;
-Pods, Services e Deployments são namespaced.
+Recursos como Nodes e PersistentVolumes são globais e não pertencem a nenhum namespace; Pods, Services e Deployments são namespaced.
 
 ## RBAC: quem pode fazer o quê
 
-**Role** (ou **ClusterRole**, para escopo cluster-wide) define um conjunto de permissões
-sobre recursos da API.
+**Role** (ou **ClusterRole**, para escopo cluster-wide) define um conjunto de permissões sobre recursos da API.
 
 ```yaml
 apiVersion: rbac.authorization.k8s.io/v1
@@ -64,12 +60,9 @@ roleRef:
 
 ## Boas práticas
 
-- Aplique o princípio do menor privilégio: comece com `get`/`list`/`watch` e só adicione
-  `create`/`update`/`delete` quando necessário.
-- Use `ClusterRole` + `RoleBinding` (não `ClusterRoleBinding`) para reutilizar uma role em
-  múltiplos namespaces sem dar acesso cluster-wide.
-- ServiceAccounts são a identidade de workloads (Pods chamando a API do Kubernetes) — nunca
-  reutilize a conta `default` para permissões elevadas.
+- Aplique o princípio do menor privilégio: comece com `get`/`list`/`watch` e só adicione `create`/`update`/`delete` quando necessário.
+- Use `ClusterRole` + `RoleBinding` (não `ClusterRoleBinding`) para reutilizar uma role em múltiplos namespaces sem dar acesso cluster-wide.
+- ServiceAccounts são a identidade de workloads (Pods chamando a API do Kubernetes). Nunca reutilize a conta `default` para permissões elevadas.
 
 ```bash
 kubectl auth can-i delete pods --as=joao@empresa.com -n time-pagamentos

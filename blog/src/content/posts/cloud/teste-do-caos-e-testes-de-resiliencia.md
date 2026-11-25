@@ -2,7 +2,6 @@
 title: "Teste do Caos e Testes de Resiliência"
 description: "Teste de carga e teste do caos: como descobrir o limite e o comportamento da aplicação antes que o cliente descubra."
 date: 2026-10-17
-updatedDate: 2026-10-17
 prerequisites: [cloud/sre-confiabilidade-e-toil]
 related: [cloud/incidentes-self-healing-e-postmortem-blameless, cloud/resiliencia-timeout-retry-circuit-breaker]
 ---

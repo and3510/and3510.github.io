@@ -1,16 +1,13 @@
 ---
 title: "Infraestrutura como Código com Terraform"
 description: "Como provisionar e versionar infraestrutura de nuvem de forma declarativa e reprodutível."
-date: 2026-07-10
-updatedDate: 2026-07-10
+date: 2026-09-27
 related: [cloud/ansible-automacao-e-configuration-management, cloud/modelos-de-servico-e-multi-cloud]
 ---
 
 ## Por que IaC
 
-Provisionar recursos manualmente pelo console da nuvem não é auditável, não é reproduzível e
-não escala entre ambientes (dev, staging, prod). **Terraform** descreve a infraestrutura
-desejada em código declarativo e calcula o diff entre estado atual e desejado.
+Provisionar recursos manualmente pelo console da nuvem não é auditável, não é reproduzível e não escala entre ambientes (dev, staging, prod). **Terraform** descreve a infraestrutura desejada em código declarativo e calcula o diff entre estado atual e desejado.
 
 ```hcl
 # main.tf
@@ -54,9 +51,7 @@ terraform destroy      # remove tudo que o Terraform gerencia
 
 ## Estado remoto e locking
 
-Guardar o `.tfstate` localmente é inviável em equipe: dois engenheiros aplicando ao mesmo
-tempo corrompem o estado. Um **backend remoto** (S3 + DynamoDB para lock, Terraform Cloud,
-etc.) resolve isso.
+Guardar o `.tfstate` localmente é inviável em equipe: dois engenheiros aplicando ao mesmo tempo corrompem o estado. Um **backend remoto** (S3 + DynamoDB para lock, Terraform Cloud, etc.) resolve isso.
 
 ```hcl
 backend "s3" {
@@ -78,9 +73,6 @@ module "vpc" {
 }
 ```
 
-Módulos evitam duplicar a mesma definição de VPC, cluster ou banco entre múltiplos ambientes
-— cada ambiente só passa variáveis diferentes para o mesmo módulo.
+Módulos evitam duplicar a mesma definição de VPC, cluster ou banco entre múltiplos ambientes. Cada ambiente só passa variáveis diferentes para o mesmo módulo.
 
-> `terraform apply` sem revisar o `plan` antes é a causa mais comum de incidentes com
-> Terraform em produção — sempre trate o `plan` como um pull request de infraestrutura,
-> revisado antes de aplicar, idealmente automatizado em pipeline de CI/CD.
+> Rodar `terraform apply` sem revisar o `plan` é a causa mais comum de incidente com Terraform em produção. Trate o `plan` como um pull request de infraestrutura, de preferência rodando no pipeline de CI/CD.

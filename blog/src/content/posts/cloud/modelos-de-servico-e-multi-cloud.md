@@ -1,8 +1,7 @@
 ---
 title: "IaaS, PaaS, SaaS e a estratégia multi-cloud"
 description: "O que muda de responsabilidade em cada modelo de serviço em nuvem e quando considerar múltiplos provedores."
-date: 2026-07-12
-updatedDate: 2026-07-12
+date: 2026-09-27
 related: [cloud/fundamentos-aws-nuvem-custos-e-seguranca, cloud/iac-com-terraform]
 ---
 
@@ -19,31 +18,22 @@ Virtualização      Você     Provedor    Provedor   Provedor
 Servidores/Rede    Você     Provedor    Provedor   Provedor
 ```
 
-- **IaaS** (EC2, Compute Engine): você gerencia SO, runtime e aplicação; o provedor cuida do
-  hardware físico.
-- **PaaS** (Elastic Beanstalk, App Engine, Cloud Run): você entrega código/container, o
-  provedor cuida de SO, runtime e escalonamento.
+- **IaaS** (EC2, Compute Engine): você gerencia SO, runtime e aplicação; o provedor cuida do hardware físico.
+- **PaaS** (Elastic Beanstalk, App Engine, Cloud Run): você entrega código/container, o provedor cuida de SO, runtime e escalonamento.
 - **SaaS** (Google Workspace, Salesforce): você só consome a aplicação pronta.
 
-Entender essa fronteira é o que define, num incidente, **de quem é a responsabilidade** — um
-erro comum é tratar uma falha de infraestrutura subjacente em PaaS como se fosse algo que a
-equipe de aplicação devesse resolver.
+Entender essa fronteira é o que define, num incidente, **de quem é a responsabilidade**. Um erro comum é tratar uma falha de infraestrutura subjacente em PaaS como se fosse algo que a equipe de aplicação devesse resolver.
 
 ## Por que considerar multi-cloud
 
 - **Resiliência**: reduzir dependência de um único provedor para workloads críticos.
 - **Negociação e custo**: evitar lock-in que reduza poder de barganha em contratos.
-- **Requisitos regulatórios/soberania de dados**: alguns setores exigem dados em provedores
-  ou regiões específicas.
-- **Melhor ferramenta para cada carga**: usar o serviço gerenciado mais maduro de cada nuvem
-  para uma necessidade específica (ex: BigQuery para analytics, mesmo hospedando o resto em
-  outro provedor).
+- **Requisitos regulatórios/soberania de dados**: alguns setores exigem dados em provedores ou regiões específicas.
+- **Melhor ferramenta para cada carga**: usar o serviço gerenciado mais maduro de cada nuvem para uma necessidade específica (ex: BigQuery para analytics, mesmo hospedando o resto em outro provedor).
 
 ## O custo real do multi-cloud
 
-Multi-cloud não é gratuito: cada provedor tem APIs, modelos de IAM e ferramentas de
-observabilidade diferentes. Sem abstração (Terraform, Kubernetes como camada comum,
-Crossplane), a equipe acaba mantendo conhecimento e automação duplicados.
+Multi-cloud não é gratuito: cada provedor tem APIs, modelos de IAM e ferramentas de observabilidade diferentes. Sem abstração (Terraform, Kubernetes como camada comum, Crossplane), a equipe acaba mantendo conhecimento e automação duplicados.
 
 ```hcl
 # mesmo módulo Terraform, providers diferentes
@@ -58,7 +48,4 @@ module "app_gcp" {
 }
 ```
 
-> Antes de adotar multi-cloud "por segurança", vale medir se a maturidade operacional atual
-> já lida bem com **uma** nuvem. Multi-cloud malfeito multiplica a superfície de erro
-> operacional sem entregar a resiliência prometida — geralmente faz mais sentido depois que
-> observabilidade, IaC e processos de incident response já estão maduros num único provedor.
+Antes de adotar multi-cloud "por segurança", vale ver se a operação já lida bem com **uma** nuvem. Multi-cloud mal feito aumenta a chance de erro sem entregar a resiliência prometida. Normalmente só compensa depois que observabilidade, IaC e resposta a incidentes estão maduros em um provedor.

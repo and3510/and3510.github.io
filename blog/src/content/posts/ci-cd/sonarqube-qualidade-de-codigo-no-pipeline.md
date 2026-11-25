@@ -2,7 +2,6 @@
 title: "SonarQube: qualidade de código no pipeline"
 description: "O que o SonarQube analisa, como subir um servidor com Docker e como integrá-lo ao build e ao CI/CD."
 date: 2026-10-17
-updatedDate: 2026-10-17
 prerequisites: [ci-cd/integracao-entrega-e-implantacao-continuas]
 related: [ci-cd/pipeline-com-github-actions, ci-cd/pipeline-com-gitlab-ci]
 ---

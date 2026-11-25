@@ -1,8 +1,7 @@
 ---
 title: "Pipeline básico com GitLab CI"
 description: "Estrutura mínima de um .gitlab-ci.yml para lint, teste e build, com stages e cache."
-date: 2026-08-28
-updatedDate: 2026-08-28
+date: 2026-09-27
 prerequisites: [ci-cd/integracao-entrega-e-implantacao-continuas]
 related: [ci-cd/pipeline-com-github-actions, ci-cd/pipeline-com-gitea-actions]
 ---
@@ -51,9 +50,7 @@ build:
 
 ## Stages x Jobs
 
-**Stages** definem a ordem geral (lint → test → build); **jobs** são as tarefas que rodam
-dentro de cada stage. Jobs do mesmo stage rodam em paralelo por padrão; stages diferentes
-rodam em sequência, um só começa depois que o anterior termina com sucesso.
+**Stages** definem a ordem geral (lint → test → build); **jobs** são as tarefas que rodam dentro de cada stage. Jobs do mesmo stage rodam em paralelo por padrão; stages diferentes rodam em sequência, um só começa depois que o anterior termina com sucesso.
 
 ## Regras de execução
 
@@ -68,23 +65,17 @@ deploy:
     - when: never
 ```
 
-`rules` (a forma moderna, substituindo o antigo `only`/`except`) controla precisamente quando
-cada job roda — aqui, o deploy só executa em push para `main`.
+`rules` (a forma moderna, substituindo o antigo `only`/`except`) controla precisamente quando cada job roda. Aqui, o deploy só executa em push para `main`.
 
 ## Cache x Artifacts
 
-- **cache**: acelera execuções futuras reutilizando dependências (`node_modules`) entre
-  pipelines — não é garantido entre todos os runners, é uma otimização, não uma garantia.
-- **artifacts**: arquivos gerados por um job que ficam disponíveis para download e para jobs
-  posteriores no mesmo pipeline (ex: `dist/` do build sendo usado no stage de deploy).
+- **cache**: acelera execuções futuras reutilizando dependências (`node_modules`) entre pipelines. É uma otimização: não há garantia de que o cache exista em todos os runners.
+- **artifacts**: arquivos gerados por um job que ficam disponíveis para download e para jobs posteriores no mesmo pipeline (ex: `dist/` do build sendo usado no stage de deploy).
 
 ## Boas práticas
 
 - Fixar a versão da imagem base (`node:22`, não `node:latest`) para builds reprodutíveis.
-- Usar `rules` para controlar precisamente quando cada job deve rodar, evitando pipelines
-  desnecessários em branches que não precisam.
+- Usar `rules` para controlar precisamente quando cada job deve rodar, evitando pipelines desnecessários em branches que não precisam.
 - Definir `expire_in` em artifacts para não acumular armazenamento indefinidamente.
 
-> O GitLab Runner é o agente que efetivamente executa os jobs — pode ser compartilhado (SaaS
-> do GitLab.com) ou self-hosted. Runners self-hosted dão controle sobre o ambiente de
-> execução, mas exigem que você mesmo gerencie a infraestrutura deles.
+O GitLab Runner é o agente que executa os jobs. Ele pode ser compartilhado (do GitLab.com) ou self-hosted; o self-hosted dá mais controle sobre o ambiente, mas a infraestrutura passa a ser sua.

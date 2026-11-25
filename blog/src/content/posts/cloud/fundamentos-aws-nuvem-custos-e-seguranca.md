@@ -2,7 +2,6 @@
 title: "Fundamentos da AWS: nuvem, custos e segurança"
 description: "Conceitos de computação em nuvem, infraestrutura global, modelos de preço, TCO, responsabilidade compartilhada e IAM."
 date: 2026-10-17
-updatedDate: 2026-10-17
 related: [cloud/alta-disponibilidade-e-escalabilidade, cloud/iac-com-terraform, cloud/modelos-de-servico-e-multi-cloud]
 ---
 

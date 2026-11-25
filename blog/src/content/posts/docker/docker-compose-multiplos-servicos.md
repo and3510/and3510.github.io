@@ -1,8 +1,7 @@
 ---
 title: "Docker Compose: orquestrando múltiplos serviços"
 description: "Como declarar aplicação, banco e dependências num único arquivo para ambientes locais e de teste."
-date: 2026-07-08
-updatedDate: 2026-07-08
+date: 2026-09-27
 prerequisites: [docker/dockerfile-multi-stage-build, docker/redes-e-volumes-no-docker]
 related: [kubernetes/introducao-a-pods]
 ---
@@ -55,10 +54,7 @@ docker compose down
 
 ## depends_on com healthcheck
 
-`depends_on` sozinho só espera o container **iniciar**, não estar **pronto**. Combinado com
-`condition: service_healthy`, o Compose espera o `healthcheck` do serviço dependente passar
-antes de subir o próximo — evita o clássico erro de conexão recusada porque o banco ainda
-estava inicializando.
+`depends_on` sozinho só espera o container **iniciar**, não estar **pronto**. Combinado com `condition: service_healthy`, o Compose espera o `healthcheck` do serviço dependente passar antes de subir o próximo. Isso evita o clássico erro de conexão recusada porque o banco ainda estava inicializando.
 
 ## Overrides por ambiente
 
@@ -77,9 +73,6 @@ services:
     command: npm run dev
 ```
 
-Esse padrão mantém um `docker-compose.yml` base (próximo de produção) e overrides específicos
-para desenvolvimento (bind mount do código, hot reload), sem duplicar toda a configuração.
+Esse padrão mantém um `docker-compose.yml` base (próximo de produção) e overrides específicos para desenvolvimento (bind mount do código, hot reload), sem duplicar toda a configuração.
 
-> Volumes nomeados (`db-data`) sobrevivem a `docker compose down`; só são removidos com
-> `docker compose down -v`. É um erro comum "perder" dados de banco local só porque alguém
-> rodou o `-v` sem saber o que fazia.
+> Volumes nomeados (`db-data`) sobrevivem a `docker compose down` e só são removidos com `docker compose down -v`. É fácil perder os dados do banco local rodando `-v` sem perceber.

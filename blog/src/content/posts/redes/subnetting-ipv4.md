@@ -1,16 +1,14 @@
 ---
 title: "Subnetting IPv4: dividindo redes com máscaras"
 description: "Como quebrar uma rede grande em sub-redes menores, e o cálculo que aparece em toda prova de redes."
-date: 2026-09-01
-updatedDate: 2026-09-01
+date: 2026-09-27
 prerequisites: [redes/ipv4-enderecamento-essencial]
 related: [redes/roteamento-ip-estatico-e-dinamico]
 ---
 
 ## O que é subnetting
 
-Divisão lógica de uma rede IP em redes menores, para organizar endereçamento, separar
-segmentos, reduzir domínios de broadcast e apoiar segurança e roteamento.
+Divisão lógica de uma rede IP em redes menores, para organizar endereçamento, separar segmentos, reduzir domínios de broadcast e apoiar segurança e roteamento.
 
 ## Prefixo CIDR e máscara
 
@@ -28,9 +26,7 @@ segmentos, reduzir domínios de broadcast e apoiar segurança e roteamento.
 | /29 | 255.255.255.248 | 8 |
 | /30 | 255.255.255.252 | 4 |
 
-Fórmula geral: total de endereços = `2^(32 - prefixo)`. Hosts utilizáveis tradicionais =
-`2^(bits de host) - 2` (subtrai rede e broadcast — exceto em casos especiais como `/31` e
-`/32`).
+Fórmula geral: total de endereços = `2^(32 - prefixo)`. Hosts utilizáveis tradicionais = `2^(bits de host) - 2` (subtrai rede e broadcast, exceto em casos especiais como `/31` e `/32`).
 
 ## Macete do salto
 
@@ -38,8 +34,7 @@ Fórmula geral: total de endereços = `2^(32 - prefixo)`. Hosts utilizáveis tra
 256 − valor da máscara no octeto relevante = tamanho do salto entre sub-redes
 ```
 
-Exemplo: máscara `192` → `256 − 192 = 64`. As sub-redes no último octeto começam em
-`0, 64, 128, 192`.
+Exemplo: máscara `192` → `256 − 192 = 64`. As sub-redes no último octeto começam em `0, 64, 128, 192`.
 
 ## Exemplo resolvido
 
@@ -57,10 +52,6 @@ Broadcast = 192.168.10.127
 
 ## VLSM (Variable Length Subnet Mask)
 
-Usa prefixos diferentes conforme a necessidade de cada sub-rede, evitando desperdiçar
-endereços. Exemplo: um setor com 100 hosts precisa de `/25`; um enlace ponto a ponto com só 2
-endereços úteis usa `/30`.
+Usa prefixos diferentes conforme a necessidade de cada sub-rede, evitando desperdiçar endereços. Exemplo: um setor com 100 hosts precisa de `/25`; um enlace ponto a ponto com só 2 endereços úteis usa `/30`.
 
-> `/26` não oferece 26 hosts — o número 26 no prefixo representa **bits de prefixo**, não
-> quantidade de hosts. Uma rede `/26` tem 64 endereços totais e 62 hosts utilizáveis. Essa é a
-> pegadinha mais comum de subnetting.
+> `/26` não quer dizer 26 hosts. O 26 é a quantidade de **bits de prefixo**. Uma rede `/26` tem 64 endereços, sendo 62 utilizáveis. É a pegadinha mais comum de subnetting.

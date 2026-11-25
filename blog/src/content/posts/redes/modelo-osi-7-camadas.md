@@ -1,8 +1,7 @@
 ---
 title: "Modelo OSI: as 7 camadas de comunicação"
 description: "O modelo de referência que organiza toda a pilha de protocolos de rede em responsabilidades bem definidas."
-date: 2026-08-25
-updatedDate: 2026-08-25
+date: 2026-09-27
 prerequisites: [redes/redes-fundamentos-topologias-e-tipos]
 related: [redes/modelo-tcpip-camadas-e-protocolos]
 ---
@@ -21,9 +20,7 @@ related: [redes/modelo-tcpip-camadas-e-protocolos]
 
 ## Encapsulamento e desencapsulamento
 
-Ao descer as camadas na origem, os dados recebem cabeçalhos (e às vezes trailers) em cada
-etapa: **Dados → Segmento → Pacote → Quadro → Bits**. No destino, o processo é o inverso —
-cada camada remove seu cabeçalho correspondente ao subir.
+Ao descer as camadas na origem, os dados recebem cabeçalhos (e às vezes trailers) em cada etapa: **Dados → Segmento → Pacote → Quadro → Bits**. No destino, o processo é o inverso: cada camada remove seu cabeçalho correspondente ao subir.
 
 ## Macete de prova: cada camada tem sua unidade
 
@@ -34,9 +31,9 @@ cada camada remove seu cabeçalho correspondente ao subir.
 
 ## Dispositivos por camada
 
-- **Hub/Repeater**: Camada 1 (Física) — apenas repete sinal, sem inteligência.
-- **Switch Ethernet**: Camada 2 (Enlace) — encaminha por endereço MAC.
-- **Roteador**: Camada 3 (Rede) — encaminha por endereço IP.
+- **Hub/Repeater**: Camada 1 (Física). Só repete o sinal, sem inteligência.
+- **Switch Ethernet**: Camada 2 (Enlace). Encaminha por endereço MAC.
+- **Roteador**: Camada 3 (Rede). Encaminha por endereço IP.
 
 ## Pegadinhas comuns
 
@@ -44,7 +41,4 @@ cada camada remove seu cabeçalho correspondente ao subir.
 - **TCP pertence à camada de Transporte**, não à de Aplicação.
 - **Roteamento está associado à camada de Rede**, não à de Enlace.
 
-> O modelo OSI é uma referência conceitual de sete camadas; o modelo TCP/IP prático (visto no
-> próximo post) condensa isso em quatro. Nenhum protocolo real segue o OSI de forma
-> perfeitamente estanque — é um modelo para raciocinar sobre responsabilidades, não uma
-> implementação literal.
+O OSI é um modelo de referência com sete camadas; o TCP/IP, que vem no próximo post, resume isso em quatro. Nenhum protocolo real segue o OSI à risca. Ele serve para pensar em responsabilidades, e não como implementação literal.

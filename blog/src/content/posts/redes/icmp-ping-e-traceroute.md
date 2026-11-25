@@ -1,17 +1,14 @@
 ---
 title: "ICMP, Ping e Traceroute"
-description: "As ferramentas de diagnóstico mais básicas de rede — e por que um ping falho não prova que o host está fora do ar."
-date: 2026-09-04
-updatedDate: 2026-09-04
+description: "Como funcionam o ICMP, o ping e o traceroute, e o que um ping sem resposta realmente indica."
+date: 2026-09-27
 prerequisites: [redes/ipv4-enderecamento-essencial]
 related: [linux/linux-networking-troubleshooting]
 ---
 
 ## O que é ICMP
 
-**Internet Control Message Protocol** existe para diagnóstico, sinalização de erros e
-informação de condições de rede. ICMP não transporta dados de aplicação como TCP/UDP — é um
-protocolo de controle, não de transporte de payload de usuário.
+**Internet Control Message Protocol** existe para diagnóstico, sinalização de erros e informação de condições de rede. ICMP não transporta dados de aplicação como TCP/UDP; é um protocolo de controle.
 
 ## Ping
 
@@ -28,21 +25,18 @@ Testa alcance e mede tempo aproximado de ida e volta.
 
 ## Se o ping falhar...
 
-A ausência de resposta **não** significa necessariamente que o host está desligado. Causas
-possíveis:
+A ausência de resposta **não** significa necessariamente que o host está desligado. Causas possíveis:
 
 - Firewall bloqueando ICMP.
 - Rota ausente entre origem e destino.
 - Política de segurança que descarta especificamente esse tipo de tráfego.
 - Perda de pacote pontual na rede.
 
-> Ausência de resposta ao ping não é prova absoluta de indisponibilidade — é apenas um sinal
-> de que aquele teste específico falhou.
+> Ping sem resposta não prova que o host está fora do ar. Só mostra que aquele teste específico falhou.
 
 ## Traceroute / tracert
 
-Mostra os saltos do caminho até o destino, usando o comportamento do TTL (IPv4) ou Hop Limit
-(IPv6).
+Mostra os saltos do caminho até o destino, usando o comportamento do TTL (IPv4) ou Hop Limit (IPv6).
 
 ```
 Host → R1 → R2 → R3 → Destino
@@ -51,9 +45,7 @@ TTL 2 → expira em R2
 TTL 3 → expira em R3
 ```
 
-- **TTL (Time To Live)**: campo decrementado a cada roteador. Quando chega a zero, o pacote é
-  descartado, normalmente gerando uma mensagem ICMP Time Exceeded — mecanismo criado para
-  impedir loops eternos de roteamento.
+- **TTL (Time To Live)**: campo decrementado a cada roteador. Quando chega a zero, o pacote é descartado, normalmente gerando uma mensagem ICMP Time Exceeded. Foi criado para impedir loops eternos de roteamento.
 
 ## Mensagens ICMP importantes
 
@@ -64,10 +56,6 @@ TTL 3 → expira em R3
 
 ## Path MTU Discovery
 
-Mecanismos de ICMP/ICMPv6 podem ajudar a descobrir o maior tamanho de pacote utilizável sem
-fragmentação inadequada no caminho — relevante em IPv4 quando a flag DF (Don't Fragment) está
-ativa e o pacote é grande demais para o próximo enlace.
+Mecanismos de ICMP/ICMPv6 podem ajudar a descobrir o maior tamanho de pacote utilizável sem fragmentação inadequada no caminho. Isso é relevante no IPv4 quando a flag DF (Don't Fragment) está ativa e o pacote é grande demais para o próximo enlace.
 
-> `ping` usa Echo Request/Reply; `traceroute` explora o comportamento crescente de TTL/Hop
-> Limit para revelar o caminho salto a salto. São ferramentas relacionadas, mas com mecânica
-> interna bem diferente.
+O `ping` usa Echo Request/Reply; o `traceroute` vai aumentando o TTL/Hop Limit para descobrir o caminho salto a salto. São ferramentas parecidas, mas funcionam de jeito bem diferente por dentro.
