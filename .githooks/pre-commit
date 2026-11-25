@@ -1,0 +1,9 @@
+#!/bin/sh
+# Bloqueia commit de imagem pesada no blog.
+# Ativar uma vez por clone: git config core.hooksPath .githooks
+if git diff --cached --name-only --diff-filter=ACM | grep -qiE '^blog/src/.*\.(jpe?g|png|webp|avif)$'; then
+  npm --prefix blog run -s images:check || {
+    echo "\nCommit bloqueado: rode 'npm run images' em blog/, revise e faça 'git add' de novo." >&2
+    exit 1
+  }
+fi

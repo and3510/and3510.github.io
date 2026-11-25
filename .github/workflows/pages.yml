@@ -32,6 +32,10 @@ jobs:
         working-directory: blog
         run: npm ci
 
+      - name: Check blog images
+        working-directory: blog
+        run: npm run images:check
+
       - name: Build blog
         working-directory: blog
         run: npm run build

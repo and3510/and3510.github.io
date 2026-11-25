@@ -9,7 +9,9 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "images": "node scripts/optimize-images.mjs",
+    "images:check": "node scripts/optimize-images.mjs --check"
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.3.3",
@@ -21,6 +23,7 @@
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.10",
+    "sharp": "^0.35.5",
     "typescript": "^6.0.3"
   }
 }

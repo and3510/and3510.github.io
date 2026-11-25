@@ -52,6 +52,40 @@ draft: false      # opcional, esconde a página quando true
 - **Glossário** em `src/data/glossary.json`: a primeira ocorrência de cada termo no post ganha um
   tooltip com a definição (e um link, se o termo tiver `post`).
 
+### Imagens
+
+Coloque a imagem numa pasta `img/` ao lado do post e use caminho relativo:
+
+```
+src/content/posts/kubernetes/
+├── argo-concept-e-importance.md
+└── img/
+    └── argo-sync.png
+```
+
+```markdown
+---
+cover: ./img/argo-sync.webp
+coverAlt: "Tela de sincronização do Argo CD"
+---
+
+![Fluxo de sync do Argo CD](./img/argo-sync.webp)
+```
+
+Antes do commit, rode `npm run images`. O script converte JPG/PNG para WebP, limita a largura a
+1600px, remove metadados (inclusive GPS de foto de celular) e atualiza as referências nos `.md`.
+No build, o Astro gera as versões responsivas (640px, 1080px, ...), que não vão para o git.
+
+`npm run images:check` falha se alguma imagem estiver fora do padrão (WebP/AVIF, até 1600px e
+400 KB). Ele roda no CI e no hook de pre-commit, que precisa ser ativado uma vez por clone:
+
+```bash
+git config core.hooksPath .githooks
+```
+
+Evite usar URL de imagem de outro site em `cover`: se o site sair do ar ou bloquear hotlink, a
+capa quebra.
+
 O site gera automaticamente:
 
 - `/` — categorias e publicações recentes

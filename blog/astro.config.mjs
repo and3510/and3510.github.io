@@ -11,6 +11,7 @@ const base = '/blog';
 // https://astro.build/config
 export default defineConfig({
   site: 'https://and3510.github.io',
+  image: { layout: 'constrained' },
   base,
   markdown: {
     shikiConfig: { theme: 'github-dark-dimmed' },
