@@ -63,29 +63,33 @@ export function getPostUrl(post: Post): string {
   return url(`/categorias/${getCategorySlug(post)}/${getPostSlug(post)}/`);
 }
 
+// Introdução do post para o destaque: parágrafos até o primeiro subtítulo (ou lista, código,
+// citação, tabela). Assim nenhum trecho aparece fora de contexto, como "Vantagens:" sem a lista.
 export function getExcerpt(post: Post, maxChars = 700): string[] {
-  const body = (post.body ?? '').replace(/```[\s\S]*?```/g, '');
-  const paragraphs = body
+  const blocks = (post.body ?? '')
+    .replace(/```[\s\S]*?```/g, '\n\n```\n\n')
     .split(/\n\s*\n/)
     .map((block) => block.trim())
-    .filter((block) => block && !/^(#|[-*+] |\d+\. |\||>|!\[|<)/.test(block))
-    .map((block) =>
-      block
-        .replace(/!\[[^\]]*\]\([^)]*\)/g, '')
-        .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
-        .replace(/[*_`]+/g, '')
-        .replace(/\s+/g, ' ')
-        .trim(),
-    )
     .filter(Boolean);
 
   const excerpt: string[] = [];
   let total = 0;
-  for (const paragraph of paragraphs) {
+  for (const block of blocks) {
+    const isParagraph = !/^(#|[-*+] |\d+\. |\||>|!\[|<|```)/.test(block);
+    if (!isParagraph) {
+      if (excerpt.length > 0) break; // fim da introdução
+      continue; // pula o título que abre o post
+    }
     if (total >= maxChars) break;
+    const text = block
+      .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
+      .replace(/[*_`]+/g, '')
+      .replace(/\s+/g, ' ')
+      .trim();
+    if (!text) continue;
     const remaining = maxChars - total;
-    excerpt.push(paragraph.length > remaining ? `${paragraph.slice(0, remaining).replace(/\s+\S*$/, '')}…` : paragraph);
-    total += paragraph.length;
+    excerpt.push(text.length > remaining ? `${text.slice(0, remaining).replace(/\s+\S*$/, '')}…` : text);
+    total += text.length;
   }
   return excerpt;
 }
