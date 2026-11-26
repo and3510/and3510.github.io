@@ -10,7 +10,7 @@ interface Props {
 const { categories, siteTitle } = Astro.props;
 const currentPath = Astro.url.pathname;
 const today = new Intl.DateTimeFormat('pt-BR', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' }).format(new Date());
-const linkClass = 'shrink-0 border-b-2 py-3 text-sm font-semibold transition';
+const linkClass = 'shrink-0 border-b-2 py-4 text-base font-semibold transition';
 
 // Faixas de comandos que passam ao fundo do topo (só decoração).
 const commands = [
