@@ -30,7 +30,10 @@ const canonical = new URL(Astro.url.pathname, Astro.site).href;
 // 1200x627 em JPG: tamanho recomendado pelo LinkedIn (WebP não é exibido de forma confiável).
 let ogImage = new URL(url('/og-default.jpg'), Astro.site).href;
 let ogImageSize: { width: number; height: number } | null = { width: 1200, height: 627 };
-if (typeof image === 'string') {
+if (typeof image === 'string' && image.startsWith('/')) {
+  // Card gerado no build (/og/...): já sai em 1200x627.
+  ogImage = new URL(image, Astro.site).href;
+} else if (typeof image === 'string') {
   ogImage = image;
   ogImageSize = null;
 } else if (image) {

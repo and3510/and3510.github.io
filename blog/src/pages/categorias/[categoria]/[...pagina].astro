@@ -34,8 +34,8 @@ const updatedLabel =
 <BaseLayout
   title={post.data.title}
   description={post.data.description}
-  image={post.data.cover}
-  imageAlt={post.data.coverAlt}
+  image={url(`/og/${post.id}.jpg`)}
+  imageAlt={post.data.title}
   type="article"
   publishedTime={post.data.date}
 >

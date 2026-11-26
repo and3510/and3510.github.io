@@ -1,5 +1,5 @@
 // Gera public/og-default.jpg: a imagem do card de compartilhamento (LinkedIn, etc.)
-// usada pelos posts sem `cover`. Rode `npm run og:default` se mudar o visual do blog.
+// usada nas páginas que não são post (posts sem `cover` usam o card de src/pages/og/). Rode `npm run og:default` se mudar o visual do blog.
 import sharp from 'sharp';
 
 const W = 1200;
