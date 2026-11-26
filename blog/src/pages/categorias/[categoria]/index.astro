@@ -15,8 +15,8 @@ const { categoria } = Astro.params;
 const posts = await getPostsByCategory(categoria);
 const categoryName = formatCategoryName(categoria);
 const [headline, ...rest] = posts;
-const secondary = rest.slice(0, 3);
-const others = rest.slice(3);
+const secondary = rest.slice(0, 2);
+const others = rest.slice(2);
 ---
 
 <BaseLayout title={categoryName}>
