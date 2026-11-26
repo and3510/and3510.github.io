@@ -1,6 +1,6 @@
 ---
 import CategoryBadge from './CategoryBadge.astro';
-import { getCategorySlug, getPostUrl, getReadingTime, formatCategoryName, type Post } from '../lib/content';
+import { getCategorySlug, getPostUrl, formatCategoryName, type Post } from '../lib/content';
 
 interface Props {
   post: Post;
@@ -26,8 +26,5 @@ const dateLabel = post.data.date
     </a>
   </h3>
   {post.data.description && <p class="mt-2 leading-relaxed text-muted">{post.data.description}</p>}
-  <p class="mt-3 text-xs text-muted">
-    {dateLabel && <span>{dateLabel} · </span>}
-    <span>{getReadingTime(post)} min de leitura</span>
-  </p>
+  {dateLabel && <p class="mt-3 text-xs text-muted">{dateLabel}</p>}
 </article>

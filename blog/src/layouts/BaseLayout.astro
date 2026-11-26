@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
-import { getImage } from 'astro:assets';
+import { getImage, Image } from 'astro:assets';
+import autor from '../assets/autor.webp';
 import type { ImageMetadata } from 'astro';
 import SiteHeader from '../components/SiteHeader.astro';
 import { getCategories, url } from '../lib/content';
@@ -93,8 +94,23 @@ const ogTitle = title === 'Início' ? siteTitle : title;
     <main class="mx-auto w-full max-w-6xl px-4 pb-20 pt-10 sm:px-6">
       <slot />
     </main>
-    <footer class="rule-double mx-auto max-w-6xl py-8 text-center text-sm text-muted">
-      <p>{siteTitle} · conteúdo em Markdown.</p>
+    <footer class="mx-auto w-full max-w-6xl px-4 pb-10 sm:px-6">
+      <div class="rule-double flex flex-col gap-5 pt-8 sm:flex-row sm:items-start">
+        <Image src={autor} alt="Foto de Anderson do Vale" width={64} height={64} class="h-16 w-16 shrink-0 rounded-full object-cover" />
+        <div class="max-w-2xl">
+          <p class="font-sans text-base font-bold text-ink">Anderson do Vale <span class="font-medium text-muted">· DevOps Engineer</span></p>
+          <p class="mt-1 font-serif text-base leading-relaxed text-ink/85">
+            Minhas anotações de estudo sobre DevOps, Cloud, SRE, CI/CD e Linux. Escrevo para fixar o
+            que aprendo, então leia como resumo de estudo, não como documentação oficial.
+          </p>
+          <ul class="mt-3 flex flex-wrap gap-x-5 gap-y-1 font-sans text-sm font-semibold">
+            <li><a href="https://linkedin.com/in/anderson-do-vale" class="text-accent hover:underline" rel="me noopener" target="_blank">LinkedIn</a></li>
+            <li><a href="https://github.com/and3510" class="text-accent hover:underline" rel="me noopener" target="_blank">GitHub</a></li>
+            <li><a href="/" class="text-accent hover:underline">Portfólio</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="mt-8 text-center text-xs text-muted">{siteTitle} · conteúdo em Markdown.</p>
     </footer>
   </body>
 </html>

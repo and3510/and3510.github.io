@@ -12,17 +12,6 @@ const moreNews = rest.slice(2, 10);
 ---
 
 <BaseLayout title="Início">
-  <aside
-    aria-label="Sobre este blog"
-    class="mb-10 border-l-4 border-accent bg-accent/5 px-5 py-4"
-  >
-    <h2 class="mb-2 font-sans text-sm font-bold uppercase tracking-widest text-accent">Sobre este blog</h2>
-    <p class="font-serif text-base leading-relaxed text-ink">
-      Minhas anotações de estudo sobre DevOps, Cloud, SRE, CI/CD e Linux. Escrevo para fixar o
-      que aprendo, então leia como resumo de estudo, não como documentação oficial.
-    </p>
-  </aside>
-
   {headline ? (
     <FeaturedSection headline={headline} secondary={secondary} />
   ) : (
@@ -39,6 +28,9 @@ const moreNews = rest.slice(2, 10);
         <div class="grid gap-x-8 gap-y-6 sm:grid-cols-2">
           {moreNews.map((post) => <PostCard post={post} />)}
         </div>
+        <a href={url('/publicacoes/')} class="mt-8 inline-block font-sans text-sm font-semibold text-accent hover:underline">
+          Ver todas as {posts.length} publicações →
+        </a>
       </section>
     )}
 

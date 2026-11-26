@@ -4,7 +4,7 @@ import { render } from 'astro:content';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import CategoryBadge from '../../../components/CategoryBadge.astro';
 import PostLinks from '../../../components/PostLinks.astro';
-import { getPublishedPosts, getCategorySlug, getPostSlug, getReadingTime, formatCategoryName, resolvePostRefs, url } from '../../../lib/content';
+import { getPublishedPosts, getCategorySlug, getPostSlug, formatCategoryName, resolvePostRefs, url } from '../../../lib/content';
 
 export async function getStaticPaths() {
   const posts = await getPublishedPosts();
@@ -47,9 +47,8 @@ const updatedLabel =
         <p class="mx-auto mt-5 max-w-2xl font-sans text-xl leading-relaxed text-muted">{post.data.description}</p>
       )}
       <p class="mt-6 text-sm text-muted">
-        {dateLabel && <span>Publicado em {dateLabel}</span>}
-        {updatedLabel && <span> · Atualizado em {updatedLabel}</span>}
-        <span> · {getReadingTime(post)} min de leitura</span>
+        {dateLabel && <span class="whitespace-nowrap">Publicado em {dateLabel}</span>}
+        {updatedLabel && <span class="whitespace-nowrap"> · Atualizado em {updatedLabel}</span>}
       </p>
     </header>
     {post.data.cover && (

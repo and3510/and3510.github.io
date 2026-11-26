@@ -2,7 +2,7 @@
 import CoverImage from './CoverImage.astro';
 import CategoryBadge from './CategoryBadge.astro';
 import PostCard from './PostCard.astro';
-import { getCategorySlug, getPostUrl, getReadingTime, getExcerpt, formatCategoryName, type Post } from '../lib/content';
+import { getCategorySlug, getPostUrl, getExcerpt, formatCategoryName, type Post } from '../lib/content';
 
 interface Props {
   headline: Post;
@@ -14,7 +14,7 @@ const { headline, secondary, showCategory = true } = Astro.props;
 const excerpt = getExcerpt(headline);
 ---
 
-<section class:list={['mb-12 grid gap-10 border-b border-rule pb-12', secondary.length > 0 && 'lg:grid-cols-3']}>
+<section class:list={['mb-12 grid gap-10', secondary.length > 0 && 'lg:grid-cols-3']}>
   <article class:list={['group relative', secondary.length > 0 && 'lg:col-span-2']}>
     {headline.data.cover && (
       <div class="mb-6 overflow-hidden rounded-md">
@@ -28,8 +28,9 @@ const excerpt = getExcerpt(headline);
         />
       </div>
     )}
-    <p class="mb-3 text-xs font-bold uppercase tracking-widest text-muted">Destaque</p>
-    {showCategory && <CategoryBadge slug={getCategorySlug(headline)} name={formatCategoryName(getCategorySlug(headline))} size="md" />}
+    <p class="mb-1 text-xs font-bold uppercase tracking-widest text-muted">
+      Destaque{showCategory && <> · <CategoryBadge slug={getCategorySlug(headline)} name={formatCategoryName(getCategorySlug(headline))} /></>}
+    </p>
     <h2 class="mt-3 font-sans tracking-tight text-4xl font-extrabold leading-tight text-ink transition group-hover:text-accent sm:text-5xl">
       <a href={getPostUrl(headline)} class="after:absolute after:inset-0">
         {headline.data.title}
@@ -44,7 +45,7 @@ const excerpt = getExcerpt(headline);
       </div>
     )}
     <p class="mt-5 text-sm font-semibold text-accent">
-      Ler artigo · {getReadingTime(headline)} min →
+      Ler artigo →
     </p>
   </article>
   {secondary.length > 0 && (

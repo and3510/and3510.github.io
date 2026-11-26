@@ -9,7 +9,6 @@ interface Props {
 
 const { categories, siteTitle } = Astro.props;
 const currentPath = Astro.url.pathname;
-const today = new Intl.DateTimeFormat('pt-BR', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' }).format(new Date());
 const linkClass = 'shrink-0 border-b-2 py-4 text-base font-semibold transition';
 
 // Faixas de comandos que passam ao fundo do topo (só decoração).
@@ -62,26 +61,6 @@ const bands = [0, 1, 2].map((offset) => commands.filter((_, i) => i % 3 === offs
     ))}
   </div>
   <div class="relative mx-auto w-full max-w-6xl px-4 pt-6 sm:px-6">
-    <div class="flex items-center justify-between text-xs text-muted">
-      <span class="capitalize">{today}</span>
-      <button
-        type="button"
-        id="theme-toggle"
-        class="inline-flex items-center gap-1.5 rounded border border-rule bg-paper px-2 py-1 font-semibold text-muted transition hover:border-accent hover:text-accent"
-        aria-label="Alternar tema claro/escuro"
-        title="Alternar tema claro/escuro"
-      >
-        <svg class="h-3.5 w-3.5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
-        </svg>
-        <svg class="hidden h-3.5 w-3.5 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <circle cx="12" cy="12" r="4" />
-          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
-        </svg>
-        <span class="dark:hidden">Escuro</span>
-        <span class="hidden dark:inline">Claro</span>
-      </button>
-    </div>
     <a href={url('/')} class="block pb-2 pt-4 text-center font-sans text-5xl font-extrabold tracking-tight text-ink sm:text-6xl">
       {siteTitle}
     </a>
@@ -93,7 +72,7 @@ const bands = [0, 1, 2].map((offset) => commands.filter((_, i) => i % 3 === offs
   {categories.length > 0 && (
     <nav class="rule-double sticky top-0 z-20 border-b border-rule bg-paper/95 backdrop-blur">
       <div class="mx-auto flex w-full max-w-6xl flex-col-reverse gap-x-6 px-4 sm:flex-row sm:items-center sm:px-6">
-        <div class="flex flex-1 gap-6 overflow-x-auto">
+        <div class="flex flex-1 gap-6 overflow-x-auto pr-8 [mask-image:linear-gradient(90deg,#000_80%,transparent)] sm:pr-0 sm:[mask-image:none]">
           <a
             href={url('/')}
             class:list={[linkClass, currentPath === url('/') ? 'border-accent text-accent' : 'border-transparent text-ink hover:text-accent']}
@@ -114,8 +93,25 @@ const bands = [0, 1, 2].map((offset) => commands.filter((_, i) => i % 3 === offs
             </a>
           ))}
         </div>
-        <div class="pt-3 sm:py-2 sm:pt-2">
-          <SearchBox />
+        <div class="flex items-center gap-3 pt-3 sm:py-2 sm:pt-2">
+          <div class="min-w-0 flex-1 sm:flex-none">
+            <SearchBox />
+          </div>
+          <button
+            type="button"
+            id="theme-toggle"
+            class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-full text-muted transition hover:bg-accent-soft hover:text-accent focus-visible:outline-2 focus-visible:outline-accent"
+            aria-label="Alternar tema claro/escuro"
+            title="Alternar tema"
+          >
+            <svg class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+            </svg>
+            <svg class="hidden h-5 w-5 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+            </svg>
+          </button>
         </div>
       </div>
     </nav>
@@ -139,12 +135,26 @@ const bands = [0, 1, 2].map((offset) => commands.filter((_, i) => i % 3 === offs
 <style>
   .cmd-bands {
     position: absolute;
-    inset: 3rem 0 0.75rem;
+    inset: 0.75rem 0 0.75rem;
     display: grid;
     align-content: center;
     gap: 0.6rem;
     pointer-events: none;
-    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    /* Bordas esmaecidas + uma elipse vazia atrás do nome e da frase, para não brigar com o texto. */
+    -webkit-mask-image:
+      radial-gradient(ellipse 30rem 4.5rem at 50% 50%, transparent 70%, #000 100%),
+      linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    -webkit-mask-composite: source-in;
+    mask-image:
+      radial-gradient(ellipse 30rem 4.5rem at 50% 50%, transparent 70%, #000 100%),
+      linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+    mask-composite: intersect;
+  }
+  @media (max-width: 640px) {
+    /* No celular o nome ocupa quase toda a largura: as faixas ficam só como textura bem leve. */
+    .cmd-band {
+      opacity: 0.12;
+    }
   }
   .cmd-band {
     overflow: hidden;

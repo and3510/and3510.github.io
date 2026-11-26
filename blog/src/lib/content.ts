@@ -54,11 +54,6 @@ export async function getPostsByCategory(categorySlug: string): Promise<Post[]> 
   return posts.filter((post) => getCategorySlug(post) === categorySlug);
 }
 
-export function getReadingTime(post: Post): number {
-  const words = (post.body ?? '').trim().split(/\s+/).filter(Boolean).length;
-  return Math.max(1, Math.round(words / 200));
-}
-
 export function getPostUrl(post: Post): string {
   return url(`/categorias/${getCategorySlug(post)}/${getPostSlug(post)}/`);
 }

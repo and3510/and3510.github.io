@@ -1,6 +1,6 @@
 ---
-title: "Conceito de Argocd"
-description: "O que é Argocd e seu valor no deploy de aplicações no Kubernetes."
+title: "Conceito de Argo CD"
+description: "O que é o Argo CD e seu valor no deploy de aplicações no Kubernetes."
 date: 2026-09-27
 updatedDate: 2026-09-28
 cover: https://i0.wp.com/blog.mocsolucoes.com.br/wp-content/uploads/2023/03/Argo-CD-Kubernete.jpg?resize=728%2C380&ssl=1
@@ -12,7 +12,7 @@ related: [kubernetes/helm-pacotes-e-templates, cloud/cicd-estrategias-blue-green
 
 ## Conceito: O que é?
 
-O Argocd é uma aplicação que é implementada como kubernetes controller, que orquestra os componentes do kubernetes por meio da sincronização de um repositório que centraliza esses manifestos com .yaml(s). 
+O Argo CD é uma aplicação que é implementada como kubernetes controller, que orquestra os componentes do kubernetes por meio da sincronização de um repositório que centraliza esses manifestos com .yaml(s). 
 
 
 
