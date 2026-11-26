@@ -20,7 +20,7 @@ const index = posts.map((post) => ({
       type="search"
       placeholder="Buscar no arquivo…"
       autocomplete="off"
-      class="w-full min-w-0 appearance-none bg-transparent font-serif text-sm text-ink placeholder:italic placeholder:text-muted focus:outline-none sm:w-48 [&::-webkit-search-cancel-button]:hidden"
+      class="w-full min-w-0 appearance-none bg-transparent font-sans text-sm text-ink placeholder:text-muted focus:outline-none sm:w-48 [&::-webkit-search-cancel-button]:hidden"
       data-search-input
     />
   </label>
@@ -64,12 +64,12 @@ const index = posts.map((post) => ({
               (entry) => `
               <a href="${entry.url}" class="group/item block border-b border-rule px-5 py-4 last:border-0 hover:bg-accent-soft/60 focus:bg-accent-soft/60 focus:outline-none">
                 <span class="text-xs font-bold uppercase tracking-wider text-accent">${escape(entry.category)}</span>
-                <span class="mt-1 block font-serif text-lg font-bold leading-snug text-ink group-hover/item:text-accent group-focus/item:text-accent">${escape(entry.title)}</span>
-                ${entry.description ? `<span class="mt-1 block font-serif text-sm italic leading-snug text-muted">${escape(entry.description)}</span>` : ''}
+                <span class="mt-1 block font-sans text-lg font-bold leading-snug text-ink group-hover/item:text-accent group-focus/item:text-accent">${escape(entry.title)}</span>
+                ${entry.description ? `<span class="mt-1 block font-sans text-sm leading-snug text-muted">${escape(entry.description)}</span>` : ''}
               </a>`,
             )
             .join('')
-        : `<p class="px-5 py-4 font-serif text-sm italic text-muted">Nada encontrado para “${escape(input.value.trim())}”.</p>`;
+        : `<p class="px-5 py-4 font-sans text-sm text-muted">Nada encontrado para “${escape(input.value.trim())}”.</p>`;
       results.classList.remove('hidden');
     };
 

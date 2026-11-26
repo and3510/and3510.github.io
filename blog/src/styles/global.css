@@ -2,7 +2,7 @@
 
 @theme {
   --font-serif: "Source Serif 4", Georgia, serif;
-  --font-sans: "Source Sans 3", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
 
   --color-paper: #fbf8f2;
@@ -73,7 +73,8 @@ body {
 .prose-post h2,
 .prose-post h3,
 .prose-post h4 {
-  font-family: var(--font-serif);
+  font-family: var(--font-sans);
+  letter-spacing: -0.015em;
   color: var(--color-ink);
   font-weight: 700;
   line-height: 1.25;

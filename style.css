@@ -202,7 +202,7 @@ h1 {
 /* Botão Blog: no hover, assume o visual do DevOpsOne (papel + azul tinta),
    seguindo o tema claro/escuro do sistema como o blog faz. */
 .btn-blog {
-  font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
   letter-spacing: 0.3px;
   --blog-paper: #fbf8f2;
   --blog-ink: #1c1917;

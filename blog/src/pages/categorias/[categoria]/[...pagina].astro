@@ -42,9 +42,9 @@ const updatedLabel =
   <article class="mx-auto max-w-[44rem]">
     <header class="mb-10 border-b border-rule pb-8 text-center">
       <CategoryBadge slug={categorySlug} name={categoryName} size="md" />
-      <h1 class="mt-4 font-serif text-4xl font-extrabold leading-tight text-ink sm:text-5xl">{post.data.title}</h1>
+      <h1 class="mt-4 font-sans tracking-tight text-4xl font-extrabold leading-tight text-ink sm:text-5xl">{post.data.title}</h1>
       {post.data.description && (
-        <p class="mx-auto mt-5 max-w-2xl font-serif text-xl italic leading-relaxed text-muted">{post.data.description}</p>
+        <p class="mx-auto mt-5 max-w-2xl font-sans text-xl leading-relaxed text-muted">{post.data.description}</p>
       )}
       <p class="mt-6 text-sm text-muted">
         {dateLabel && <span>Publicado em {dateLabel}</span>}

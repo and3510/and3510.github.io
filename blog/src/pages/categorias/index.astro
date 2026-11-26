@@ -6,7 +6,7 @@ const categories = await getCategories();
 ---
 
 <BaseLayout title="Editorias">
-  <h1 class="mb-6 border-b border-rule pb-4 font-serif text-3xl font-extrabold text-ink">Editorias</h1>
+  <h1 class="mb-6 border-b border-rule pb-4 font-sans tracking-tight text-3xl font-extrabold text-ink">Editorias</h1>
   {categories.length > 0 ? (
     <div class="grid gap-4 sm:grid-cols-2">
       {categories.map((category) => (
@@ -14,7 +14,7 @@ const categories = await getCategories();
           href={url(`/categorias/${category.slug}/`)}
           class="flex items-center justify-between border-b border-rule py-4 hover:text-accent"
         >
-          <span class="font-serif text-lg font-bold text-ink">{category.name}</span>
+          <span class="font-sans text-lg font-bold text-ink">{category.name}</span>
           <span class="text-sm text-muted">{category.count} página{category.count === 1 ? '' : 's'}</span>
         </a>
       ))}
