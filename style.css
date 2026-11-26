@@ -199,21 +199,33 @@ h1 {
   }
 }
 
-/* Botão Blog: tipografia editorial do site DevOpsOne, com cursor de digitação vermelho */
+/* Botão Blog: no hover, assume o visual do DevOpsOne (papel + azul tinta),
+   seguindo o tema claro/escuro do sistema como o blog faz. */
 .btn-blog {
   font-family: 'Playfair Display', Georgia, 'Times New Roman', serif;
   letter-spacing: 0.3px;
+  --blog-paper: #fbf8f2;
+  --blog-ink: #1c1917;
+  --blog-accent: #1d4e89;
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-blog {
+    --blog-paper: #181613;
+    --blog-ink: #ede6da;
+    --blog-accent: #7fa9e0;
+  }
 }
 
 .btn-blog:hover {
-  background: #fdfdfd;
-  color: #111;
-  border-color: #111;
+  background: var(--blog-paper);
+  color: var(--blog-ink);
+  border-color: var(--blog-accent);
   box-shadow: 0 0 22px rgba(0, 0, 0, 0.25);
 }
 
 .btn-blog .typing-cursor {
-  color: #c0392b;
+  color: var(--blog-accent);
 }
 
 /* Cursor piscando estilo prompt */

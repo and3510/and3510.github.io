@@ -9,11 +9,35 @@
   --color-ink: #1c1917;
   --color-muted: #6b6359;
   --color-rule: #e4ddd0;
-  --color-accent: #b4232a;
-  --color-accent-soft: #f6e7e3;
+  --color-accent: #1d4e89;
+  --color-accent-soft: #e5ecf5;
+  --color-body: #2a2522;
+  --color-quote: #4a413a;
+  --color-code-bg: #f0ebe1;
+  --color-code-ink: #173d6b;
+  --color-card: #ffffff;
+}
+
+/* Tema escuro: o script no <head> define data-theme (preferência salva ou a do sistema). */
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --color-paper: #181613;
+  --color-ink: #ede6da;
+  --color-muted: #a39a8d;
+  --color-rule: #3a342d;
+  --color-accent: #7fa9e0;
+  --color-accent-soft: #1c2836;
+  --color-body: #d9d1c4;
+  --color-quote: #cbbfae;
+  --color-code-bg: #2a2622;
+  --color-code-ink: #a9c6ee;
+  --color-card: #211e1a;
 }
 
 html {
+  color-scheme: light;
   scroll-behavior: smooth;
 }
 
@@ -40,7 +64,7 @@ body {
   font-family: var(--font-serif);
   font-size: 1.1875rem;
   line-height: 1.75;
-  color: #2a2522;
+  color: var(--color-body);
 }
 .prose-post > * + * {
   margin-top: 1.15em;
@@ -116,7 +140,7 @@ body {
   background: var(--color-accent-soft);
   padding: 0.9em 1.2em;
   border-radius: 0 0.4em 0.4em 0;
-  color: #4a413a;
+  color: var(--color-quote);
   font-style: italic;
 }
 .prose-post hr {
@@ -131,11 +155,11 @@ body {
 }
 .prose-post code {
   font-family: var(--font-mono);
-  background: #f0ebe1;
+  background: var(--color-code-bg);
   border-radius: 0.3em;
   padding: 0.12em 0.4em;
   font-size: 0.82em;
-  color: #7a1d22;
+  color: var(--color-code-ink);
 }
 .prose-post pre {
   font-size: 0.95rem;
@@ -244,7 +268,7 @@ body {
   font-family: var(--font-sans);
   border: 1px solid var(--color-rule);
   border-left: 3px solid var(--color-accent);
-  background: #fff;
+  background: var(--color-card);
   border-radius: 0.4em;
   padding: 1em 1.3em;
 }

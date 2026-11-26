@@ -7,7 +7,7 @@ const H = 627;
 const paper = '#fbf8f2';
 const ink = '#1c1917';
 const muted = '#6b6359';
-const accent = '#b4232a';
+const accent = '#1d4e89';
 const rule = '#e4ddd0';
 const font = "'Noto Serif', 'DejaVu Serif', serif";
 
