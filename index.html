@@ -95,7 +95,7 @@
       <a href="portfolio/index.html" class="rounded-btn btn-portfolio" data-default-text="Portfólio" data-hover-text="anderson@devops:~$ cd portfolio" data-cursor-char="_">
         <span class="btn-text">Portfólio</span><span class="typing-cursor"></span>
       </a>
-      <a href="blog/" class="rounded-btn btn-blog" data-default-text="Blog DevOpsOne" data-hover-text="Ir ao Blog DevOpsOne" data-cursor-char="|">
+      <a href="https://devopsone-org.github.io/" class="rounded-btn btn-blog" data-default-text="Blog DevOpsOne" data-hover-text="Ir ao Blog DevOpsOne" data-cursor-char="|">
         <span class="btn-text">Blog DevOpsOne</span><span class="typing-cursor"></span>
       </a>
       <!-- Adicione outros botões aqui se quiser -->
@@ -137,7 +137,7 @@
     });
 
     // ===== Botão Blog: comandos passando ao fundo (mesma lista do topo do blog) =====
-    // Mantenha em sincronia com `commands` em blog/src/components/SiteHeader.astro.
+    // Mantenha em sincronia com `commands` em src/components/SiteHeader.astro (repo devopsone-org.github.io).
     const blogCommands = [
       'kubectl rollout status deploy/api', 'kubectl get pods -A -o wide',
       'kubectl describe pod api-7d9f8b6c5-x2k4q', 'kubectl logs -f deploy/api --since=10m',
@@ -147,8 +147,8 @@
       'git push origin main', 'git tag -a v1.4.0 -m "release"', 'gh workflow run pages.yml',
       'terraform plan -out=tfplan', 'terraform apply tfplan', 'ansible-playbook site.yml --check',
       'aws s3 sync ./dist s3://devopsone', 'systemctl status nginx', 'journalctl -u nginx -f',
-      'chmod 640 /etc/app/config.yaml', 'ss -tulpn | grep 443', 'dig +short and3510.github.io',
-      'curl -I https://and3510.github.io/blog/', 'ssh -J bastion deploy@10.0.1.12', 'traceroute 8.8.8.8',
+      'chmod 640 /etc/app/config.yaml', 'ss -tulpn | grep 443', 'dig +short devopsone-org.github.io',
+      'curl -I https://devopsone-org.github.io/', 'ssh -J bastion deploy@10.0.1.12', 'traceroute 8.8.8.8',
     ];
     document.querySelectorAll('.btn-blog').forEach((btn) => {
       const bands = document.createElement('span');

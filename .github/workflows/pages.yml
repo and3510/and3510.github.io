@@ -21,35 +21,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: actions/setup-node@v4
-        with:
-          node-version: 22
-          cache: npm
-          cache-dependency-path: blog/package-lock.json
-
-      - name: Install blog dependencies
-        working-directory: blog
-        run: npm ci
-
-      - name: Check blog images
-        working-directory: blog
-        run: npm run images:check
-
-      - name: Build blog
-        working-directory: blog
-        run: npm run build
-
-      - name: Check share cards (Open Graph)
-        working-directory: blog
-        run: npm run check:og
-
       - name: Assemble site
         run: |
           mkdir -p _site
           cp -r index.html style.css images portfolio _site/
-          cp -r blog/dist _site/blog
-          cp blog/dist/404.html _site/404.html
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
