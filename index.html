@@ -11,7 +11,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@700&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
 </head>
@@ -134,6 +134,41 @@
         cursor.textContent = "";
         textSpan.textContent = defaultText;
       });
+    });
+
+    // ===== Botão Blog: comandos passando ao fundo (mesma lista do topo do blog) =====
+    // Mantenha em sincronia com `commands` em blog/src/components/SiteHeader.astro.
+    const blogCommands = [
+      'kubectl rollout status deploy/api', 'kubectl get pods -A -o wide',
+      'kubectl describe pod api-7d9f8b6c5-x2k4q', 'kubectl logs -f deploy/api --since=10m',
+      'kubectl scale deploy/api --replicas=5', 'kubectl rollout undo deploy/api',
+      'helm upgrade --install blog ./chart -f values.yaml', 'argocd app sync devopsone',
+      'docker build -t devopsone:latest .', 'docker compose up -d --build', 'docker image prune -f',
+      'git push origin main', 'git tag -a v1.4.0 -m "release"', 'gh workflow run pages.yml',
+      'terraform plan -out=tfplan', 'terraform apply tfplan', 'ansible-playbook site.yml --check',
+      'aws s3 sync ./dist s3://devopsone', 'systemctl status nginx', 'journalctl -u nginx -f',
+      'chmod 640 /etc/app/config.yaml', 'ss -tulpn | grep 443', 'dig +short and3510.github.io',
+      'curl -I https://and3510.github.io/blog/', 'ssh -J bastion deploy@10.0.1.12', 'traceroute 8.8.8.8',
+    ];
+    document.querySelectorAll('.btn-blog').forEach((btn) => {
+      const bands = document.createElement('span');
+      bands.className = 'cmd-bands';
+      bands.setAttribute('aria-hidden', 'true');
+      [0, 1, 2].forEach((offset) => {
+        const row = blogCommands.filter((_, i) => i % 3 === offset).map((c) => '$ ' + c);
+        const band = document.createElement('span');
+        band.className = 'cmd-band' + (offset === 1 ? ' reverse' : '');
+        const track = document.createElement('span');
+        track.className = 'cmd-track';
+        [...row, ...row].forEach((cmd) => {
+          const item = document.createElement('span');
+          item.textContent = cmd;
+          track.append(item);
+        });
+        band.append(track);
+        bands.append(band);
+      });
+      btn.prepend(bands);
     });
 
     // ===== Botão Portfólio: efeito "glitch" rápido ao clicar =====

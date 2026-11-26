@@ -228,6 +228,74 @@ h1 {
   color: var(--blog-accent);
 }
 
+/* Comandos passando ao fundo do botão Blog, como no topo do blog */
+.btn-blog {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.btn-blog .btn-text,
+.btn-blog .typing-cursor {
+  position: relative;
+  z-index: 1;
+}
+
+.btn-blog .cmd-bands {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2px;
+  pointer-events: none;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.62rem;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #fff;
+  opacity: 0;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 15%, #000 85%, transparent);
+  transition: color 0.2s ease, opacity 0.2s ease;
+}
+
+.btn-blog:hover .cmd-bands {
+  color: var(--blog-ink);
+  opacity: 0.16;
+}
+
+.btn-blog .cmd-band {
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: left;
+}
+
+.btn-blog .cmd-track {
+  display: inline-flex;
+  width: max-content;
+  animation: cmd-slide 120s linear infinite;
+}
+
+.btn-blog .cmd-band.reverse .cmd-track {
+  animation-direction: reverse;
+  animation-duration: 150s;
+}
+
+.btn-blog .cmd-track span {
+  padding-right: 2rem;
+}
+
+@keyframes cmd-slide {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn-blog .cmd-track { animation: none; }
+}
+
 /* Cursor piscando estilo prompt */
 .typing-cursor {
   display: inline-block;
