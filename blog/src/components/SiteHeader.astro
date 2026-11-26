@@ -11,16 +11,63 @@ const { categories, siteTitle } = Astro.props;
 const currentPath = Astro.url.pathname;
 const today = new Intl.DateTimeFormat('pt-BR', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' }).format(new Date());
 const linkClass = 'shrink-0 border-b-2 py-3 text-sm font-semibold transition';
+
+// Faixas de comandos que passam ao fundo do topo (só decoração).
+const commands = [
+  // Kubernetes
+  'kubectl rollout status deploy/api',
+  'kubectl get pods -A -o wide',
+  'kubectl describe pod api-7d9f8b6c5-x2k4q',
+  'kubectl logs -f deploy/api --since=10m',
+  'kubectl scale deploy/api --replicas=5',
+  'kubectl rollout undo deploy/api',
+  'helm upgrade --install blog ./chart -f values.yaml',
+  'argocd app sync devopsone',
+  // Docker
+  'docker build -t devopsone:latest .',
+  'docker compose up -d --build',
+  'docker image prune -f',
+  // CI/CD e Git
+  'git push origin main',
+  'git tag -a v1.4.0 -m "release"',
+  'gh workflow run pages.yml',
+  // Cloud e IaC
+  'terraform plan -out=tfplan',
+  'terraform apply tfplan',
+  'ansible-playbook site.yml --check',
+  'aws s3 sync ./dist s3://devopsone',
+  // Linux e Redes
+  'systemctl status nginx',
+  'journalctl -u nginx -f',
+  'chmod 640 /etc/app/config.yaml',
+  'ss -tulpn | grep 443',
+  'dig +short and3510.github.io',
+  'curl -I https://and3510.github.io/blog/',
+  'ssh -J bastion deploy@10.0.1.12',
+  'traceroute 8.8.8.8',
+];
+// Cada faixa pega um comando a cada três, para não repetir a mesma sequência.
+const bands = [0, 1, 2].map((offset) => commands.filter((_, i) => i % 3 === offset));
 ---
 
 <header>
-  <div class="mx-auto w-full max-w-6xl px-4 pt-6 sm:px-6">
+  <div class="relative overflow-hidden">
+  <div class="cmd-bands" aria-hidden="true">
+    {bands.map((row, i) => (
+      <div class:list={['cmd-band', { reverse: i === 1 }]}>
+        <div class="cmd-track">
+          {[...row, ...row].map((cmd) => <span>$ {cmd}</span>)}
+        </div>
+      </div>
+    ))}
+  </div>
+  <div class="relative mx-auto w-full max-w-6xl px-4 pt-6 sm:px-6">
     <div class="flex items-center justify-between text-xs text-muted">
       <span class="capitalize">{today}</span>
       <button
         type="button"
         id="theme-toggle"
-        class="inline-flex items-center gap-1.5 rounded border border-rule px-2 py-1 font-semibold text-muted transition hover:border-accent hover:text-accent"
+        class="inline-flex items-center gap-1.5 rounded border border-rule bg-paper px-2 py-1 font-semibold text-muted transition hover:border-accent hover:text-accent"
         aria-label="Alternar tema claro/escuro"
         title="Alternar tema claro/escuro"
       >
@@ -41,6 +88,7 @@ const linkClass = 'shrink-0 border-b-2 py-3 text-sm font-semibold transition';
     <p class="pb-5 text-center font-sans text-base text-muted">
       DevOps, Cloud e SRE: cultura e infraestrutura para escalar
     </p>
+  </div>
   </div>
   {categories.length > 0 && (
     <nav class="rule-double sticky top-0 z-20 border-b border-rule bg-paper/95 backdrop-blur">
@@ -87,3 +135,45 @@ const linkClass = 'shrink-0 border-b-2 py-3 text-sm font-semibold transition';
     document.documentElement.dataset.theme = next;
   });
 </script>
+
+<style>
+  .cmd-bands {
+    position: absolute;
+    inset: 3rem 0 0.75rem;
+    display: grid;
+    align-content: center;
+    gap: 0.6rem;
+    pointer-events: none;
+    mask-image: linear-gradient(90deg, transparent, #000 12%, #000 88%, transparent);
+  }
+  .cmd-band {
+    overflow: hidden;
+    white-space: nowrap;
+    font-family: var(--font-mono);
+    font-size: 0.8rem;
+    color: var(--color-muted);
+    opacity: 0.3;
+  }
+  .cmd-track {
+    display: flex;
+    width: max-content;
+    animation: cmd-slide 120s linear infinite;
+  }
+  .cmd-band.reverse .cmd-track {
+    animation-direction: reverse;
+    animation-duration: 150s;
+  }
+  .cmd-track span {
+    padding-right: 2.2rem;
+  }
+  @keyframes cmd-slide {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .cmd-track {
+      animation: none;
+    }
+  }
+</style>
